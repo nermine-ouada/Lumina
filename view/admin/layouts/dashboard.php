@@ -1,3 +1,5 @@
+<?php include ('header.php'); ?>
+
 <div class="container-fluid">
     <!--  Row 1 -->
     <div class="row">
@@ -301,7 +303,7 @@
         <div class="col-sm-6 col-xl-3">
             <div class="card overflow-hidden rounded-2">
                 <div class="position-relative">
-                    <a href="javascript:void(0)"><img src="../assets/images/products/s4.jpg"
+                    <a href="javascript:void(0)"><img src="../../../assets/images/products/s4.jpg"
                             class="card-img-top rounded-0" alt="..." /></a>
                     <a href="javascript:void(0)"
                         class="bg-primary rounded-circle p-2 text-white d-inline-flex position-absolute bottom-0 end-0 mb-n3 me-3"
@@ -339,7 +341,7 @@
         <div class="col-sm-6 col-xl-3">
             <div class="card overflow-hidden rounded-2">
                 <div class="position-relative">
-                    <a href="javascript:void(0)"><img src="../assets/images/products/s5.jpg"
+                    <a href="javascript:void(0)"><img src="../../../assets/images/products/s5.jpg"
                             class="card-img-top rounded-0" alt="..." /></a>
                     <a href="javascript:void(0)"
                         class="bg-primary rounded-circle p-2 text-white d-inline-flex position-absolute bottom-0 end-0 mb-n3 me-3"
@@ -377,7 +379,7 @@
         <div class="col-sm-6 col-xl-3">
             <div class="card overflow-hidden rounded-2">
                 <div class="position-relative">
-                    <a href="javascript:void(0)"><img src="../assets/images/products/s7.jpg"
+                    <a href="javascript:void(0)"><img src="../../../assets/images/products/s7.jpg"
                             class="card-img-top rounded-0" alt="..." /></a>
                     <a href="javascript:void(0)"
                         class="bg-primary rounded-circle p-2 text-white d-inline-flex position-absolute bottom-0 end-0 mb-n3 me-3"
@@ -415,7 +417,7 @@
         <div class="col-sm-6 col-xl-3">
             <div class="card overflow-hidden rounded-2">
                 <div class="position-relative">
-                    <a href="javascript:void(0)"><img src="../assets/images/products/s11.jpg"
+                    <a href="javascript:void(0)"><img src="../../../assets/images/products/s11.jpg"
                             class="card-img-top rounded-0" alt="..." /></a>
                     <a href="javascript:void(0)"
                         class="bg-primary rounded-circle p-2 text-white d-inline-flex position-absolute bottom-0 end-0 mb-n3 me-3"
@@ -459,3 +461,4 @@
         </p>
     </div>
 </div>
+<?php include ('footer.php'); ?>
