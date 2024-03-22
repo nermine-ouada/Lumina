@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Lumina</title>
-    <link rel="shortcut icon" type="image/png" href="../assets/images/logos/light-bulb.png" />
+    <link rel="shortcut icon" type="image/png" href="../assets/images/logos/favicon.png" />
     <link rel="stylesheet" href="../assets/css/styles.min.css" />
 </head>
 
@@ -26,7 +26,12 @@
                                 <p class="text-center">Your road to success !</p>
                                 <form>
                                     <div class="mb-3">
-                                        <label for="exampleInputEmail1" class="form-label">Email address</label>
+                                        <label for="exampleInputtext1" class="form-label">Name</label>
+                                        <input type="text" class="form-control" id="exampleInputtext1"
+                                            aria-describedby="textHelp">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="exampleInputEmail1" class="form-label">Email Address</label>
                                         <input type="email" class="form-control" id="exampleInputEmail1"
                                             aria-describedby="emailHelp">
                                     </div>
@@ -35,11 +40,11 @@
                                         <input type="password" class="form-control" id="exampleInputPassword1">
                                     </div>
                                     <a href="./index.html" class="btn btn-primary w-100 py-8 fs-4 mb-4 rounded-2">Sign
-                                        In</a>
+                                        Up</a>
                                     <div class="d-flex align-items-center justify-content-center">
-                                        <p class="fs-4 mb-0 fw-bold">New to Lumina?</p>
-                                        <a class="text-primary fw-bold ms-2"
-                                            href="register.php">Create an account</a>
+                                        <p class="fs-4 mb-0 fw-bold">Already have an Account?</p>
+                                        <a class="text-primary fw-bold ms-2" href="login.php">Sign
+                                            In</a>
                                     </div>
                                 </form>
                             </div>
