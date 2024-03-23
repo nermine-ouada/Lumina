@@ -1,4 +1,6 @@
 <?php
+require '../../../config.php';
+
 include ("../../../config.php");
 
 $req = $conn->prepare(
