@@ -1,12 +1,13 @@
 <?php
-include ("../../../config.php");
+require '../../../config.php';
+require '../../../model/uuid.php';
 
 $sql = 'INSERT INTO admin (  admin_id,cin,first_name,last_name,email,password,tel,poste) VALUES (?,?,?,?,?,?,?,?)';
 
 $req = $conn->prepare($sql);
 
 $req->execute([
-    $_POST['admin_id'],
+    Uuid::generate(),
     $_POST['cin'],
     $_POST['first_name'],
     $_POST['last_name'],
