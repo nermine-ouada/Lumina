@@ -45,7 +45,7 @@
                             <span class="hide-menu">USERS</span>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link" href="../admins/index.php" aria-expanded="false">
+                            <a class="sidebar-link" href="../admin_crud/index.php" aria-expanded="false">
                                 <span>
                                     <i class="ti ti-article"></i>
                                 </span>
