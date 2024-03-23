@@ -13,8 +13,17 @@ $req = $conn->prepare($sql);
 $req->execute();
 
 ?>
+
 <div class="container-fluid">
     <div class="row">
+        
+        <form action="index.php" method="GET">
+            <div class="d-sm-flex d-block align-items-center justify-content mb-9">
+                <input type="text" class="form-control w-50" name="search" placeholder="Search">
+                <button type="submit" class="btn btn-outline-primary m-3">Search</button>
+
+            </div>
+        </form>
         <div class="d-flex align-items-stretch">
             <div class="card w-100">
                 <div class="card-body p-4">
@@ -55,9 +64,12 @@ $req->execute();
                             <tbody>
                                 <?php if ($req->rowCount() == 0) {
                                     ?>
-                                    <tr><td>No data in the table</td></tr>
+                                    <tr>
+                                        <td>No data in the table</td>
+                                    </tr>
                                 <?php } ?>
-                                <?php while ($row = $req->fetch()) { ?>
+                                
+                                <?php  while ($row = $req->fetch()) { ?>
 
                                     <tr>
 
