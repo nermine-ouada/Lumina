@@ -48,6 +48,10 @@ $req->execute();
                                 </tr>
                             </thead>
                             <tbody>
+                                <?php if ($req->rowCount() == 0) {
+                                    ?>
+                                    <tr><td>No data in the table</td></tr>
+                                <?php } ?>
                                 <?php while ($row = $req->fetch()) { ?>
 
                                     <tr>
