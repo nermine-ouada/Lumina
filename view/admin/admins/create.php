@@ -4,7 +4,7 @@ session_start();
 if (!isset ($_SESSION['email'])) {
     header("location:../../auth/login.html");
 }
-include ('header.php');
+include ('../layouts/header.php');
 ?>
 <div class="container-fluid">
     <div class="card">

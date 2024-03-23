@@ -4,7 +4,7 @@ session_start();
 if (!isset ($_SESSION['email'])) {
     header("location:../../auth/login.html");
 }
-include ('header.php');
+include ('../layouts/header.php');
 include ("../../../config.php");
 
 $sql = 'select * from admin ';
@@ -92,7 +92,7 @@ $req->execute();
                                         </td>
                                         <td class="border-bottom-0">
                                             <a href="edit.php?admin_id=<?php echo $row["admin_id"] ?>"
-                                                class="btn btn-outline-warning m-1">Update</a>
+                                                class="btn btn-outline-warning m-1">Edit</a>
                                         </td>
                                         <td class="border-bottom-0">
                                             <a href="delete.php?admin_id=<?php echo $row["admin_id"] ?>"
