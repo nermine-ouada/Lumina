@@ -1,4 +1,11 @@
-<?php include ('header.php'); ?>
+<?php 
+session_start();
+
+if (!isset ($_SESSION['email'])) {
+    header("location:../../auth/login.html");
+}
+include ('header.php'); 
+?>
 
 <div class="container-fluid">
     <!--  Row 1 -->

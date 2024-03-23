@@ -1,5 +1,10 @@
-<?php include ('../layouts/header.php');
+<?php
+session_start();
 
+if (!isset ($_SESSION['email'])) {
+    header("location:../../auth/login.html");
+}
+include ('header.php');
 require '../../../config.php';
 
 $sql = 'select * from admin where admin_id=?';
