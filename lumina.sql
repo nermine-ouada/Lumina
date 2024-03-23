@@ -44,8 +44,6 @@ CREATE TABLE `admin` (
 -- Dumping data for table `admin`
 --
 
-INSERT INTO `admin` (`admin_id`, `cin`, `first_name`, `last_name`, `email`, `password`, `tel`, `poste`, `created_at`, `updated_at`) VALUES
-('123456', '123455', 'nermine ', 'ouada', 'nermine.ouada@gmail.com', '123', '97258557', 'HR', '2024-03-23 00:40:11', '2024-03-23 00:40:11');
 
 --
 -- Indexes for dumped tables
