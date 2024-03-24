@@ -73,6 +73,14 @@
                             <span class="hide-menu">TRAININGS</span>
                         </li>
                         <li class="sidebar-item">
+                            <a class="sidebar-link" href="../category/index.php" aria-expanded="false">
+                                <span>
+                                    <i class="ti ti-login"></i>
+                                </span>
+                                <span class="hide-menu">Formation category</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
                             <a class="sidebar-link" href="../formation/index.php" aria-expanded="false">
                                 <span>
                                     <i class="ti ti-login"></i>
