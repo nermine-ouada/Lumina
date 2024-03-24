@@ -53,15 +53,15 @@
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link" href="../formateur/index.php" aria-expanded="false">
+                            <a class="sidebar-link" href="../formateur_crud/index.php" aria-expanded="false">
                                 <span>
                                     <i class="ti ti-alert-circle"></i>
                                 </span>
-                                <span class="hide-menu">Formateurs</span>
+                                <span class="hide-menu">Formateur</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link" href="../participant/index.php" aria-expanded="false">
+                            <a class="sidebar-link" href="../participant_crud/index.php" aria-expanded="false">
                                 <span>
                                     <i class="ti ti-cards"></i>
                                 </span>
