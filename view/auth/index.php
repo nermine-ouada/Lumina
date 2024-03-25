@@ -12,18 +12,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
 
-    <title>Lumina</title>
+    <title>DigiMedia - Creative SEO HTML5 Template</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="assets/main/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="shortcut icon" type="image/png" href="assets/dashboard/images/logos/light-bulb.png" />
+    <link href="../../assets/main/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="shortcut icon" type="image/png" href="../../assets/dashboard/images/logos/light-bulb.png" />
 
 
     <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="assets/main/assets/css/fontawesome.css">
-    <link rel="stylesheet" href="assets/main/assets/css/templatemo-digimedia-v3.css">
-    <link rel="stylesheet" href="assets/main/assets/css/animated.css">
-    <link rel="stylesheet" href="assets/main/assets/css/owl.css">
+    <link rel="stylesheet" href="../../assets/main/assets/css/fontawesome.css">
+    <link rel="stylesheet" href="../../assets/main/assets/assets/css/templatemo-digimedia-v3.css">
+    <link rel="stylesheet" href="../../assets/main/assets/assets/css/animated.css">
+    <link rel="stylesheet" href="../../assets/main/assets/assets/css/owl.css">
     <!--
 
 TemplateMo 568 DigiMedia
@@ -77,7 +77,7 @@ https://templatemo.com/tm-568-digimedia
                     <nav class="main-nav">
                         <!-- ***** Logo Start ***** -->
                         <a href="index.html" class="logo">
-                            <img src="assets/dashboard/images/logos/lumina-logo.png" height="100" alt="">
+                            <img src="../../assets/dashboard/images/logos/lumina-logo.png" height="100" alt="">
                         </a>
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
@@ -134,7 +134,7 @@ https://templatemo.com/tm-568-digimedia
                         </div>
                         <div class="col-lg-6">
                             <div class="right-image wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
-                                <img src="assets/main/assets/images/slider-dec-v3.png" alt="">
+                                <img src="../../assets/main/assets/images/slider-dec-v3.png" alt="">
                             </div>
                         </div>
                     </div>
@@ -150,7 +150,7 @@ https://templatemo.com/tm-568-digimedia
                     <div class="row">
                         <div class="col-lg-6">
                             <div class="about-left-image  wow fadeInLeft" data-wow-duration="1s" data-wow-delay="0.5s">
-                                <img src="assets/main/assets/images/about-dec-v3.png" alt="">
+                                <img src="../../assets/main/assets/images/about-dec-v3.png" alt="">
                             </div>
                         </div>
                         <div class="col-lg-6 align-self-center  wow fadeInRight" data-wow-duration="1s"
@@ -253,7 +253,7 @@ https://templatemo.com/tm-568-digimedia
                             <a href="#">
                                 <div class="portfolio-item">
                                     <div class="thumb">
-                                        <img src="assets/main/assets/images/portfolio-01.jpg" alt="">
+                                        <img src="../../assets/main/assets/images/portfolio-01.jpg" alt="">
                                     </div>
                                     <div class="down-content">
                                         <h4>Fullstack</h4>
@@ -266,7 +266,7 @@ https://templatemo.com/tm-568-digimedia
                             <a href="#">
                                 <div class="portfolio-item">
                                     <div class="thumb">
-                                        <img src="assets/main/assets/images/portfolio-01.jpg" alt="">
+                                        <img src="../../assets/main/assets/images/portfolio-01.jpg" alt="">
                                     </div>
                                     <div class="down-content">
                                         <h4>Intro to marketing</h4>
@@ -279,7 +279,7 @@ https://templatemo.com/tm-568-digimedia
                             <a href="#">
                                 <div class="portfolio-item">
                                     <div class="thumb">
-                                        <img src="assets/main/assets/images/portfolio-02.jpg" alt="">
+                                        <img src="../../assets/main/assets/images/portfolio-02.jpg" alt="">
                                     </div>
                                     <div class="down-content">
                                         <h4>Website Builder</h4>
@@ -292,7 +292,7 @@ https://templatemo.com/tm-568-digimedia
                             <a href="#">
                                 <div class="portfolio-item">
                                     <div class="thumb">
-                                        <img src="assets/main/assets/images/portfolio-03.jpg" alt="">
+                                        <img src="../../assets/main/assets/images/portfolio-03.jpg" alt="">
                                     </div>
                                     <div class="down-content">
                                         <h4>Website Builder</h4>
@@ -305,7 +305,7 @@ https://templatemo.com/tm-568-digimedia
                             <a href="#">
                                 <div class="portfolio-item">
                                     <div class="thumb">
-                                        <img src="assets/main/assets/images/portfolio-04.jpg" alt="">
+                                        <img src="../../assets/main/assets/images/portfolio-04.jpg" alt="">
                                     </div>
                                     <div class="down-content">
                                         <h4>Website Builder</h4>
@@ -339,7 +339,7 @@ https://templatemo.com/tm-568-digimedia
                                         <div class="first-thumb active">
                                             <div class="thumb">
                                                 <span class="icon"><img
-                                                        src="assets/main/assets/images/service-icon-01.png"
+                                                        src="../../assets/main/assets/images/service-icon-01.png"
                                                         alt=""></span>
                                                 Wed &amp; development
                                             </div>
@@ -347,7 +347,7 @@ https://templatemo.com/tm-568-digimedia
                                         <div>
                                             <div class="thumb">
                                                 <span class="icon"><img
-                                                        src="assets/main/assets/images/service-icon-02.png"
+                                                        src="../../assets/main/assets/images/service-icon-02.png"
                                                         alt=""></span>
                                                 buissness
                                             </div>
@@ -355,7 +355,7 @@ https://templatemo.com/tm-568-digimedia
                                         <div>
                                             <div class="thumb">
                                                 <span class="icon"><img
-                                                        src="assets/main/assets/images/service-icon-03.png"
+                                                        src="../../assets/main/assets/images/service-icon-03.png"
                                                         alt=""></span>
                                                 Data
                                             </div>
@@ -363,7 +363,7 @@ https://templatemo.com/tm-568-digimedia
                                         <div class="last-thumb">
                                             <div class="thumb">
                                                 <span class="icon"><img
-                                                        src="assets/main/assets/images/service-icon-01.png"
+                                                        src="../../assets/main/assets/images/service-icon-01.png"
                                                         alt=""></span>
                                                 Soft &amp; skills
                                             </div>
@@ -401,7 +401,7 @@ https://templatemo.com/tm-568-digimedia
                                                         </div>
                                                         <div class="col-lg-6 align-self-center">
                                                             <div class="right-image">
-                                                                <img src="assets/main/assets/images/services-image.jpg"
+                                                                <img src="../../assets/main/assets/images/services-image.jpg"
                                                                     alt="">
                                                             </div>
                                                         </div>
@@ -438,7 +438,7 @@ https://templatemo.com/tm-568-digimedia
                                                         </div>
                                                         <div class="col-lg-6 align-self-center">
                                                             <div class="right-image">
-                                                                <img src="assets/main/assets/images/services-image-02.jpg"
+                                                                <img src="../../assets/main/assets/images/services-image-02.jpg"
                                                                     alt="">
                                                             </div>
                                                         </div>
@@ -475,7 +475,7 @@ https://templatemo.com/tm-568-digimedia
                                                         </div>
                                                         <div class="col-lg-6 align-self-center">
                                                             <div class="right-image">
-                                                                <img src="assets/main/assets/images/services-image-03.jpg"
+                                                                <img src="../../assets/main/assets/images/services-image-03.jpg"
                                                                     alt="">
                                                             </div>
                                                         </div>
@@ -512,7 +512,7 @@ https://templatemo.com/tm-568-digimedia
                                                         </div>
                                                         <div class="col-lg-6 align-self-center">
                                                             <div class="right-image">
-                                                                <img src="assets/main/assets/images/services-image-04.jpg"
+                                                                <img src="../../assets/main/assets/images/services-image-04.jpg"
                                                                     alt="">
                                                             </div>
                                                         </div>
@@ -549,7 +549,7 @@ https://templatemo.com/tm-568-digimedia
                                                         </div>
                                                         <div class="col-lg-6 align-self-center">
                                                             <div class="right-image">
-                                                                <img src="assets/main/assets/images/services-image.jpg"
+                                                                <img src="../../assets/main/assets/images/services-image.jpg"
                                                                     alt="">
                                                             </div>
                                                         </div>
@@ -619,7 +619,7 @@ https://templatemo.com/tm-568-digimedia
                 <div class="col-lg-6 show-up wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s">
                     <div class="blog-post">
                         <div class="thumb">
-                            <a href="#"><img src="assets/main/assets/images/blog-post-01.jpg" alt=""></a>
+                            <a href="#"><img src="../../assets/main/assets/images/blog-post-01.jpg" alt=""></a>
                         </div>
                         <div class="down-content">
                             <span class="category">SEO Analysis</span>
@@ -630,7 +630,7 @@ https://templatemo.com/tm-568-digimedia
                             </a>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doers itii eiumod deis
                                 tempor incididunt ut labore.</p>
-                            <span class="author"><img src="assets/main/assets/images/author-post.jpg" alt="">By: Andrea
+                            <span class="author"><img src="../../assets/main/assets/images/author-post.jpg" alt="">By: Andrea
                                 Mentuzi</span>
                             <div class="border-first-button"><a href="#">Discover More</a></div>
                         </div>
@@ -642,7 +642,7 @@ https://templatemo.com/tm-568-digimedia
                             <div class="col-lg-12">
                                 <div class="post-item">
                                     <div class="thumb">
-                                        <a href="#"><img src="assets/main/assets/images/blog-post-02.jpg" alt=""></a>
+                                        <a href="#"><img src="../../assets/main/assets/images/blog-post-02.jpg" alt=""></a>
                                     </div>
                                     <div class="right-content">
                                         <span class="category">SEO Analysis</span>
@@ -657,7 +657,7 @@ https://templatemo.com/tm-568-digimedia
                             <div class="col-lg-12">
                                 <div class="post-item">
                                     <div class="thumb">
-                                        <a href="#"><img src="assets/main/assets/images/blog-post-03.jpg" alt=""></a>
+                                        <a href="#"><img src="../../assets/main/assets/images/blog-post-03.jpg" alt=""></a>
                                     </div>
                                     <div class="right-content">
                                         <span class="category">SEO Analysis</span>
@@ -672,7 +672,7 @@ https://templatemo.com/tm-568-digimedia
                             <div class="col-lg-12">
                                 <div class="post-item last-post-item">
                                     <div class="thumb">
-                                        <a href="#"><img src="assets/main/assets/images/blog-post-04.jpg" alt=""></a>
+                                        <a href="#"><img src="../../assets/main/assets/images/blog-post-04.jpg" alt=""></a>
                                     </div>
                                     <div class="right-content">
                                         <span class="category">SEO Analysis</span>
@@ -706,7 +706,7 @@ https://templatemo.com/tm-568-digimedia
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="contact-dec">
-                                    <img src="assets/main/assets/images/contact-dec-v3.png" alt="">
+                                    <img src="../../assets/main/assets/images/contact-dec-v3.png" alt="">
                                 </div>
                             </div>
                             <div class="col-lg-5">
@@ -723,7 +723,7 @@ https://templatemo.com/tm-568-digimedia
                                         <div class="col-lg-4">
                                             <div class="info-post">
                                                 <div class="icon">
-                                                    <img src="assets/main/assets/images/phone-icon.png" alt="">
+                                                    <img src="../../assets/main/assets/images/phone-icon.png" alt="">
                                                     <a href="#">010-020-0340</a>
                                                 </div>
                                             </div>
@@ -731,7 +731,7 @@ https://templatemo.com/tm-568-digimedia
                                         <div class="col-lg-4">
                                             <div class="info-post">
                                                 <div class="icon">
-                                                    <img src="assets/main/assets/images/email-icon.png" alt="">
+                                                    <img src="../../assets/main/assets/images/email-icon.png" alt="">
                                                     <a href="#">our@email.com</a>
                                                 </div>
                                             </div>
@@ -739,7 +739,7 @@ https://templatemo.com/tm-568-digimedia
                                         <div class="col-lg-4">
                                             <div class="info-post">
                                                 <div class="icon">
-                                                    <img src="assets/main/assets/images/location-icon.png" alt="">
+                                                    <img src="../../assets/main/assets/images/location-icon.png" alt="">
                                                     <a href="#">123 Rio de Janeiro</a>
                                                 </div>
                                             </div>
@@ -795,12 +795,12 @@ https://templatemo.com/tm-568-digimedia
 
 
     <!-- Scripts -->
-    <script src="assets/main/vendor/jquery/jquery.min.js"></script>
-    <script src="assets/main/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/main/assets/js/owl-carousel.js"></script>
-    <script src="assets/main/assets/js/animation.js"></script>
-    <script src="assets/main/assets/js/imagesloaded.js"></script>
-    <script src="assets/main/assets/js/custom.js"></script>
+    <script src="../../assets/main/vendor/jquery/jquery.min.js"></script>
+    <script src="../../assets/main/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../../assets/main/assets/js/owl-carousel.js"></script>
+    <script src="../../assets/main/assets/js/animation.js"></script>
+    <script src="../../assets/main/assets/js/imagesloaded.js"></script>
+    <script src="../../assets/main/assets/js/custom.js"></script>
 
 </body>
 

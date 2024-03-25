@@ -10,7 +10,7 @@ $result = $req->fetch();
 
 if ($req->rowCount() > 0) {
     session_start();
-    $_SESSION['email'] = $result["email"];
+    $_SESSION['admin'] = $result["email"];
     header("Location: ../admin/layouts/dashboard.php");
 } else {
     header("Location: login.html");
