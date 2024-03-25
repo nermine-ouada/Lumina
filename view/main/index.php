@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
 
-    <title>DigiMedia - Creative SEO HTML5 Template</title>
+    <title>Lumina</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../../assets/main/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -21,9 +21,9 @@
 
     <!-- Additional CSS Files -->
     <link rel="stylesheet" href="../../assets/main/assets/css/fontawesome.css">
-    <link rel="stylesheet" href="../../assets/main/assets/assets/css/templatemo-digimedia-v3.css">
-    <link rel="stylesheet" href="../../assets/main/assets/assets/css/animated.css">
-    <link rel="stylesheet" href="../../assets/main/assets/assets/css/owl.css">
+    <link rel="stylesheet" href="../../assets/main/assets/css/templatemo-digimedia-v3.css">
+    <link rel="stylesheet" href="../../assets/main/assets/css/animated.css">
+    <link rel="stylesheet" href="../../assets/main/assets/css/owl.css">
     <!--
 
 TemplateMo 568 DigiMedia
@@ -89,7 +89,7 @@ https://templatemo.com/tm-568-digimedia
                             <li class="scroll-to-section"><a href="#blog">Blog</a></li>
                             <li class="scroll-to-section"><a href="#contact">Contact</a></li>
                             <li class="scroll-to-section">
-                                <div class="border-first-button"><a href="view/auth/index.php">Log in</a></div>
+                                <div class="border-first-button"><a href="auth.php">Log in</a></div>
                             </li>
                         </ul>
                         <a class='menu-trigger'>

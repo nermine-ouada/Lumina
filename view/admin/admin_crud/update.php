@@ -1,8 +1,6 @@
 <?php
 require '../../../config.php';
 
-include ("../../../config.php");
-
 $req = $conn->prepare(
     'update admin set first_name=?,last_name=?,email=?,password=?,tel=?,cin=?,poste=?,updated_at=? where admin_id=?'
 );
