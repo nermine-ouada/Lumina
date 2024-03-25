@@ -5,8 +5,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Lumina Dashboard</title>
-    <link rel="shortcut icon" type="image/png" href="../../../assets/images/logos/light-bulb.png" />
-    <link rel="stylesheet" href="../../../assets/css/styles.min.css" />
+    <link rel="shortcut icon" type="image/png" href="../../../assets/dashboard/images/logos/light-bulb.png" />
+    <link rel="stylesheet" href="../../../assets/dashboard/css/styles.min.css" />
 </head>
 
 <body>
@@ -19,7 +19,7 @@
             <div>
                 <div class="brand-logo d-flex align-items-center justify-content-between">
                     <a href="http://localhost/Lumina/" class="text-nowrap logo-img">
-                        <img src="../../../assets/images/logos/lumina-logo.png" width="180" alt="" />
+                        <img src="../../../assets/dashboard/images/logos/lumina-logo.png" width="180" alt="" />
                     </a>
                     <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
                         <i class="ti ti-x fs-8"></i>
@@ -141,7 +141,7 @@
                                     target="_blank" class="btn btn-primary fs-2 fw-semibold lh-sm">Navigate</a>
                             </div>
                             <div class="unlimited-access-img">
-                                <img src="../../../assets/images/backgrounds/rocket.png" alt="" class="img-fluid">
+                                <img src="../../../assets/dashboard/images/backgrounds/rocket.png" alt="" class="img-fluid">
                             </div>
                         </div>
                     </div>
@@ -169,7 +169,7 @@
                             <li class="nav-item dropdown">
                                 <a class="nav-link nav-icon-hover" href="javascript:void(0)" id="drop2"
                                     data-bs-toggle="dropdown" aria-expanded="false">
-                                    <img src="../../../assets/images/profile/user-1.jpg" alt="" width="35" height="35"
+                                    <img src="../../../assets/dashboard/images/profile/user-1.jpg" alt="" width="35" height="35"
                                         class="rounded-circle" />
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up"
