@@ -6,7 +6,7 @@ include ("../../../config.php");
 
 <div class="container-fluid">
     <div class="row">
-        <h1>hello</h1>
+
         <form action="index.php" method="GET">
             <div class="d-sm-flex d-block align-items-center justify-content mb-9">
                 <input type="text" class="form-control w-50" name="search" placeholder="Filter by search">

@@ -13,7 +13,7 @@ $row = $req->fetch();
 
 <div class="container-fluid">
     <div class="card">
-        <h1>hello</h1>
+       
         <div class="card-body">
             <h5 class="card-title fw-semibold mb-4">Add new admin</h5>
             <div class="card-body">
