@@ -7,4 +7,7 @@ if (!isset ($_SESSION['email'])) {
 include ('../layouts/header.php');
 ?>
 
+
+
+
 <?php include ('../layouts/footer.php'); ?>
