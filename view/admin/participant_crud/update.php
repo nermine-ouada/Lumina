@@ -2,7 +2,7 @@
 require '../../../config.php';
 
 $req = $conn->prepare(
-    'update admin set first_name=?,last_name=?,email=?,password=?,tel=?,cin=?,poste=?,updated_at=? where admin_id=?'
+    'update participant set first_name=?,last_name=?,email=?,password=?,tel=?,adress=?,cin=?,profession=?,updated_at=? where participant_id=?'
 );
 $currentDateTime = date("Y-m-d H:i:s");
 $req->execute([
@@ -11,10 +11,11 @@ $req->execute([
     $_POST['email'],
     $_POST['password'],
     $_POST['tel'],
+    $_POST['address'],
     $_POST['cin'],
-    $_POST['poste'],
+    $_POST['profession'],
     $currentDateTime,
-    $_POST['admin_id'],
+    $_POST['participant_id'],
 ]);
 
 header('location:index.php');
