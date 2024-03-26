@@ -2,7 +2,7 @@
 require '../../../config.php';
 
 $req = $conn->prepare(
-    'update formateur set first_name=?,last_name=?,email=?,password=?,tel=?,cin=?,rib=?,updated_at=? where formateur_id=?'
+    'update formateur set first_name=?,last_name=?,email=?,password=?,tel=?,cin=?,rib=?,specialite=?,banque=?,updated_at=? where formateur_id=?'
 );
 $currentDateTime = date("Y-m-d H:i:s");
 $req->execute([
@@ -13,6 +13,8 @@ $req->execute([
     $_POST['tel'],
     $_POST['cin'],
     $_POST['rib'],
+    $_POST['specialite'],
+    $_POST['banque'],
     $currentDateTime,
     $_POST['formateur_id'],
 ]);

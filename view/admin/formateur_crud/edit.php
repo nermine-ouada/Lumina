@@ -71,9 +71,30 @@ $row = $req->fetch();
                                     value="<?php echo $row['rib'] ?>">
                                 </div>
                             </div>
-                            
+                            <div class="mb-3 w-50">
+                                <label for="exampleInputEmail1" class="form-label">specialite</label>
+                                <Select name="specialite" class="form-control"  value="<?php echo $row['specialite'] ?>">
+                                <option value=""></option>
+                                <option value="Mathematique">Mathematique</option>
+                                <option value="Digital Marketing">Digital Marketing</option>
+                                <option value="FrontEnd Web Developpement">FrontEnd Web Developpement</option>
+                                <option value="BackEnd Web Developpement">BackEnd Web Developpement</option>
+                                
+                            </Select>
+                            </div>
                         </div>
-                       
+                        <div class="mb-3">
+                            <label for="exampleInputEmail1" class="form-label">Banque</label>
+                            <Select name="banque" class="form-control" value="<?php echo $row['banque'] ?>">
+                                <option value="STB">STB</option>
+                                <option value="ATB">ATB</option>
+                                <option value="BNA">BNA</option>
+                                <option value="Zitouna">Zitouna</option>
+                                <option value="Amen">Amen</option>
+                                <option value="Wifek">Wifek</option>
+                                <option value="BH">BH</option>
+                            </Select>
+                        </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
                 </div>
