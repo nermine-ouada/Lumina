@@ -6,7 +6,7 @@ include ('../layouts/header.php');
 div class="container-fluid">
 <div class="card">
     <div class="card-body">
-
+        <h1>hello</h1>
         <h5 class="card-title fw-semibold mb-4">Add new admin</h5>
         <div class="card-body">
             <form action="store.php" method="post">
