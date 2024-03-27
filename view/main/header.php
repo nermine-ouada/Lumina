@@ -60,7 +60,6 @@ https://templatemo.com/tm-568-digimedia
                 </div>
                 <div class="col-lg-4 col-sm-4 col-5">
                     <ul class="social-media">
-                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                         <li><a href="https://github.com/nermine-ouada/Lumina"><i class="fa fa-github"></i></a></li>
                     </ul>
                 </div>
@@ -82,11 +81,9 @@ https://templatemo.com/tm-568-digimedia
                         <!-- ***** Logo End ***** -->
                         <!-- ***** Menu Start ***** -->
                         <ul class="nav">
-                            <li class="scroll-to-section"><a href="#top" class="active">Home</a></li>
-                            <li class="scroll-to-section"><a href="#about">About</a></li>
-                            <li class="scroll-to-section"><a href="#services">Services</a></li>
-                            <li class="scroll-to-section"><a href="#portfolio">Projects</a></li>
-                            <li class="scroll-to-section"><a href="#blog">Blog</a></li>
+                            <li class="scroll-to-section"><a href="home.php" class="active">Home</a></li>
+                            <li class="scroll-to-section"><a href="#portfolio">Sessions</a></li>
+                            <li class="scroll-to-section"><a href="#services">Trainings</a></li>
                             <li class="scroll-to-section"><a href="#contact">Contact</a></li>
                             <li class="scroll-to-section">
                                 <div class="border-first-button"><a href="auth.php">Log in</a></div>
