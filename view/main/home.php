@@ -599,7 +599,7 @@
                     </div>
                 </div>
                 <div class="col-lg-12 wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.25s">
-                    <form id="contact" action="" method="post">
+                    <form id="contact" action="contact.php" method="post">
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="contact-dec">
@@ -647,7 +647,7 @@
                                                     autocomplete="on" required>
                                             </fieldset>
                                             <fieldset>
-                                                <input type="text" name="email" id="email" pattern="[^ @]*@[^ @]*"
+                                                <input type="text" name="email" id="email"
                                                     placeholder="Your Email" required="">
                                             </fieldset>
                                             <fieldset>

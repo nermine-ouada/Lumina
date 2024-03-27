@@ -59,7 +59,6 @@ include ('../layouts/header.php');
                                 <option value="Digital Marketing">Digital Marketing</option>
                                 <option value="FrontEnd Web Developpement">FrontEnd Web Developpement</option>
                                 <option value="BackEnd Web Developpement">BackEnd Web Developpement</option>
-                                
                             </Select>
                             </div>
 </div>
