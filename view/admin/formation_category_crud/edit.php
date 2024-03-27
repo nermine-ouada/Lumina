@@ -26,7 +26,7 @@ $row = $req->fetch();
                                 value="<?php echo $row['formation_category_id'] ?>">
 
                             <div class="mb-3 w-50">
-                                <label for="exampleInputEmail1" class="form-label">Category name</label>
+                                <label  class="form-label">Category name</label>
                                 <input type="text" class="form-control" name="category_name"
                                     value="<?php echo $row['category_name'] ?>">
                             </div>

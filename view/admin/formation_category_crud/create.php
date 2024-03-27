@@ -14,7 +14,7 @@ include ('../layouts/header.php');
                     <form action="store.php" method="post">
                         <div class="row">
                             <div class="mb-3 w-50">
-                                <label for="exampleInputEmail1" class="form-label">Category name</label>
+                                <label  class="form-label">Category name</label>
                                 <input type="text" class="form-control" name="category_name">
                             </div>
                         </div>   
