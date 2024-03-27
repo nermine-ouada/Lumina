@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if (!isset ($_SESSION['admin'])) {
+if (!isset($_SESSION['admin'])) {
     header("location:../auth/login.html");
 }
 include ('../layouts/header.php');
@@ -14,9 +14,9 @@ include ("../../../config.php");
             <div class="d-sm-flex d-block align-items-center justify-content mb-9">
                 <input type="text" class="form-control w-50" name="search" placeholder="Filter by search">
                 <button type="submit" class="btn btn-outline-primary m-3">Filter</button>
-                <?php if (isset ($_GET["search"])) { ?>
+                <?php if (isset($_GET["search"])) { ?>
                     <a href="index.php" class="btn btn-danger m-3">Undo search</a>
-                    <?php } ?>
+                <?php } ?>
             </div>
         </form>
 
@@ -43,7 +43,7 @@ include ("../../../config.php");
                                         <h6 class="fw-semibold mb-0">Description</h6>
                                     </th>
                                     <th class="border-bottom-0">
-                                    <h6 class="fw-semibold mb-0">Category</h6>
+                                        <h6 class="fw-semibold mb-0">Category</h6>
 
                                     </th>
                                     <th class="border-bottom-0">
@@ -52,7 +52,7 @@ include ("../../../config.php");
                             </thead>
                             <tbody>
                                 <?php
-                                if (!isset ($_GET['search'])) {
+                                if (!isset($_GET['search'])) {
                                     $sql = 'select * from formation';
 
                                     $req = $conn->prepare($sql);
@@ -68,7 +68,7 @@ include ("../../../config.php");
 
                                         <tr>
 
-                                           <td class="border-bottom-0">
+                                            <td class="border-bottom-0">
                                                 <p class="mb-0 fw-normal">
                                                     <?php echo $row["title"] ?>
                                                 </p>
@@ -83,7 +83,7 @@ include ("../../../config.php");
                                                     <?php echo $row["formation_category_id"] ?>
                                                 </p>
                                             </td>
-                                          <td class="border-bottom-0">
+                                            <td class="border-bottom-0">
                                                 <h6 class="fw-semibold mb-0">
                                                     <?php echo $row["formation_id"] ?>
                                                 </h6>
@@ -99,7 +99,7 @@ include ("../../../config.php");
 
                                         </tr>
                                     <?php }
-                                } else if (isset ($_GET["search"])) {
+                                } else if (isset($_GET["search"])) {
                                     $sql = 'select * from formation where title like ? ';
 
                                     $req = $conn->prepare($sql);
@@ -120,7 +120,7 @@ include ("../../../config.php");
                                                     <?php echo $row["title"] ?>
                                                     </p>
                                                 </td>
-                                              
+
                                                 <td class="border-bottom-0">
                                                     <h6 class="fw-semibold mb-0">
                                                     <?php echo $row["formation_id"] ?>
@@ -140,7 +140,7 @@ include ("../../../config.php");
                                 } ?>
                             </tbody>
                         </table>
-                        
+
                     </div>
                 </div>
             </div>

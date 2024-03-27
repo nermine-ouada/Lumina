@@ -12,7 +12,7 @@ $req->execute([
     $_POST['description'],
     $_POST['formation_category_id'],
 
- 
+
 ]);
 
 header('location:index.php')
