@@ -24,6 +24,8 @@
     <link rel="stylesheet" href="../../assets/main/assets/css/templatemo-digimedia-v3.css">
     <link rel="stylesheet" href="../../assets/main/assets/css/animated.css">
     <link rel="stylesheet" href="../../assets/main/assets/css/owl.css">
+    <link rel="stylesheet" href="../../assets/main/assets/css/bootstrap.min.css">
+
     <!--
 
 TemplateMo 568 DigiMedia
