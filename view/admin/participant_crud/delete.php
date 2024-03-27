@@ -1,9 +1,9 @@
 <?php
 include ("../../../config.php");
 
-$req = $conn->prepare('delete from admin where admin_id=?');
+$req = $conn->prepare('delete from participant where participant_id=?');
 
-$req->execute([$_GET['admin_id']]);
+$req->execute([$_GET['participant_id']]);
 
 header('location:index.php');
 

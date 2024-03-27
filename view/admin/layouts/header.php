@@ -73,7 +73,7 @@
                             <span class="hide-menu">TRAININGS</span>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link" href="../category/index.php" aria-expanded="false">
+                            <a class="sidebar-link" href="../formation_category_crud/index.php" aria-expanded="false">
                                 <span>
                                     <i class="ti ti-login"></i>
                                 </span>
@@ -81,7 +81,7 @@
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link" href="../formation/index.php" aria-expanded="false">
+                            <a class="sidebar-link" href="../formation_crud/index.php" aria-expanded="false">
                                 <span>
                                     <i class="ti ti-login"></i>
                                 </span>

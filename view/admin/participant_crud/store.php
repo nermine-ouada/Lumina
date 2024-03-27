@@ -2,7 +2,7 @@
 require '../../../config.php';
 require '../../../model/uuid.php';
 
-$sql = 'INSERT INTO admin (  admin_id,cin,first_name,last_name,email,password,tel,poste) VALUES (?,?,?,?,?,?,?,?)';
+$sql = 'INSERT INTO participant (  participant_id,cin,first_name,last_name,email,password,tel,address,profession) VALUES (?,?,?,?,?,?,?,?,?)';
 
 $req = $conn->prepare($sql);
 
@@ -14,7 +14,8 @@ $req->execute([
     $_POST['email'],
     $_POST['password'],
     $_POST['tel'],
-    $_POST['poste'],
+    $_POST['address'],
+    $_POST['profession'],
 ]);
 
 header('location:index.php')

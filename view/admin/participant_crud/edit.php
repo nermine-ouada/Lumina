@@ -3,24 +3,24 @@
 include ('../layouts/header.php');
 require '../../../config.php';
 
-$sql = 'select * from admin where admin_id=?';
+$sql = 'select * from participant where participant_id=?';
 
 $req = $conn->prepare($sql);
-$req->execute([$_GET["admin_id"]]);
+$req->execute([$_GET["participant_id"]]);
 $row = $req->fetch();
 
 ?>
 
 <div class="container-fluid">
     <div class="card">
-        <h1>hello</h1>
+
         <div class="card-body">
-            <h5 class="card-title fw-semibold mb-4">Add new admin</h5>
+            <h5 class="card-title fw-semibold mb-4">Add new participant</h5>
             <div class="card-body">
                 <form action="update.php" method="post">
                     <div class="row">
                         <input type="text" class="form-control" name="admin_id" style="visibility:hidden"
-                            value="<?php echo $row['admin_id'] ?>">
+                            value="<?php echo $row['participant_id'] ?>">
 
                         <div class="mb-3 w-50">
                             <label for="exampleInputEmail1" class="form-label">First name</label>
@@ -48,23 +48,41 @@ $row = $req->fetch();
                             <input type="tel" class="form-control" name="tel" aria-describedby="emailHelp"
                                 value="<?php echo $row['tel'] ?>">
                             <div id="emailHelp" class="form-text">Enter only your phone number +216 ** *** ***
+
                             </div>
                         </div>
                         <div class="mb-3 w-50">
+                            <label for="exampleInputEmail1" class="form-label">Adresse</label>
+                            <input type="text" class="form-control" name="address"
+                                value="<?php echo $row['address'] ?>">
+                        </div>
+
+                    </div>
+                    <div class="row">
+
+                        <div class="mb-3  w-50">
                             <label for="exampleInputEmail1" class="form-label">CIN</label>
                             <input type="text" class="form-control" name="cin" aria-describedby="emailHelp"
                                 value="<?php echo $row['cin'] ?>">
                             <div id="emailHelp" class="form-text">Enter your 8 digit CIN number.
                             </div>
                         </div>
+
+                        <div class="mb-3 w-50">
+
+                            <label for="exampleInputEmail1" class="form-label">Profession</label>
+                            <Select name="poste" class="form-control">
+                                <option></option>
+                                <option value="Mobile App Developer">Mobile App Developer</option>
+                                <option value="Data Scientist">Data Scientist </option>
+                                <option value="UI/UX Designer">UI/UX Designer</option>
+                                <option value="Cloud Architect">Cloud Architect</option>
+                                <option value="Systems Administrator">Systems Administrator</option>
+
+                            </Select>
+                        </div>
                     </div>
-                    <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Poste</label>
-                        <Select name="poste" class="form-control">
-                            <option value="Manager">Manager</option>
-                            <option value="HR">HR</option>
-                        </Select>
-                    </div>
+
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
             </div>
