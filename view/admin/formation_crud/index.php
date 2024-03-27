@@ -44,7 +44,9 @@ include ("../../../config.php");
                                     </th>
                                     <th class="border-bottom-0">
                                         <h6 class="fw-semibold mb-0">Category</h6>
-
+                                    </th>
+                                    <th class="border-bottom-0">
+                                        <h6 class="fw-semibold mb-0">Id</h6>
                                     </th>
                                     <th class="border-bottom-0">
                                     </th>
