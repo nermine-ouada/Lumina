@@ -1,18 +1,18 @@
-<?php include("header.php");?>
+<?php include ("header.php"); ?>
 
-    <!-- Page Header Start -->
-    <div class="container-fluid about page-header mb-5 wow fadeIn" data-wow-delay="0.1s">
-        <div class="container">
-            <h1 class="display-3 mb-4 animated slideInDown">About</h1>
-            <nav aria-label="breadcrumb animated slideInDown">
-                <ol class="breadcrumb mb-0">
+<!-- Page Header Start -->
+<div class="container-fluid about page-header mb-5 wow fadeIn" data-wow-delay="0.1s">
+    <div class="container">
+        <h1 class="display-3 mb-4 animated slideInDown">About</h1>
+        <nav aria-label="breadcrumb animated slideInDown">
+            <ol class="breadcrumb mb-0">
                 <li class="breadcrumb-item"><a href="home.php">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">About</li>
-                </ol>
-            </nav>
-        </div>
+                <li class="breadcrumb-item active" aria-current="page">About</li>
+            </ol>
+        </nav>
     </div>
-    <!-- Page Header End -->
+</div>
+<!-- Page Header End -->
 
 <!-- About Start -->
 <div class="container-xxl py-5">
@@ -24,8 +24,8 @@
             <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
                 <p class="d-inline-block border rounded text-primary fw-semi-bold py-1 px-3">About Us</p>
                 <h1 class="display-5 mb-4">We Help Our Clients To Grow Their Business</h1>
-                <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et
-                    eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet
+                <p class="mb-4">Welcome to Lumina, where learning meets excellence! Established in
+                    2024, we are Kairouan's premier destination for professional development and skill enhancement.
                 </p>
                 <div class="border rounded p-4">
                     <nav>
@@ -44,22 +44,24 @@
                     <div class="tab-content" id="nav-tabContent">
                         <div class="tab-pane fade show active" id="nav-story" role="tabpanel"
                             aria-labelledby="nav-story-tab">
-                            <p>Tempor erat elitr rebum at clita. Diam dolor diam ipsum et tempor sit. Aliqu diam
-                                amet diam et eos labore.</p>
-                            <p class="mb-0">Diam dolor diam ipsum et tempor sit. Aliqu diam amet diam et eos labore.
-                                Clita erat ipsum et lorem et sit</p>
+                            <p>Since [2024, Lumina has been a
+                                trusted leader in the training industry. Founded by students from ISET Kairouan, our
+                                center has
+                                grown from humble beginnings to become a recognized authority in professional
+                                development and skills training.</p>
                         </div>
                         <div class="tab-pane fade" id="nav-mission" role="tabpanel" aria-labelledby="nav-mission-tab">
-                            <p>Tempor erat elitr rebum at clita. Diam dolor diam ipsum et tempor sit. Aliqu diam
-                                amet diam et eos labore.</p>
-                            <p class="mb-0">Diam dolor diam ipsum et tempor sit. Aliqu diam amet diam et eos labore.
-                                Clita erat ipsum et lorem et sit</p>
+                            <p>At Lumina, our mission is to empower individuals and organizations
+                                to reach their full potential through high-quality training programs and personalized
+                                learning experiences.</p>
+                            <p class="mb-0"> We are committed to providing innovative, practical, and effective
+                                training solutions that drive success and growth.</p>
                         </div>
                         <div class="tab-pane fade" id="nav-vision" role="tabpanel" aria-labelledby="nav-vision-tab">
-                            <p>Tempor erat elitr rebum at clita. Diam dolor diam ipsum et tempor sit. Aliqu diam
-                                amet diam et eos labore.</p>
-                            <p class="mb-0">Diam dolor diam ipsum et tempor sit. Aliqu diam amet diam et eos labore.
-                                Clita erat ipsum et lorem et sit</p>
+                            <p>We believe that education is the key to empowerment. Our vision is to provide accessible,
+                                innovative, and high-quality training programs that empower individuals from all walks
+                                of life to acquire new skills, expand their knowledge, and unlock new opportunities for
+                                personal and professional growth.</p>
                         </div>
                     </div>
                 </div>
@@ -75,7 +77,7 @@
                             </div>
                             <div class="ps-3">
                                 <h4>No Hidden Cost</h4>
-                                <span>Clita erat ipsum lorem sit sed stet duo justo</span>
+                                <span> </span>
                             </div>
                             <div class="border-end d-none d-lg-block"></div>
                         </div>
@@ -90,7 +92,7 @@
                             </div>
                             <div class="ps-3">
                                 <h4>Dedicated Team</h4>
-                                <span>Clita erat ipsum lorem sit sed stet duo justo</span>
+                                <span> </span>
                             </div>
                             <div class="border-end d-none d-lg-block"></div>
                         </div>
@@ -105,7 +107,7 @@
                             </div>
                             <div class="ps-3">
                                 <h4>24/7 Available</h4>
-                                <span>Clita erat ipsum lorem sit sed stet duo justo</span>
+                                <span> </span>
                             </div>
                         </div>
                     </div>
