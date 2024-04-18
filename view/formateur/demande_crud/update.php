@@ -1,13 +1,8 @@
 <?php
-session_start();
-
-if (!isset($_SESSION['admin'])) {
-    header("location:../auth/login.html");
-}
 require '../../../config.php';
 
 $req = $conn->prepare(
-    'update admin set first_name=?,last_name=?,email=?,password=?,tel=?,cin=?,poste=?,updated_at=? where admin_id=?'
+    'update formateur set first_name=?,last_name=?,email=?,password=?,tel=?,cin=?,rib=?,specialite=?,banque=?,updated_at=? where formateur_id=?'
 );
 $currentDateTime = date("Y-m-d H:i:s");
 $req->execute([
@@ -17,9 +12,11 @@ $req->execute([
     $_POST['password'],
     $_POST['tel'],
     $_POST['cin'],
-    $_POST['poste'],
+    $_POST['rib'],
+    $_POST['specialite'],
+    $_POST['banque'],
     $currentDateTime,
-    $_POST['admin_id'],
+    $_POST['formateur_id'],
 ]);
 
 header('location:index.php');
