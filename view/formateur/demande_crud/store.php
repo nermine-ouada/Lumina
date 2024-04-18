@@ -1,13 +1,8 @@
 <?php
-session_start();
-
-if (!isset($_SESSION['admin'])) {
-    header("location:../auth/login.html");
-}
 require '../../../config.php';
 require '../../../model/uuid.php';
 
-$sql = 'INSERT INTO admin (  admin_id,cin,first_name,last_name,email,password,tel,poste) VALUES (?,?,?,?,?,?,?,?)';
+$sql = 'INSERT INTO formateur (  formateur_id,cin,first_name,last_name,email,password,tel,rib,specialite,banque) VALUES (?,?,?,?,?,?,?,?,?,?)';
 
 $req = $conn->prepare($sql);
 
@@ -19,7 +14,9 @@ $req->execute([
     $_POST['email'],
     $_POST['password'],
     $_POST['tel'],
-    $_POST['poste'],
+    $_POST['rib'],
+    $_POST['specialite'],
+    $_POST['banque'],
 ]);
 
 header('location:index.php')

@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Finanza - Financial Services Website Template</title>
+    <title>Lumina</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -73,11 +73,11 @@
                     <a href="contact.php" class="nav-item nav-link">Contact</a>
 
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Log in AS</a>
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">My space</a>
                         <div class="dropdown-menu border-light m-0">
                             <a href="../admin/auth/login.php" class="dropdown-item">Admin</a>
                             <a href="feature.html" class="dropdown-item">Participant</a>
-                            <a href="team.html" class="dropdown-item">Trainer</a>
+                            <a href="../formateur/auth/login.php" class="dropdown-item">Trainer</a>
                         </div>
                     </div>
                 </div>
