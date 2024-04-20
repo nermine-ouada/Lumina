@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if (!isset($_SESSION['admin'])) {
+if (!isset($_SESSION['formateur'])) {
     header("location:../auth/login.html");
 }
 include ('../layouts/header.php');
@@ -25,11 +25,11 @@ include ("../../../config.php");
                 <div class="card-body p-4">
                     <div class="d-sm-flex d-block align-items-center justify-content-between mb-9">
                         <div class="mb-3 mb-sm-0">
-                            <h5 class="card-title fw-semibold">Formation Table</h5>
+                            <h5 class="card-title fw-semibold">Trainer Table</h5>
                         </div>
 
                         <div>
-                            <a href="create.php" class="btn btn-primary">Add new formation</a>
+                            <a href="create.php" class="btn btn-primary">Add new Trainer</a>
                         </div>
                     </div>
                     <div class="table-responsive">
@@ -37,16 +37,27 @@ include ("../../../config.php");
                             <thead class="text-dark fs-4">
                                 <tr>
                                     <th class="border-bottom-0">
-                                        <h6 class="fw-semibold mb-0">Title</h6>
+                                        <h6 class="fw-semibold mb-0">Name </h6>
                                     </th>
                                     <th class="border-bottom-0">
-                                        <h6 class="fw-semibold mb-0">Description</h6>
+                                        <h6 class="fw-semibold mb-0">Email</h6>
                                     </th>
                                     <th class="border-bottom-0">
-                                        <h6 class="fw-semibold mb-0">Category</h6>
+                                        <h6 class="fw-semibold mb-0">CIN</h6>
+                                    </th>
+                                    <th class="border-bottom-0">
+                                        <h6 class="fw-semibold mb-0">Phone Number</h6>
+                                    </th>
+                                    <th class="border-bottom-0">
+                                        <h6 class="fw-semibold mb-0">Specialite</h6>
+                                    </th>
+                                    <th class="border-bottom-0">
+                                        <h6 class="fw-semibold mb-0">Banque</h6>
                                     </th>
                                     <th class="border-bottom-0">
                                         <h6 class="fw-semibold mb-0">Id</h6>
+                                    </th>
+                                    <th class="border-bottom-0">
                                     </th>
                                     <th class="border-bottom-0">
                                     </th>
@@ -55,10 +66,8 @@ include ("../../../config.php");
                             <tbody>
                                 <?php
                                 if (!isset($_GET['search'])) {
-                                    $sql = 'SELECT title, description, category_name, formation_id FROM formation 
-        JOIN formation_category ON formation.formation_category_id = formation_category.formation_category_id';
+                                    $sql = 'select * from formateur ';
 
-                                    // Prepare and execute the statement
                                     $req = $conn->prepare($sql);
                                     $req->execute();
                                     if ($req->rowCount() == 0) {
@@ -73,49 +82,58 @@ include ("../../../config.php");
                                         <tr>
 
                                             <td class="border-bottom-0">
+                                                <h6 class="fw-semibold mb-1">
+                                                    <?php echo $row["first_name"] ?>
+                                                    <?php echo $row["last_name"] ?>
+                                                </h6>
+
+                                            </td>
+                                            <td class="border-bottom-0">
                                                 <p class="mb-0 fw-normal">
-                                                    <?php echo $row["title"] ?>
+                                                    <?php echo $row["email"] ?>
                                                 </p>
                                             </td>
                                             <td class="border-bottom-0">
                                                 <p class="mb-0 fw-normal">
-                                                    <?php echo $row["description"] ?>
+                                                    <?php echo $row["cin"] ?>
                                                 </p>
                                             </td>
                                             <td class="border-bottom-0">
                                                 <p class="mb-0 fw-normal">
-                                                    <?php echo $row["category_name"] ?>
+                                                    <?php echo $row["tel"] ?>
+                                                </p>
+                                            </td>
+                                            <td class="border-bottom-0">
+                                                <p class="mb-0 fw-normal">
+                                                    <?php echo $row["specialite"] ?>
+                                                </p>
+                                            </td>
+                                            <td class="border-bottom-0">
+                                                <p class="mb-0 fw-normal">
+                                                    <?php echo $row["banque"] ?>
                                                 </p>
                                             </td>
                                             <td class="border-bottom-0">
                                                 <h6 class="fw-semibold mb-0">
-                                                    <?php echo $row["formation_id"] ?>
+                                                    <?php echo $row["formateur_id"] ?>
                                                 </h6>
                                             </td>
                                             <td class="border-bottom-0">
-                                                <a href="edit.php?formation_id=<?php echo $row["formation_id"] ?>"
+                                                <a href="edit.php?formateur_id=<?php echo $row["formateur_id"] ?>"
                                                     class="btn btn-outline-warning m-1">Edit</a>
                                             </td>
                                             <td class="border-bottom-0">
-                                                <a href="delete.php?formation_id=<?php echo $row["formation_id"] ?>"
+                                                <a href="delete.php?formateur_id=<?php echo $row["formateur_id"] ?>"
                                                     class="btn btn-outline-danger m-1">Delete</a>
                                             </td>
 
                                         </tr>
                                     <?php }
                                 } else if (isset($_GET["search"])) {
-                                    $search = '%' . $_GET["search"] . '%';
-                                    $sql = 'SELECT title, description, category_name, formation_id FROM formation 
-                                            JOIN formation_category ON formation.formation_category_id = formation_category.formation_category_id  
-                                  WHERE title LIKE ? 
-                                        OR description LIKE ? 
-                                        OR category_name LIKE ? 
-                                        ';
-
+                                    $sql = 'select * from formateur where first_name like ?  or last_name like ? or email like ? ';
 
                                     $req = $conn->prepare($sql);
-                                    $req->execute([$search, $search, $search]);
-
+                                    $req->execute([$_GET["search"], $_GET["search"], $_GET["search"]]);
                                     if ($req->rowCount() == 0) {
                                         ?>
                                             <tr>
@@ -124,34 +142,52 @@ include ("../../../config.php");
                                     <?php } ?>
 
                                     <?php while ($row = $req->fetch()) { ?>
+
                                             <tr>
 
                                                 <td class="border-bottom-0">
+                                                    <h6 class="fw-semibold mb-1">
+                                                    <?php echo $row["first_name"] ?>
+                                                    <?php echo $row["last_name"] ?>
+                                                    </h6>
+
+                                                </td>
+                                                <td class="border-bottom-0">
                                                     <p class="mb-0 fw-normal">
-                                                    <?php echo $row["title"] ?>
+                                                    <?php echo $row["email"] ?>
                                                     </p>
                                                 </td>
                                                 <td class="border-bottom-0">
                                                     <p class="mb-0 fw-normal">
-                                                    <?php echo $row["description"] ?>
+                                                    <?php echo $row["cin"] ?>
                                                     </p>
                                                 </td>
                                                 <td class="border-bottom-0">
                                                     <p class="mb-0 fw-normal">
-                                                    <?php echo $row["category_name"] ?>
+                                                    <?php echo $row["tel"] ?>
+                                                    </p>
+                                                </td>
+                                                <td class="border-bottom-0">
+                                                    <p class="mb-0 fw-normal">
+                                                    <?php echo $row["specialite"] ?>
+                                                    </p>
+                                                </td>
+                                                <td class="border-bottom-0">
+                                                    <p class="mb-0 fw-normal">
+                                                    <?php echo $row["banque"] ?>
                                                     </p>
                                                 </td>
                                                 <td class="border-bottom-0">
                                                     <h6 class="fw-semibold mb-0">
-                                                    <?php echo $row["formation_id"] ?>
+                                                    <?php echo $row["formateur_id"] ?>
                                                     </h6>
                                                 </td>
                                                 <td class="border-bottom-0">
-                                                    <a href="edit.php?formation_id=<?php echo $row["formation_id"] ?>"
+                                                    <a href="edit.php?formateur_id=<?php echo $row["formateur_id"] ?>"
                                                         class="btn btn-outline-warning m-1">Edit</a>
                                                 </td>
                                                 <td class="border-bottom-0">
-                                                    <a href="delete.php?formation_id=<?php echo $row["formation_id"] ?>"
+                                                    <a href="delete.php?formateur_id=<?php echo $row["formateur_id"] ?>"
                                                         class="btn btn-outline-danger m-1">Delete</a>
                                                 </td>
 

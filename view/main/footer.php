@@ -4,7 +4,7 @@
         <div class="row g-5">
             <div class="col-lg-3 col-md-6">
                 <h4 class="text-white mb-4">Our Office</h4>
-                <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>1Lumina Center, Tunisia</p>
+                <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Lumina Center, Tunisia</p>
                 <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+216 ** *** ***</p>
                 <p class="mb-2"><i class="fa fa-envelope me-3"></i>lumina@gmail.com</p>
                 <div class="d-flex pt-2">
