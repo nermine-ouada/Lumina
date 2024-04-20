@@ -15,18 +15,12 @@ require '../../../config.php';
             <h5 class="card-title fw-semibold mb-4">Add new formation</h5>
             <div class="card-body">
                 <form action="store.php" method="post">
-                    <div class="row">
-                        <div class="mb-3 w-50">
-                            <label  class="form-label">Title</label>
-                            <input type="text" class="form-control" name="title">
-                        </div>
-                        <div class="mb-3 w-50">
-                            <label  class="form-label">Description</label>
-                            <input type="text" class="form-control" name="description">
-                        </div>
+                    <div class="mb-3">
+                        <label class="form-label">Title</label>
+                        <input type="text" class="form-control" name="title">
                     </div>
                     <div class="mb-3">
-                        <label  class="form-label">Category</label>
+                        <label class="form-label">Category</label>
                         <Select name="formation_category_id" class="form-control">
                             <?php
                             $req = $conn->prepare("select * from formation_category");
@@ -43,6 +37,11 @@ require '../../../config.php';
 
                         </Select>
                     </div>
+                    <div class="mb-3">
+                        <label class="form-label">Description</label>
+                        <textarea type="text" class="form-control" name="description"></textarea>
+                    </div>
+
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
             </div>

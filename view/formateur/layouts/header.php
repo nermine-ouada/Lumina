@@ -53,7 +53,7 @@
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link" href="../demande_crud/index.php" aria-expanded="false">
+                            <a class="sidebar-link" href="../demande_crud/encours.php" aria-expanded="false">
                                 <span>
                                     <i class="ti ti-alert-circle"></i>
                                 </span>
@@ -61,14 +61,14 @@
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link" href="../participant_crud/index.php" aria-expanded="false">
+                            <a class="sidebar-link" href="../demande_crud/accept.php" aria-expanded="false">
                                 <span>
                                     <i class="ti ti-cards"></i>
                                 </span>
                                 <span class="hide-menu">acceptes</span>
                             </a>
                         </li><li class="sidebar-item">
-                            <a class="sidebar-link" href="../participant_crud/index.php" aria-expanded="false">
+                            <a class="sidebar-link" href="../demande_crud/refus.php" aria-expanded="false">
                                 <span>
                                     <i class="ti ti-cards"></i>
                                 </span>

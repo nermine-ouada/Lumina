@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if (!isset ($_SESSION['admin'])) {
+if (!isset($_SESSION['admin'])) {
     header("location:../auth/login.html");
 }
 include ('../layouts/header.php');
@@ -14,9 +14,9 @@ include ("../../../config.php");
             <div class="d-sm-flex d-block align-items-center justify-content mb-9">
                 <input type="text" class="form-control w-50" name="search" placeholder="Filter by search">
                 <button type="submit" class="btn btn-outline-primary m-3">Filter</button>
-                <?php if (isset ($_GET["search"])) { ?>
+                <?php if (isset($_GET["search"])) { ?>
                     <a href="index.php" class="btn btn-danger m-3">Undo search</a>
-                    <?php } ?>
+                <?php } ?>
             </div>
         </form>
 
@@ -65,7 +65,7 @@ include ("../../../config.php");
                             </thead>
                             <tbody>
                                 <?php
-                                if (!isset ($_GET['search'])) {
+                                if (!isset($_GET['search'])) {
                                     $sql = 'select * from formateur ';
 
                                     $req = $conn->prepare($sql);
@@ -86,7 +86,7 @@ include ("../../../config.php");
                                                     <?php echo $row["first_name"] ?>
                                                     <?php echo $row["last_name"] ?>
                                                 </h6>
-                                                
+
                                             </td>
                                             <td class="border-bottom-0">
                                                 <p class="mb-0 fw-normal">
@@ -128,12 +128,20 @@ include ("../../../config.php");
                                             </td>
 
                                         </tr>
-                                        <?php }
-                                } else if (isset ($_GET["search"])) {
-                                    $sql = 'select * from formateur where first_name like ?  or last_name like ? or email like ? ';
+                                    <?php }
+                                } else if (isset($_GET["search"])) {
+                                    $search = '%' . $_GET["search"] . '%';
+                                
+                                    $sql = 'SELECT * FROM formateur 
+                                        WHERE first_name LIKE ? 
+                                        OR last_name LIKE ? 
+                                        OR email LIKE ? 
+                                        OR spacialite LIKE ? 
+                                        OR tel LIKE ? 
+                                        OR cin LIKE ?';
 
                                     $req = $conn->prepare($sql);
-                                    $req->execute([$_GET["search"], $_GET["search"], $_GET["search"]]);
+                                    $req->execute([$search, $search, $search, $search, $search, $search]);
                                     if ($req->rowCount() == 0) {
                                         ?>
                                             <tr>
@@ -150,7 +158,7 @@ include ("../../../config.php");
                                                     <?php echo $row["first_name"] ?>
                                                     <?php echo $row["last_name"] ?>
                                                     </h6>
-                                                    
+
                                                 </td>
                                                 <td class="border-bottom-0">
                                                     <p class="mb-0 fw-normal">
@@ -196,7 +204,7 @@ include ("../../../config.php");
                                 } ?>
                             </tbody>
                         </table>
-                        
+
                     </div>
                 </div>
             </div>
