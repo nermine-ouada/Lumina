@@ -97,14 +97,6 @@ CREATE TABLE `formateur` (
 -- Table structure for table `formation`
 --
 
-CREATE TABLE `formation` (
-  `formation_id` varchar(255) NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `description` varchar(255) NOT NULL,
-  `formation_catgeory_id` varchar(255) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -141,15 +133,6 @@ CREATE TABLE `formation_progress` (
 -- Table structure for table `module`
 --
 
-CREATE TABLE `module` (
-  `module_id` varchar(255) NOT NULL,
-  `title` varchar(255) NOT NULL,
-  `description` varchar(255) NOT NULL,
-  `formation_id` varchar(255) NOT NULL,
-  `volume_horaire` int(11) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
-  `updated_at` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -173,7 +156,7 @@ CREATE TABLE `participant` (
 
 -- --------------------------------------------------------
 
---
+-- 
 -- Table structure for table `promotion`
 --
 
