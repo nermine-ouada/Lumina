@@ -11,6 +11,8 @@ $result = $req->fetch();
 if ($req->rowCount() > 0) {
     session_start();
     $_SESSION['formateur'] = $result["email"];
+    $_SESSION['formateur_id'] = $result["formateur_id"];
+
     header("Location: ../layouts/dashboard.php");
 } else {
     header("Location: login.html");
