@@ -5,7 +5,7 @@ if (!isset($_SESSION['admin'])) {
     header("location:../auth/login.html");
 }
 include ('../layouts/header.php');
-include ("../../../config.php");
+require '../../../config.php';
 ?>
 
 <div class="container-fluid">
@@ -56,7 +56,7 @@ include ("../../../config.php");
                                 <?php
                                 if (!isset($_GET['search'])) {
                                     $sql = 'SELECT title, description, category_name, formation_id FROM formation 
-        JOIN formation_category ON formation.formation_category_id = formation_category.formation_category_id';
+                                    JOIN formation_category ON formation.formation_category_id = formation_category.formation_category_id';
 
                                     // Prepare and execute the statement
                                     $req = $conn->prepare($sql);
