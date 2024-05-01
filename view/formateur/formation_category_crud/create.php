@@ -6,7 +6,6 @@ if (!isset ($_SESSION['admin'])) {
 }
 include ('../layouts/header.php');
 ?>
-
 <div class="container-fluid">
     <div class="card">
         <div class="card-body">

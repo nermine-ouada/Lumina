@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if (!isset ($_SESSION['formateur'])) {
+if (!isset($_SESSION['formateur'])) {
     header("location:../auth/login.html");
 }
 include ('../layouts/header.php');
@@ -14,9 +14,9 @@ include ("../../../config.php");
             <div class="d-sm-flex d-block align-items-center justify-content mb-9">
                 <input type="text" class="form-control w-50" name="search" placeholder="Filter by search">
                 <button type="submit" class="btn btn-outline-primary m-3">Filter</button>
-                <?php if (isset ($_GET["search"])) { ?>
+                <?php if (isset($_GET["search"])) { ?>
                     <a href="index.php" class="btn btn-danger m-3">Undo search</a>
-                    <?php } ?>
+                <?php } ?>
             </div>
         </form>
 
@@ -25,11 +25,11 @@ include ("../../../config.php");
                 <div class="card-body p-4">
                     <div class="d-sm-flex d-block align-items-center justify-content-between mb-9">
                         <div class="mb-3 mb-sm-0">
-                            <h5 class="card-title fw-semibold">Demende encours </h5>
+                            <h5 class="card-title fw-semibold">Suggestion encours </h5>
                         </div>
 
                         <div>
-                            <a href="create.php" class="btn btn-primary">Depot demande</a>
+                            <a href="create.php" class="btn btn-primary">Depot susgestion</a>
                         </div>
                     </div>
                     <div class="table-responsive">
@@ -53,8 +53,8 @@ include ("../../../config.php");
                             </thead>
                             <tbody>
                                 <?php
-                                if (!isset ($_GET['search'])) {
-                                    $sql = 'select * from demande';
+                                if (!isset($_GET['search'])) {
+                                    $sql = "select * from formation_suggestion ";
 
                                     $req = $conn->prepare($sql);
                                     $req->execute();
@@ -83,11 +83,35 @@ include ("../../../config.php");
                                                     <?php echo $row["description"] ?>
                                                 </p>
                                             </td>
+                                            <?php if ($row["etat"] == "encours") { ?>
+                                                <td class="border-bottom-0">
+                                                    <div class="d-flex align-items-center gap-2">
+                                                        <span class="badge bg-warning rounded-3 fw-semibold">Pending</span>
+                                                    </div>
+                                                </td>
+                                                <?php
+                                            } ?>
+                                            <?php if ($row["etat"] == "refuse") { ?>
+                                                <td class="border-bottom-0">
+                                                    <div class="d-flex align-items-center gap-2">
+                                                        <span class="badge bg-danger rounded-3 fw-semibold">Denied</span>
+                                                    </div>
+                                                </td>
+                                                <?php
+                                            } ?>
+                                            <?php if ($row["etat"] == "accepte") { ?>
+                                                <td class="border-bottom-0">
+                                                    <div class="d-flex align-items-center gap-2">
+                                                        <span class="badge bg-success rounded-3 fw-semibold">Accepted</span>
+                                                    </div>
+                                                </td>
+                                                <?php
+                                            } ?>
 
                                         </tr>
-                                        <?php }
-                                } else if (isset ($_GET["search"])) {
-                                    $sql = 'select * from demande where title like ?  or description like  ? ';
+                                    <?php }
+                                } else if (isset($_GET["search"])) {
+                                    $sql = 'select * from formation_suggestion where etat="encours" title like ?  or description like  ? ';
 
                                     $req = $conn->prepare($sql);
                                     $req->execute([$_GET["search"], $_GET["search"]]);
@@ -99,34 +123,36 @@ include ("../../../config.php");
                                     <?php } ?>
 
                                     <?php while ($row = $req->fetch()) { ?>
-                                        <tr>
-                                            <td class="border-bottom-0">
-                                                <p class="mb-0 fw-normal">
+                                            <tr>
+                                                <td class="border-bottom-0">
+                                                    <p class="mb-0 fw-normal">
                                                     <?php echo $row["title"] ?>
-                                                </p>
-                                            </td>
-                                            <td class="border-bottom-0">
-                                                <p class="mb-0 fw-normal">
+                                                    </p>
+                                                </td>
+                                                <td class="border-bottom-0">
+                                                    <p class="mb-0 fw-normal">
                                                     <?php echo $row["formation_category_id"] ?>
-                                                </p>
-                                            </td>
-                                            <td class="border-bottom-0">
-                                                <p class="mb-0 fw-normal">
+                                                    </p>
+                                                </td>
+                                                <td class="border-bottom-0">
+                                                    <p class="mb-0 fw-normal">
                                                     <?php echo $row["description"] ?>
-                                                </p>
-                                            </td>
-                                        <td class="border-bottom-0">
-                                                    <a href="edit.php?formateur_id=<?php echo $row["formateur_id"] ?>" class="btn btn-outline-warning m-1">Edit</a>
-                                        </td>
-                                        <td class="border-bottom-0">
-                                            <a href="delete.php?formateur_id=<?php echo $row["formateur_id"] ?>" class="btn btn-outline-danger m-1">Delete</a>
-                                        </td>
-                                        </tr>
+                                                    </p>
+                                                </td>
+                                                <td class="border-bottom-0">
+                                                    <a href="edit.php?formateur_id=<?php echo $row["formateur_id"] ?>"
+                                                        class="btn btn-outline-warning m-1">Edit</a>
+                                                </td>
+                                                <td class="border-bottom-0">
+                                                    <a href="delete.php?formateur_id=<?php echo $row["formateur_id"] ?>"
+                                                        class="btn btn-outline-danger m-1">Delete</a>
+                                                </td>
+                                            </tr>
                                     <?php }
                                 } ?>
                             </tbody>
                         </table>
-                        
+
                     </div>
                 </div>
             </div>
