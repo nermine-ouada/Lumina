@@ -7,9 +7,9 @@ if (!isset($_SESSION['formateur'])) {
 include ('../layouts/header.php');
 include ("../../../config.php");
 
-$req = $conn->prepare('delete from formateur where formateur_id=?');
+$req = $conn->prepare('delete from formation_suggestion where formation_suggestion_id=?');
 
-$req->execute([$_GET['formateur_id']]);
+$req->execute([$_GET['formation_suggestion_id']]);
 
 header('location:index.php');
 

@@ -89,7 +89,7 @@
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link" href="../session/index.php" aria-expanded="false">
+                            <a class="sidebar-link" href="../session_crud/index.php" aria-expanded="false">
                                 <span>
                                     <i class="ti ti-user-plus"></i>
                                 </span>
@@ -97,7 +97,7 @@
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link" href="../module/index.php" aria-expanded="false">
+                            <a class="sidebar-link" href="../module_crud/index.php" aria-expanded="false">
                                 <span>
                                     <i class="ti ti-typography"></i>
                                 </span>
@@ -105,7 +105,7 @@
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link" href="../offres/index.php" aria-expanded="false">
+                            <a class="sidebar-link" href="../promotion_crud/index.php" aria-expanded="false">
                                 <span>
                                     <i class="ti ti-file-description"></i>
                                 </span>
@@ -117,12 +117,21 @@
                             <span class="hide-menu">PROGRESS</span>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link" href="../demande/index.php" aria-expanded="false">
+                            <a class="sidebar-link" href="../suggestion_crud/index.php" aria-expanded="false">
                                 <span>
-                                    <i class="ti ti-mood-happy"></i>
+                                    <i class="ti ti-cards"></i>
                                 </span>
-                                <span class="hide-menu">Demandes</span>
+                                <span class="hide-menu">Suggestion formation</span>
                             </a>
+                        </li>
+                        <li class="sidebar-item">
+
+                        <a class="sidebar-link" href="../demande/index.php" aria-expanded="false">
+                            <span>
+                                <i class="ti ti-mood-happy"></i>
+                            </span>
+                            <span class="hide-menu">Demandes</span>
+                        </a>
                         </li>
                         <li class="sidebar-item">
                             <a class="sidebar-link" href="../suivi/index.php" aria-expanded="false">
@@ -137,11 +146,12 @@
                         <div class="d-flex">
                             <div class="unlimited-access-title me-3">
                                 <h6 class="fw-semibold fs-4 mb-6 text-dark w-85">Go to Lumina</h6>
-                                <a href="http://localhost/Lumina/"
-                                    target="_blank" class="btn btn-primary fs-2 fw-semibold lh-sm">Navigate</a>
+                                <a href="http://localhost/Lumina/" target="_blank"
+                                    class="btn btn-primary fs-2 fw-semibold lh-sm">Navigate</a>
                             </div>
                             <div class="unlimited-access-img">
-                                <img src="../../../assets/dashboard/images/backgrounds/rocket.png" alt="" class="img-fluid">
+                                <img src="../../../assets/dashboard/images/backgrounds/rocket.png" alt=""
+                                    class="img-fluid">
                             </div>
                         </div>
                     </div>
@@ -169,8 +179,8 @@
                             <li class="nav-item dropdown">
                                 <a class="nav-link nav-icon-hover" href="javascript:void(0)" id="drop2"
                                     data-bs-toggle="dropdown" aria-expanded="false">
-                                    <img src="../../../assets/dashboard/images/profile/user-1.jpg" alt="" width="35" height="35"
-                                        class="rounded-circle" />
+                                    <img src="../../../assets/dashboard/images/profile/user-1.jpg" alt="" width="35"
+                                        height="35" class="rounded-circle" />
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up"
                                     aria-labelledby="drop2">
