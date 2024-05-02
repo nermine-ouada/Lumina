@@ -2,14 +2,26 @@
 include ('../layouts/header.php');
 require_once '../../../config.php';
 
+// Check if module_id is set
+if (isset($_GET["module_id"])) {
+    $sql = 'select * from module where module_id=?';
 
-$sql = 'select * from module where module_id=?';
 
-
-$req = $conn->prepare($sql);
-$req->execute([$_GET["module_id"]]);
-$row = $req->fetch();
-
+    $req = $conn->prepare($sql);
+    $req->execute([$_GET["module_id"]]);
+    $row = $req->fetch();
+} else {
+    // Provide default values
+    $row = [
+        'module_id' => '',
+        'title' => '',
+        'description' => '', // New field for description
+        'formation_id' => '',
+        'volume_cours' => '',
+        'volume_tp' => '',
+        'volume_td' => ''
+    ];
+}
 ?>
 
 <div class="container-fluid">
@@ -19,16 +31,16 @@ $row = $req->fetch();
             <div class="card-body">
                 <form action="update.php" method="post">
                     <div class="row">
-                        <input required type="text" class="form-control" name="module_id" style="visibility:hidden"
+                        <input type="text" class="form-control" name="module_id" style="visibility:hidden"
                             value="<?php echo $row['module_id'] ?>">
 
                         <div class="mb-3 w-50">
                             <label class="form-label">Title </label>
-                            <input required type="text" class="form-control" name="title" value="<?php echo $row['title'] ?>">
+                            <input type="text" class="form-control" name="title" value="<?php echo $row['title'] ?>">
                         </div>
                         <div class="mb-3 w-50">
                             <label class="form-label">Description </label>
-                            <input required type="text" class="form-control" name="description"
+                            <input type="text" class="form-control" name="description"
                                 value="<?php echo $row['description'] ?>">
                         </div>
 
@@ -51,13 +63,13 @@ $row = $req->fetch();
                     <div class="row">
                         <div class="mb-3 w-50">
                             <label class="form-label">Volume Cours</label>
-                            <input required type="number" class="form-control" name="volume_cours" aria-describedby="emailHelp"
+                            <input type="number" class="form-control" name="volume_cours" aria-describedby="emailHelp"
                                 value="<?php echo $row['volume_cours'] ?>">
                             <div class="form-text">Enter only number.</div>
                         </div>
                         <div class="mb-3 w-50">
                             <label class="form-label">Volume TP</label>
-                            <input required type="number" class="form-control" name="volume_tp" aria-describedby="emailHelp"
+                            <input type="number" class="form-control" name="volume_tp" aria-describedby="emailHelp"
                                 value="<?php echo $row['volume_tp'] ?>">
                             <div class="form-text">Enter only number.</div>
                         </div>
@@ -65,7 +77,7 @@ $row = $req->fetch();
                     <div class="row">
                         <div class="mb-3 w-50">
                             <label class="form-label">Volume TD</label>
-                            <input required type="number" class="form-control" name="volume_td" aria-describedby="emailHelp"
+                            <input type="number" class="form-control" name="volume_td" aria-describedby="emailHelp"
                                 value="<?php echo $row['volume_td'] ?>">
                             <div class="form-text">Enter only number.</div>
                         </div>
