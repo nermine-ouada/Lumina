@@ -17,12 +17,6 @@ include ('../../../config.php');
                         <input type="text" class="form-control" name="title">
                     </div>
                     <div class="mb-3 w-50">
-                        <label class="form-label">Description</label>
-                        <input type="text" class="form-control" name="description">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="mb-3 w-50">
                         <label class="form-label">Formation</label>
                         <select name="formation_id" class="form-control">
                             <?php
@@ -30,15 +24,16 @@ include ('../../../config.php');
                             $req->execute();
                             while ($row = $req->fetch()) {
                                 ?>
-                            <option value="<?php echo $row['title']; ?>">
-                                <?php echo $row['title']; ?>
-                            </option>
-                            <?php
+                                <option value="<?php echo $row['title']; ?>">
+                                    <?php echo $row['title']; ?>
+                                </option>
+                                <?php
                             }
                             ?>
                         </select>
                     </div>
                 </div>
+
                 <div class="row">
                     <div class="mb-3 w-50">
                         <label class="form-label">Volume Cours</label>
@@ -59,6 +54,11 @@ include ('../../../config.php');
                         <input type="number" class="form-control" name="volume_td" aria-describedby="emailHelp">
                         <div class="form-text">Enter only number.</div>
                     </div>
+                    <div class="mb-3 w-50">
+                        <label class="form-label">Description</label>
+                        <textarea class="form-control" name="description"></textarea>
+                    </div>
+
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
