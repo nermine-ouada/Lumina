@@ -120,7 +120,7 @@ include ("../../../config.php");
                                                 </h6>
                                             </td>
                                             <td class="border-bottom-0">
-                                                <a href="edit.php?participant_id=<?php echo $row["module_id"] ?>"
+                                                <a href="edit.php?module_id=<?php echo $row["module_id"] ?>"
                                                     class="btn btn-outline-warning m-1">Edit</a>
                                             </td>
                                             <td class="border-bottom-0">
@@ -131,10 +131,10 @@ include ("../../../config.php");
                                         </tr>
                                     <?php }
                                 } else if (isset($_GET["search"])) {
-                                    $sql = 'select * from participant where first_name like ?  or last_name like ? or email like ? or profession like ?';
+                                    $sql = 'select * from module where title like ?  or description like ? ';
 
                                     $req = $conn->prepare($sql);
-                                    $req->execute([$_GET["search"], $_GET["search"], $_GET["search"], $_GET["search"]]);
+                                    $req->execute([$_GET["search"], $_GET["search"]]);
                                     if ($req->rowCount() == 0) {
                                         ?>
                                             <tr>

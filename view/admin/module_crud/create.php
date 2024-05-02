@@ -10,7 +10,7 @@ include ('../../../config.php');
 <div class="container-fluid">
     <div class="card">
         <div class="card-body">
-            <h5 class="card-title fw-semibold mb-4">Add new Module</h5>
+            <h5 class="card-title fw-semibold mb-4">Add new admin</h5>
             <form action="store.php" method="post">
                 <div class="mb-3 ">
                     <label class="form-label">Module Title</label>
@@ -26,10 +26,10 @@ include ('../../../config.php');
                             $req->execute();
                             while ($row = $req->fetch()) {
                                 ?>
-                                <option value="<?php echo $row['title']; ?>">
-                                    <?php echo $row['title']; ?>
-                                </option>
-                                <?php
+                            <option value="<?php echo $row['title']; ?>">
+                                <?php echo $row['title']; ?>
+                            </option>
+                            <?php
                             }
                             ?>
                         </select>

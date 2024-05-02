@@ -5,7 +5,7 @@ if (!isset($_SESSION['admin'])) {
     header("location:../auth/login.html");
 }
 include ('../layouts/header.php');
-include ("../../../config.php");
+require '../../../config.php';
 ?>
 
 <div class="container-fluid">
@@ -55,8 +55,10 @@ include ("../../../config.php");
                             <tbody>
                                 <?php
                                 if (!isset($_GET['search'])) {
-                                    $sql = 'select * from formation';
+                                    $sql = 'SELECT title, description, category_name, formation_id FROM formation 
+                                    JOIN formation_category ON formation.formation_category_id = formation_category.formation_category_id';
 
+                                    // Prepare and execute the statement
                                     $req = $conn->prepare($sql);
                                     $req->execute();
                                     if ($req->rowCount() == 0) {
@@ -82,7 +84,7 @@ include ("../../../config.php");
                                             </td>
                                             <td class="border-bottom-0">
                                                 <p class="mb-0 fw-normal">
-                                                    <?php echo $row["formation_category_id"] ?>
+                                                    <?php echo $row["category_name"] ?>
                                                 </p>
                                             </td>
                                             <td class="border-bottom-0">
@@ -102,10 +104,18 @@ include ("../../../config.php");
                                         </tr>
                                     <?php }
                                 } else if (isset($_GET["search"])) {
-                                    $sql = 'select * from formation where title like ? ';
+                                    $search = '%' . $_GET["search"] . '%';
+                                    $sql = 'SELECT title, description, category_name, formation_id FROM formation 
+                                            JOIN formation_category ON formation.formation_category_id = formation_category.formation_category_id  
+                                  WHERE title LIKE ? 
+                                        OR description LIKE ? 
+                                        OR category_name LIKE ? 
+                                        ';
+
 
                                     $req = $conn->prepare($sql);
-                                    $req->execute([$_GET["search"]]);
+                                    $req->execute([$search, $search, $search]);
+
                                     if ($req->rowCount() == 0) {
                                         ?>
                                             <tr>
@@ -114,7 +124,6 @@ include ("../../../config.php");
                                     <?php } ?>
 
                                     <?php while ($row = $req->fetch()) { ?>
-
                                             <tr>
 
                                                 <td class="border-bottom-0">
@@ -122,7 +131,16 @@ include ("../../../config.php");
                                                     <?php echo $row["title"] ?>
                                                     </p>
                                                 </td>
-
+                                                <td class="border-bottom-0">
+                                                    <p class="mb-0 fw-normal">
+                                                    <?php echo $row["description"] ?>
+                                                    </p>
+                                                </td>
+                                                <td class="border-bottom-0">
+                                                    <p class="mb-0 fw-normal">
+                                                    <?php echo $row["category_name"] ?>
+                                                    </p>
+                                                </td>
                                                 <td class="border-bottom-0">
                                                     <h6 class="fw-semibold mb-0">
                                                     <?php echo $row["formation_id"] ?>
