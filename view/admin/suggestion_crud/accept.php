@@ -58,7 +58,7 @@ $row = $req->fetch();
                             name="description"><?php echo $row["description"]; ?></textarea>
                     </div>
 
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button  onclick="return confirm('Are you sure you want to proceed?')"  type="submit" class="btn btn-primary">Submit</button>
                 </form>
             </div>
         </div>
