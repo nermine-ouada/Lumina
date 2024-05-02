@@ -17,7 +17,7 @@ require '../../../config.php';
                 <form action="store.php" method="post">
                     <div class="mb-3">
                         <label class="form-label">Title</label>
-                        <input type="text" class="form-control" name="title">
+                        <input required type="text" class="form-control" name="title">
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Category</label>

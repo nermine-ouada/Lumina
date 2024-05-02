@@ -14,11 +14,11 @@ include ('../../../config.php');
                 <div class="row">
                     <div class="mb-3 w-50">
                         <label class="form-label">Module Title</label>
-                        <input type="text" class="form-control" name="title">
+                        <input required type="text" class="form-control" name="title">
                     </div>
                     <div class="mb-3 w-50">
                         <label class="form-label">Description</label>
-                        <input type="text" class="form-control" name="description">
+                        <input required type="text" class="form-control" name="description">
                     </div>
                 </div>
                 <div class="row">
@@ -42,12 +42,12 @@ include ('../../../config.php');
                 <div class="row">
                     <div class="mb-3 w-50">
                         <label class="form-label">Volume Cours</label>
-                        <input type="number" class="form-control" name="volume_cours" aria-describedby="emailHelp">
+                        <input required type="number" class="form-control" name="volume_cours" aria-describedby="emailHelp">
                         <div class="form-text">Enter only number.</div>
                     </div>
                     <div class="mb-3 w-50">
                         <label class="form-label">Volume TP</label>
-                        <input type="number" class="form-control" name="volume_tp" aria-describedby="emailHelp">
+                        <input required type="number" class="form-control" name="volume_tp" aria-describedby="emailHelp">
                         <div class="form-text">Enter only number.</div>
                     </div>
                 </div>
@@ -56,7 +56,7 @@ include ('../../../config.php');
                 <div class="row">
                     <div class="mb-3 w-50">
                         <label class="form-label">Volume TD</label>
-                        <input type="number" class="form-control" name="volume_td" aria-describedby="emailHelp">
+                        <input required type="number" class="form-control" name="volume_td" aria-describedby="emailHelp">
                         <div class="form-text">Enter only number.</div>
                     </div>
                 </div>
