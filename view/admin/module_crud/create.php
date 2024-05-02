@@ -10,12 +10,14 @@ include ('../../../config.php');
 <div class="container-fluid">
     <div class="card">
         <div class="card-body">
+            <h5 class="card-title fw-semibold mb-4">Add new Module</h5>
             <form action="store.php" method="post">
+                <div class="mb-3 ">
+                    <label class="form-label">Module Title</label>
+                    <input type="text" class="form-control" name="title">
+                </div>
                 <div class="row">
-                    <div class="mb-3 w-50">
-                        <label class="form-label">Module Title</label>
-                        <input type="text" class="form-control" name="title">
-                    </div>
+
                     <div class="mb-3 w-50">
                         <label class="form-label">Formation</label>
                         <select name="formation_id" class="form-control">
@@ -31,6 +33,11 @@ include ('../../../config.php');
                             }
                             ?>
                         </select>
+                    </div>
+                    <div class="mb-3 w-50">
+                        <label class="form-label">Volume TD</label>
+                        <input type="number" class="form-control" name="volume_td" aria-describedby="emailHelp">
+                        <div class="form-text">Enter only number.</div>
                     </div>
                 </div>
 
@@ -49,12 +56,8 @@ include ('../../../config.php');
 
 
                 <div class="row">
-                    <div class="mb-3 w-50">
-                        <label class="form-label">Volume TD</label>
-                        <input type="number" class="form-control" name="volume_td" aria-describedby="emailHelp">
-                        <div class="form-text">Enter only number.</div>
-                    </div>
-                    <div class="mb-3 w-50">
+
+                    <div class="mb-3 ">
                         <label class="form-label">Description</label>
                         <textarea class="form-control" name="description"></textarea>
                     </div>
