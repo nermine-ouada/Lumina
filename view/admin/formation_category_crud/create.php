@@ -6,6 +6,7 @@ if (!isset ($_SESSION['admin'])) {
 }
 include ('../layouts/header.php');
 ?>
+
 <div class="container-fluid">
     <div class="card">
         <div class="card-body">
@@ -15,7 +16,7 @@ include ('../layouts/header.php');
                         <div class="row">
                             <div class="mb-3 w-50">
                                 <label  class="form-label">Category name</label>
-                                <input type="text" class="form-control" name="category_name">
+                                <input required type="text" class="form-control" name="category_name">
                             </div>
                         </div>   
                          <button type="submit" class="btn btn-primary">Submit</button>

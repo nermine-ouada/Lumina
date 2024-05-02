@@ -20,6 +20,6 @@ class Uuid
 }
 
 // Usage
-$uuid = Uuid::generate();
-echo "Generated UUID: $uuid";
+// $uuid = Uuid::generate();
+// echo "Generated UUID: $uuid";
 ?>
