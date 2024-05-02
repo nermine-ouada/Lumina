@@ -39,6 +39,7 @@ include ("../../../config.php");
                                     <th class="border-bottom-0">
                                         <h6 class="fw-semibold mb-0">description</h6>
                                     </th>
+
                                     <th class="border-bottom-0">
                                         <h6 class="fw-semibold mb-0">formation_id</h6>
                                     </th>
@@ -83,9 +84,15 @@ include ("../../../config.php");
                                                     <?php echo $row["title"] ?>
 
                                                 </h6>
-                                                <span class="fw-normal">
+
+                                            </td>
+
+                                            <td class="border-bottom-0">
+                                                <h6 class="fw-semibold mb-1">
                                                     <?php echo $row["description"] ?>
-                                                </span>
+
+                                                </h6>
+
                                             </td>
                                             <td class="border-bottom-0">
                                                 <p class="mb-0 fw-normal">

@@ -11,7 +11,7 @@ include ("../../../config.php");
             <div class="d-sm-flex d-block align-items-center justify-content mb-9">
                 <input type="text" class="form-control w-50" name="search" placeholder="Filter by search">
                 <button type="submit" class="btn btn-outline-primary m-3">Filter</button>
-                <?php if (isset ($_GET["search"])) { ?>
+                <?php if (isset($_GET["search"])) { ?>
                     <a href="index.php" class="btn btn-danger m-3">Undo search</a>
                 <?php } ?>
             </div>
@@ -56,7 +56,7 @@ include ("../../../config.php");
                             </thead>
                             <tbody>
                                 <?php
-                                if (!isset ($_GET['search'])) {
+                                if (!isset($_GET['search'])) {
                                     $sql = 'select * from participant ';
 
                                     $req = $conn->prepare($sql);
@@ -112,7 +112,7 @@ include ("../../../config.php");
 
                                         </tr>
                                     <?php }
-                                } else if (isset ($_GET["search"])) {
+                                } else if (isset($_GET["search"])) {
                                     $sql = 'select * from participant where first_name like ?  or last_name like ? or email like ? or profession like ?';
 
                                     $req = $conn->prepare($sql);

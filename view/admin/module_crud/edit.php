@@ -27,6 +27,7 @@ $row = $req->fetch();
                             <input required type="text" class="form-control" name="title" value="<?php echo $row['title'] ?>">
                         </div>
                         <div class="mb-3 w-50">
+
                             <label class="form-label">Description </label>
                             <input required type="text" class="form-control" name="description"
                                 value="<?php echo $row['description'] ?>">
@@ -47,7 +48,9 @@ $row = $req->fetch();
                                 ?>
                             </select>
                         </div>
+
                     </div>
+
                     <div class="row">
                         <div class="mb-3 w-50">
                             <label class="form-label">Volume Cours</label>
@@ -68,6 +71,11 @@ $row = $req->fetch();
                             <input required type="number" class="form-control" name="volume_td" aria-describedby="emailHelp"
                                 value="<?php echo $row['volume_td'] ?>">
                             <div class="form-text">Enter only number.</div>
+                        </div>
+                        <div class="mb-3 w-50">
+                            <label class="form-label">Description </label>
+                            <textarea class="form-control" name="description"
+                                value="<?php echo $row['description'] ?>"></textarea>
                         </div>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>

@@ -13,21 +13,21 @@ include ('../layouts/header.php');
             <div class="card-body">
                 <form action="store.php" method="post">
                     <div class="row">
-                        <div class="mb-3 w-50">
+                        <div class="mb-3 ">
                             <label class="form-label">Title</label>
                             <input required type="text" class="form-control" name="title">
                         </div>
                     </div>
                     
                     <div class="row">
-                        <div class="mb-3 w-50">
+                        <div class="mb-3 ">
                             <label class="form-label">Taux Reduction</label>
                             <input required type="text" class="form-control" name="taux_reduction">
                         </div>
                         
                     </div>
                <div class="row">
-                        <div class="mb-3 w-50">
+                        <div class="mb-3 ">
                             <label class="form-label">Description</label>
                             <textarea type="text" class="form-control" name="description"></textarea>
                         </div>
