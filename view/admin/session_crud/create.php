@@ -19,19 +19,17 @@ require '../../../config.php';
                         <label class="form-label">Title</label>
                         <input type="text" class="form-control" name="title">
                     </div>
-                    <div class="mb-3">
-                        <label class="form-label">Description</label>
-                        <textarea type="text" class="form-control" name="description"></textarea>
-                    </div>
-                    <div class="mb-3">
+                   
+                    <div class="row">
+                    <div class="mb-3 w-50">
                         <label class="form-label">Start_Date</label>
                         <input type="datetime-local" class="form-control" name="start_date">
                     </div>
 
-                    <div class="mb-3">
+                    <div class="mb-3 w-50">
                         <label class="form-label">End_Date</label>
                         <input type="datetime-local" class="form-control" name="end_date">
-                    </div>
+                    </div></div>
                     <div class="mb-3">
                         <label class="form-label">Niveau</label>
                         <input type="text" class="form-control" name="niveau">
@@ -74,7 +72,10 @@ require '../../../config.php';
 
                         </Select>
                     </div>
-                    
+                    <div class="mb-3">
+                        <label class="form-label">Description</label>
+                        <textarea type="text" class="form-control" name="description"></textarea>
+                    </div>
                     
 
                     <button type="submit" class="btn btn-primary">Submit</button>
