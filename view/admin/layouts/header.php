@@ -141,6 +141,14 @@
                                 <span class="hide-menu">Fiche Suivi</span>
                             </a>
                         </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="../contact_crud/index.php" aria-expanded="false">
+                                <span>
+                                    <i class="ti ti-login"></i>
+                                </span>
+                                <span class="hide-menu">Contact</span>
+                            </a>
+                        </li>
                     </ul>
                     <div class="unlimited-access hide-menu bg-light-primary position-relative mb-7 mt-5 rounded">
                         <div class="d-flex">
