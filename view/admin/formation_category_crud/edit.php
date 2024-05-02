@@ -31,7 +31,7 @@ $row = $req->fetch();
                                     value="<?php echo $row['category_name'] ?>">
                             </div>
                          
-                        <button type="submit" class="btn btn-primary">Update</button>
+                        <button  onclick="return confirm('Are you sure you want to update?')" type="submit" class="btn btn-primary">Update</button>
                     </form>
                 </div>
             </div>

@@ -101,7 +101,7 @@ include ("../../../config.php");
                                                     class="btn btn-outline-warning m-1">Edit</a>
                                             </td>
                                             <td class="border-bottom-0">
-                                                <a href="delete.php?promotion_id=<?php echo $row["promotion_id"] ?>"
+                                                 <a onclick="return confirm('Are you sure you want to delete?')"  href="delete.php?promotion_id=<?php echo $row["promotion_id"] ?>"
                                                     class="btn btn-outline-danger m-1">Delete</a>
                                             </td>
 
@@ -151,7 +151,7 @@ include ("../../../config.php");
                                                         class="btn btn-outline-warning m-1">Edit</a>
                                                 </td>
                                                 <td class="border-bottom-0">
-                                                    <a href="delete.php?promotion_id=<?php echo $row["promotion_id"] ?>"
+                                                    <a onclick="return confirm('Are you sure you want to delete?')" href="delete.php?promotion_id=<?php echo $row["promotion_id"] ?>"
                                                         class="btn btn-outline-danger m-1">Delete</a>
                                                 </td>
 
