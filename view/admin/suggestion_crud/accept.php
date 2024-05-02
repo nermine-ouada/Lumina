@@ -24,12 +24,12 @@ $row = $req->fetch();
             <h5 class="card-title fw-semibold mb-4">Add new formation</h5>
             <div class="card-body">
                 <form action="store.php" method="post">
-                    <input type="hidden" class="form-control" name="formation_suggestion_id"
+                    <input required type="hidden" class="form-control" name="formation_suggestion_id"
                         value="<?php echo $row["formation_suggestion_id"]; ?>">
 
                     <div class="mb-3">
                         <label class="form-label">Title</label>
-                        <input type="text" class="form-control" name="title" value="<?php echo $row["title"]; ?>">
+                        <input required type="text" class="form-control" name="title" value="<?php echo $row["title"]; ?>">
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Category</label>

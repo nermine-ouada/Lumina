@@ -22,12 +22,12 @@ $row = $req->fetch();
                 <div class="card-body">
                     <form action="update.php" method="post">
                         <div class="row">
-                            <input type="text" class="form-control" name="formation_category_id" style="visibility:hidden"
+                            <input required type="text" class="form-control" name="formation_category_id" style="visibility:hidden"
                                 value="<?php echo $row['formation_category_id'] ?>">
 
                             <div class="mb-3 w-50">
                                 <label  class="form-label">Category name</label>
-                                <input type="text" class="form-control" name="category_name"
+                                <input required type="text" class="form-control" name="category_name"
                                     value="<?php echo $row['category_name'] ?>">
                             </div>
                          

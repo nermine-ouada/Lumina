@@ -15,14 +15,14 @@ include ('../layouts/header.php');
                     <div class="row">
                         <div class="mb-3 w-50">
                             <label class="form-label">Title</label>
-                            <input type="text" class="form-control" name="title">
+                            <input required type="text" class="form-control" name="title">
                         </div>
                     </div>
                     
                     <div class="row">
                         <div class="mb-3 w-50">
                             <label class="form-label">Taux Reduction</label>
-                            <input type="text" class="form-control" name="taux_reduction">
+                            <input required type="text" class="form-control" name="taux_reduction">
                         </div>
                         
                     </div>
