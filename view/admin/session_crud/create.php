@@ -17,43 +17,61 @@ require '../../../config.php';
                 <form action="store.php" method="post">
                     <div class="mb-3">
                         <label class="form-label">Title</label>
-                        <input type="text" class="form-control" name="title">
-                    </div>
-                   
-                    <div class="row">
-                    <div class="mb-3 w-50">
-                        <label class="form-label">Start_Date</label>
-                        <input type="datetime-local" class="form-control" name="start_date">
+                        <input required type="text" class="form-control" name="title">
                     </div>
 
-                    <div class="mb-3 w-50">
-                        <label class="form-label">End_Date</label>
-                        <input type="datetime-local" class="form-control" name="end_date">
-                    </div></div>
+                    <div class="row">
+                        <div class="mb-3 w-50">
+                            <label class="form-label">Start_Date</label>
+                            <input required type="datetime-local" class="form-control" name="start_date" id="start_date">
+                        </div>
+
+                        <div class="mb-3 w-50">
+                            <label class="form-label">End_Date</label>
+                            <input required type="datetime-local" class="form-control" name="end_date" id="end_date">
+                        </div>
+                    </div>
                     <div class="mb-3">
                         <label class="form-label">Niveau</label>
-                        <input type="text" class="form-control" name="niveau">
-                    </div>
-                    
-                   
-                    <div class="mb-3">
-                        <label class="form-label">Formation</label>
-                        <Select name="formation_id" class="form-control">
-                            <?php
-                            $req = $conn->prepare("select * from formation");
-                            $req->execute();
-                            while ($row = $req->fetch()) {
-                                ?>
-                                <option value="<?php echo $row['formation_id']; ?>">
-                                    <?php echo $row['title']; ?>
-                                </option>
+                        <select name="niveau" class="form-control">
+                            <option value="Beginner">Beginner</option>
+                            <option value="Intermediate">Intermediate</option>
+                            <option value="Advanced">Advanced</option>
 
+                        </select>
+                    </div>
+
+                    <?php if (!isset($_GET["formation_id"])) { ?>
+
+                        <div class="mb-3">
+                            <label class="form-label">Formation</label>
+                            <Select name="formation_id" class="form-control">
                                 <?php
-                            }
-                            ?>
+                                $req = $conn->prepare("select * from formation");
+                                $req->execute();
+                                while ($row = $req->fetch()) {
+                                    ?>
+                                    <option value="<?php echo $row['formation_id']; ?>">
+                                        <?php echo $row['title']; ?>
+                                    </option>
 
-                        </Select>
-                    </div>
+                                    <?php
+                                }
+                                ?>
+
+                            </Select>
+                        </div><?php
+                    } else {
+                        $req = $conn->prepare("select * from formation where formation_id=?");
+                        $req->execute([$_GET["formation_id"]]);
+                        $row = $req->fetch(); ?>
+                        <div class="mb-3">
+                            <label class="form-label">Formation</label>
+                            <input required class="form-control" value="<?php echo $row['title']; ?>" readonly>
+                            <input required name="formation_id" value="<?php echo $_GET["formation_id"] ?>" hidden>
+                        </div>
+                        <?php
+                    } ?>
                     <div class="mb-3">
                         <label class="form-label">Promotion</label>
                         <Select name="promotion_id" class="form-control">
@@ -76,7 +94,7 @@ require '../../../config.php';
                         <label class="form-label">Description</label>
                         <textarea type="text" class="form-control" name="description"></textarea>
                     </div>
-                    
+
 
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
@@ -85,5 +103,18 @@ require '../../../config.php';
 
     </div>
 </div>
+<script>
+    // Function to validate end date after start date
+    function validateDates() {
+        var startDate = new Date(document.getElementById("start_date").value);
+        var endDate = new Date(document.getElementById("end_date").value);
+
+        if (endDate <= startDate) {
+            alert("End date must be after start date.");
+            return false;
+        }
+        return true;
+    }
+</script>
 
 <?php include ('../layouts/footer.php'); ?>

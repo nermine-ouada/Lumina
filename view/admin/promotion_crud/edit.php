@@ -44,7 +44,7 @@ $row = $req->fetch();
                         <div class="row">
                            <div class="mb-3 ">
                                 <label  class="form-label">Description</label>
-                                <textarea type="text" class="form-control" name="description"><?php echo $row['description']; ?></textarea>
+                                <textarea required type="text" class="form-control" name="description"><?php echo $row['description']; ?></textarea>
                             </div>
                         </div>
                       

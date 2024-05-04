@@ -29,7 +29,7 @@ include ('../layouts/header.php');
                <div class="row">
                         <div class="mb-3 ">
                             <label class="form-label">Description</label>
-                            <textarea type="text" class="form-control" name="description"></textarea>
+                            <textarea required type="text" class="form-control" name="description"></textarea>
                         </div>
                         
                     </div>
