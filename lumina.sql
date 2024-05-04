@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 23, 2024 at 09:37 PM
+-- Generation Time: May 04, 2024 at 02:18 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -40,6 +40,21 @@ CREATE TABLE `admin` (
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contact`
+--
+
+CREATE TABLE `contact` (
+  `contact_id` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `subject` varchar(255) NOT NULL,
+  `message` varchar(255) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -51,7 +66,7 @@ CREATE TABLE `demande` (
   `demande_id` varchar(255) NOT NULL,
   `description` varchar(255) NOT NULL,
   `etat` varchar(255) NOT NULL,
-  `session_id` varchar(255) NOT NULL,
+  `formation_id` varchar(255) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -87,6 +102,7 @@ CREATE TABLE `formateur` (
   `rib` varchar(255) NOT NULL,
   `banque` varchar(255) NOT NULL,
   `specialite` varchar(255) NOT NULL,
+  `linkedin` varchar(255) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -97,6 +113,14 @@ CREATE TABLE `formateur` (
 -- Table structure for table `formation`
 --
 
+CREATE TABLE `formation` (
+  `formation_id` varchar(255) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `description` varchar(255) NOT NULL,
+  `formation_category_id` varchar(255) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -130,9 +154,37 @@ CREATE TABLE `formation_progress` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `formation_suggestion`
+--
+
+CREATE TABLE `formation_suggestion` (
+  `formation_suggestion_id` varchar(255) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `description` varchar(255) NOT NULL,
+  `formation_category_id` varchar(255) NOT NULL,
+  `etat` varchar(255) NOT NULL,
+  `formateur_id` varchar(255) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `module`
 --
 
+CREATE TABLE `module` (
+  `module_id` varchar(255) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `description` varchar(255) NOT NULL,
+  `formation_id` varchar(255) NOT NULL,
+  `volume_cours` int(11) NOT NULL,
+  `volume_tp` float NOT NULL,
+  `volume_td` float NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -156,7 +208,7 @@ CREATE TABLE `participant` (
 
 -- --------------------------------------------------------
 
--- 
+--
 -- Table structure for table `promotion`
 --
 
@@ -223,6 +275,12 @@ ALTER TABLE `formation_category`
 --
 ALTER TABLE `formation_progress`
   ADD PRIMARY KEY (`fg_id`);
+
+--
+-- Indexes for table `formation_suggestion`
+--
+ALTER TABLE `formation_suggestion`
+  ADD PRIMARY KEY (`formation_suggestion_id`);
 
 --
 -- Indexes for table `module`
