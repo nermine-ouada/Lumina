@@ -37,7 +37,7 @@ require '../../../config.php';
                             <thead class="text-dark fs-4">
                                 <tr>
                                     <th class="border-bottom-0">
-                                        <h6 class="fw-semibold mb-0">Title</h6>
+                                        <h6 class="fw-semibold mb-0">Title & formation</h6>
                                     </th>
                                     <th class="border-bottom-0">
                                         <h6 class="fw-semibold mb-0">Description</h6>
@@ -52,15 +52,11 @@ require '../../../config.php';
                                         <h6 class="fw-semibold mb-0">Niveau</h6>
                                     </th>
 
-                                    <th class="border-bottom-0">
-                                        <h6 class="fw-semibold mb-0">Formation</h6>
-                                    </th>
+                                 
                                     <th class="border-bottom-0">
                                         <h6 class="fw-semibold mb-0">Promotion</h6>
                                     </th>
-                                    <th class="border-bottom-0">
-                                        <h6 class="fw-semibold mb-0">Id</h6>
-                                    </th>
+                                 
                                     <th class="border-bottom-0">
                                     </th>
                                 </tr>
@@ -92,7 +88,9 @@ require '../../../config.php';
                                             <td class="border-bottom-0">
                                                 <p class="mb-0 fw-normal">
                                                     <?php echo $row["title"] ?>
-                                                </p>
+                                                </p>  <span class="fw-normal">
+                                                <?php echo $row["formation_title"] ?>
+                                                </span>
                                             </td>
                                             <td class="border-bottom-0">
                                                 <p class="mb-0 fw-normal">
@@ -114,21 +112,13 @@ require '../../../config.php';
                                                     <?php echo $row["niveau"] ?>
                                                 </h6>
                                             </td>
-                                            <td class="border-bottom-0">
-                                                <h6 class="fw-semibold mb-0">
-                                                    <?php echo $row["formation_title"] ?>
-                                                </h6>
-                                            </td>
+                                         
                                             <td class="border-bottom-0">
                                                 <h6 class="fw-semibold mb-0">
                                                     <?php echo $row["promotion_title"] ?>
                                                 </h6>
                                             </td>
-                                            <td class="border-bottom-0">
-                                                <h6 class="fw-semibold mb-0">
-                                                    <?php echo $row["session_id"] ?>
-                                                </h6>
-                                            </td>
+                                         
                                             <td class="border-bottom-0">
                                                 <a href="edit.php?session_id=<?php echo $row["session_id"] ?>"
                                                     class="btn btn-outline-warning m-1">Edit</a>
@@ -166,9 +156,12 @@ require '../../../config.php';
                                         <tr>
 
                                         <td class="border-bottom-0">
-                                            <p class="mb-0 fw-normal">
+                                            <h6 class="mb-0 fw-normal">
                                                 <?php echo $row["title"] ?>
-                                            </p>
+                                    </h6>
+                                            <span class="fw-normal">
+                                                <?php echo $row["formation_title"] ?>
+                                            </span>
                                         </td>
                                         <td class="border-bottom-0">
                                             <p class="mb-0 fw-normal">
@@ -190,21 +183,13 @@ require '../../../config.php';
                                                 <?php echo $row["niveau"] ?>
                                             </h6>
                                         </td>
-                                        <td class="border-bottom-0">
-                                            <h6 class="fw-semibold mb-0">
-                                                <?php echo $row["formation_title"] ?>
-                                            </h6>
-                                        </td>
+                                      
                                         <td class="border-bottom-0">
                                             <h6 class="fw-semibold mb-0">
                                                 <?php echo $row["promotion_title"] ?>
                                             </h6>
                                         </td>
-                                        <td class="border-bottom-0">
-                                            <h6 class="fw-semibold mb-0">
-                                                <?php echo $row["session_id"] ?>
-                                            </h6>
-                                        </td>
+                                    
                                         <td class="border-bottom-0">
                                             <a href="edit.php?session_id=<?php echo $row["session_id"] ?>"
                                                 class="btn btn-outline-warning m-1">Edit</a>
