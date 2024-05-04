@@ -38,14 +38,10 @@ include ("../../../config.php");
                             <thead class="text-dark fs-4">
                                 <tr>
                                     <th class="border-bottom-0">
-                                        <h6 class="fw-semibold mb-0"> Module title</h6>
+                                        <h6 class="fw-semibold mb-0"> Title & formation</h6>
                                     </th>
                                     <th class="border-bottom-0">
                                         <h6 class="fw-semibold mb-0">description</h6>
-                                    </th>
-
-                                    <th class="border-bottom-0">
-                                        <h6 class="fw-semibold mb-0">formation</h6>
                                     </th>
                                     <th class="border-bottom-0">
                                         <h6 class="fw-semibold mb-0"> volume_cours</h6>
@@ -89,6 +85,7 @@ include ("../../../config.php");
                                                     <?php echo $row["title"] ?>
 
                                                 </h6>
+                                                <span class="fw-normal"><?= $row["formation"] ?></span>
 
                                             </td>
 
@@ -99,11 +96,7 @@ include ("../../../config.php");
                                                 </h6>
 
                                             </td>
-                                            <td class="border-bottom-0">
-                                                <p class="mb-0 fw-normal">
-                                                    <?php echo $row["formation"] ?>
-                                                </p>
-                                            </td>
+
                                             <td class="border-bottom-0">
                                                 <p class="mb-0 fw-normal">
                                                     <?php echo $row["volume_cours"] ?>
@@ -150,21 +143,23 @@ include ("../../../config.php");
                                     <?php while ($row = $req->fetch()) { ?>
 
                                             <tr>
-
                                                 <td class="border-bottom-0">
                                                     <h6 class="fw-semibold mb-1">
                                                     <?php echo $row["title"] ?>
 
                                                     </h6>
-                                                    <span class="fw-normal">
-                                                    <?php echo $row["description"] ?>
-                                                    </span>
+                                                    <span class="fw-normal"><?= $row["formation"] ?></span>
+
                                                 </td>
+
                                                 <td class="border-bottom-0">
-                                                    <p class="mb-0 fw-normal">
-                                                    <?php echo $row["formation"] ?>
-                                                    </p>
+                                                    <h6 class="fw-semibold mb-1">
+                                                    <?php echo $row["description"] ?>
+
+                                                    </h6>
+
                                                 </td>
+
                                                 <td class="border-bottom-0">
                                                     <p class="mb-0 fw-normal">
                                                     <?php echo $row["volume_cours"] ?>
