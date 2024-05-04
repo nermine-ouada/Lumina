@@ -29,11 +29,13 @@ $row = $req->fetch();
                                 <label  class="form-label">First name</label>
                                 <input required type="text" class="form-control" name="first_name"
                                     value="<?php echo $row['first_name'] ?>">
+                                    <div class="form-text">Enter your first name</div>
                             </div>
                             <div class="mb-3 w-50">
                                 <label  class="form-label">Last name</label>
                                 <input required type="text" class="form-control" name="last_name"
                                     value="<?php echo $row['last_name'] ?>">
+                                    <div class="form-text">Enter your last name</div>
                             </div>
                         </div>
                         <div class="row">
@@ -41,10 +43,13 @@ $row = $req->fetch();
                             <label   class="form-label">Password</label>
                             <input required type="password" class="form-control" name="password"
                                 value="<?php echo $row['password'] ?>">
+                                <div class="form-text">Create a password   
+                            </div>
                         </div>
                         <div class="mb-3 w-50">
                             <label   class="form-label">Email address</label>
                             <input required type="email" class="form-control" name="email" value="<?php echo $row['email'] ?>">
+                            <div class="form-text">Enter your email address with the '@' symbol included</div>
                         </div>
                         
 </div>
@@ -69,19 +74,22 @@ $row = $req->fetch();
                                 <label  class="form-label">Rib</label>
                                 <input required type="text" class="form-control" name="rib" 
                                     value="<?php echo $row['rib'] ?>">
+                                    <div class="form-text">Enter your bank account number (RIB)</div>
+
                                 </div>
-                            </div>
-                            <div class="mb-3 w-50">
-                                <label  class="form-label">specialite</label>
-                                <Select name="specialite" class="form-control"  value="<?php echo $row['specialite'] ?>">
-                                <option value=""></option>
-                                <option value="Mathematique">Mathematique</option>
-                                <option value="Digital Marketing">Digital Marketing</option>
-                                <option value="FrontEnd Web Developpement">FrontEnd Web Developpement</option>
-                                <option value="BackEnd Web Developpement">BackEnd Web Developpement</option>
-                                
-                            </Select>
-                            </div>
+                           
+                                <div class="mb-3 w-50">
+    <label class="form-label">Spécialité</label>
+    <select name="specialite" class="form-control">
+        <option value=""></option>
+        <option value="Mathematique" <?php if($row['specialite'] == "Mathematique") echo "selected"; ?>>Mathematique</option>
+        <option value="Digital Marketing" <?php if($row['specialite'] == "Digital Marketing") echo "selected"; ?>>Digital Marketing</option>
+        <option value="FrontEnd Web Developpement" <?php if($row['specialite'] == "FrontEnd Web Developpement") echo "selected"; ?>>FrontEnd Web Developpement</option>
+        <option value="BackEnd Web Developpement" <?php if($row['specialite'] == "BackEnd Web Developpement") echo "selected"; ?>>BackEnd Web Developpement</option>
+    </select>
+    <div class="form-text">Select your speciality</div>
+</div>
+
                         </div>
                         <div class="mb-3">
                             <label  class="form-label">Banque</label>
@@ -94,6 +102,7 @@ $row = $req->fetch();
                                 <option value="Wifek">Wifek</option>
                                 <option value="BH">BH</option>
                             </Select>
+                            <div class="form-text">Pick your bank from the list</div>
                         </div>
                         <button onclick="return confirm('Are you sure you want to update?')" type="submit" class="btn btn-primary">Submit</button>
                     </form>

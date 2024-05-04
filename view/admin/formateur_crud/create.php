@@ -16,20 +16,25 @@ include ('../layouts/header.php');
                         <div class="mb-3 w-50">
                             <label class="form-label">First name</label>
                             <input required type="text" class="form-control" name="first_name">
+                            <div class="form-text">Enter your first name</div>
                         </div>
                         <div class="mb-3 w-50">
                             <label class="form-label">Last name</label>
                             <input required type="text" class="form-control" name="last_name">
+                            <div class="form-text">Enter your last name</div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="mb-3 w-50">
                             <label class="form-label">Password</label>
                             <input required type="password" class="form-control" name="password">
+                            <div class="form-text">Create a password   
+                            </div>
                         </div>
                         <div class="mb-3 w-50">
                             <label class="form-label">Email address</label>
                             <input required type="email" class="form-control" name="email">
+                            <div class="form-text">Enter your email address with the '@' symbol included</div>
                         </div>
                     </div>
                     <div class="row">
@@ -50,6 +55,7 @@ include ('../layouts/header.php');
                         <div class="mb-3 w-50">
                             <label class="form-label">Rib</label>
                             <input required type="text" class="form-control" name="rib">
+                            <div class="form-text">Enter your bank account number (RIB)</div>
                         </div>
                         <div class="mb-3 w-50">
                             <label class="form-label">specialite</label>
@@ -60,6 +66,7 @@ include ('../layouts/header.php');
                                 <option value="FrontEnd Web Developpement">FrontEnd Web Developpement</option>
                                 <option value="BackEnd Web Developpement">BackEnd Web Developpement</option>
                             </Select>
+                            <div class="form-text">Select your speciality</div>
                         </div>
                     </div>
 
@@ -74,6 +81,7 @@ include ('../layouts/header.php');
                             <option value="Wifek">Wifek</option>
                             <option value="BH">BH</option>
                         </Select>
+                        <div class="form-text">Pick your bank from the list</div>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
