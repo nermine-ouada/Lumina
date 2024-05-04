@@ -7,6 +7,7 @@
     <title>Lumina Dashboard</title>
     <link rel="shortcut icon" type="image/png" href="../../../assets/dashboard/images/logos/light-bulb.png" />
     <link rel="stylesheet" href="../../../assets/dashboard/css/styles.min.css" />
+ 
 </head>
 
 <body>
@@ -17,6 +18,7 @@
         <aside class="left-sidebar">
             <!-- Sidebar scroll-->
             <div>
+       
                 <div class="brand-logo d-flex align-items-center justify-content-between">
                     <a href="http://localhost/Lumina/" class="text-nowrap logo-img">
                         <img src="../../../assets/dashboard/images/logos/lumina-logo.png" width="180" alt="" />
