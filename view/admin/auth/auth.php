@@ -12,6 +12,7 @@ $result = $req->fetch();
 if ($req->rowCount() > 0) {    
     $_SESSION['successLogin'] = "Login successful.";
     $_SESSION['admin'] = $result["email"];
+    $_SESSION['username'] = $result["first_name"]." ".$result["last_name"];
     $_SESSION['admin_id'] = $result["admin_id"];
     header("Location: ../layouts/dashboard.php");
     exit(); // Terminate script execution after redirection

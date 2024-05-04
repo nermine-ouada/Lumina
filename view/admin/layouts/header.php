@@ -126,12 +126,12 @@
                         </li>
                         <li class="sidebar-item">
 
-                        <a class="sidebar-link" href="../demande/index.php" aria-expanded="false">
-                            <span>
-                                <i class="ti ti-mood-happy"></i>
-                            </span>
-                            <span class="hide-menu">Demandes</span>
-                        </a>
+                            <a class="sidebar-link" href="../demande/index.php" aria-expanded="false">
+                                <span>
+                                    <i class="ti ti-mood-happy"></i>
+                                </span>
+                                <span class="hide-menu">Demandes</span>
+                            </a>
                         </li>
                         <li class="sidebar-item">
                             <a class="sidebar-link" href="../suivi/index.php" aria-expanded="false">
@@ -196,13 +196,10 @@
                                         <a href="javascript:void(0)"
                                             class="d-flex align-items-center gap-2 dropdown-item">
                                             <i class="ti ti-user fs-6"></i>
-                                            <p class="mb-0 fs-3">My Profile</p>
+                                            <p class="mb-0 fs-3"><?php echo $_SESSION['username']; ?></p>
                                         </a>
-                                        <a href="javascript:void(0)"
-                                            class="d-flex align-items-center gap-2 dropdown-item">
-                                            <i class="ti ti-list-check fs-6"></i>
-                                            <p class="mb-0 fs-3">My Task</p>
-                                        </a>
+                                        <p class="d-flex align-items-center gap-2 dropdown-item">
+                                            Admin</p>
                                         <a href="../auth/logout.php"
                                             class="btn btn-outline-primary mx-3 mt-2 d-block">Logout</a>
                                     </div>
@@ -213,4 +210,3 @@
                 </nav>
             </header>
             <!--  Header End -->
-  
