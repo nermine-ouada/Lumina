@@ -2,7 +2,7 @@
 session_start();
 
 if (!isset ($_SESSION['admin'])) {
-    header("location:../auth/login.html");
+    header("location:../auth/login.php");
 }
 include ('../layouts/header.php');
 require '../../../config.php';
@@ -44,12 +44,12 @@ $row = $req->fetch();
                         <div class="row">
                            <div class="mb-3 ">
                                 <label  class="form-label">Description</label>
-                                <textarea type="text" class="form-control" name="description"><?php echo $row['description']; ?></textarea>
+                                <textarea required type="text" class="form-control" name="description"><?php echo $row['description']; ?></textarea>
                             </div>
                         </div>
                       
                       
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button onclick="return confirm('Are you sure you want to update?')" type="submit" class="btn btn-primary">Submit</button>
                     </form>
                 </div>
             </div>

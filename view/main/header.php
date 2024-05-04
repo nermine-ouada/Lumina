@@ -76,8 +76,8 @@
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">My space</a>
                         <div class="dropdown-menu border-light m-0">
                             <a href="../admin/auth/login.html" class="dropdown-item">Admin</a>
-                            <a href="../participant/auth/login.html" class="dropdown-item">Participant</a>
-                            <a href="../formateur/auth/login.html" class="dropdown-item">Trainer</a>
+                            <a href="../participant/auth/login.php" class="dropdown-item">Participant</a>
+                            <a href="../formateur/auth/login.php" class="dropdown-item">Trainer</a>
                         </div>
                     </div>
                 </div>
