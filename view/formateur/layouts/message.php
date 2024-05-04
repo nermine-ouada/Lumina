@@ -54,9 +54,9 @@ if (isset($_SESSION['successLogout'])) {
 if (isset($_SESSION['errorLogout'])) {
     echo '<div id="errorLogoutAlert" class="alert alert-danger">' . $_SESSION['errorLogout'] . '</div>';
     unset($_SESSION['errorLogout']); // Clear the session variable after displaying the message
-}?>
+} ?>
 <script>
-    setTimeout(function() {
+    setTimeout(function () {
         var successLoginAlert = document.getElementById('successLoginAlert');
         var errorLoginAlert = document.getElementById('errorLoginAlert');
         var successLogoutAlert = document.getElementById('successLogoutAlert');
@@ -81,11 +81,10 @@ if (isset($_SESSION['errorLogout'])) {
             errorDeleteAlert
         ];
 
-        alerts.forEach(function(alert) {
+        alerts.forEach(function (alert) {
             if (alert) {
                 alert.style.display = 'none';
             }
         });
     }, 5000);
 </script>
-
