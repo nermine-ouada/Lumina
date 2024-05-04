@@ -2,7 +2,7 @@
 session_start();
 
 if (!isset($_SESSION['admin'])) {
-    header("location:../auth/login.html");
+    header("location:../auth/login.php");
 }
 include ('header.php');
 include ('../../../config.php');
@@ -11,6 +11,7 @@ include ('../../../config.php');
 
 <div class="container-fluid">
     <!--  Row 1 -->
+    <?php include ('../layouts/message.php'); ?>
 
     <div class="row">
         <div class=" d-flex align-items-stretch">

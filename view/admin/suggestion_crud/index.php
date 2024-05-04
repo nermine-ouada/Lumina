@@ -2,7 +2,7 @@
 session_start();
 
 if (!isset($_SESSION['admin'])) {
-    header("location:../auth/login.html");
+    header("location:../auth/login.php");
 }
 include ('../layouts/header.php');
 include ("../../../config.php");
@@ -114,7 +114,7 @@ include ("../../../config.php");
                                                     class="btn btn-outline-warning m-1">Accept</a>
                                             </td>
                                             <td class="border-bottom-0">
-                                                <a href="refus.php?suggestion=<?php echo $row["formation_suggestion_id"] ?>"
+                                                 <a onclick="return confirm('Are you sure you want to deny?')"  href="refus.php?suggestion=<?php echo $row["formation_suggestion_id"] ?>"
                                                     class="btn btn-outline-danger m-1">Deny</a>
                                             </td>
 
@@ -190,7 +190,7 @@ include ("../../../config.php");
                                                                 class="btn btn-outline-warning m-1">Accept</a>
                                                         </td>
                                                         <td class="border-bottom-0">
-                                                            <a href="refus.php?suggestion=<?php echo $row["formation_suggestion_id"] ?>"
+                                                             <a onclick="return confirm('Are you sure you want to deny?')"  href="refus.php?suggestion=<?php echo $row["formation_suggestion_id"] ?>"
                                                                 class="btn btn-outline-danger m-1">Deny</a>
                                                         </td>
                                                     <?php
@@ -267,7 +267,7 @@ include ("../../../config.php");
                                                             class="btn btn-outline-warning m-1">Accept</a>
                                                     </td>
                                                     <td class="border-bottom-0">
-                                                        <a href="refus.php?suggestion=<?php echo $row["formation_suggestion_id"] ?>"
+                                                         <a onclick="return confirm('Are you sure you want to deny?')"  href="refus.php?suggestion=<?php echo $row["formation_suggestion_id"] ?>"
                                                             class="btn btn-outline-danger m-1">Deny</a>
                                                     </td>
                                                 <?php

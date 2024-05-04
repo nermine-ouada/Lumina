@@ -2,7 +2,7 @@
 session_start();
 
 if (!isset($_SESSION['admin'])) {
-    header("location:../auth/login.html");
+    header("location:../auth/login.php");
 }
 include ('../layouts/header.php');
 
@@ -39,7 +39,7 @@ require '../../../config.php';
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Description</label>
-                        <textarea type="text" class="form-control" name="description"></textarea>
+                        <textarea required type="text" class="form-control" name="description"></textarea>
                     </div>
 
                     <button type="submit" class="btn btn-primary">Submit</button>

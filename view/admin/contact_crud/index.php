@@ -1,5 +1,9 @@
 <?php
+session_start();
 
+if (!isset($_SESSION['admin'])) {
+    header("location:../auth/login.php");
+}
 include ('../layouts/header.php');
 include ("../../../config.php");
 ?>
@@ -85,7 +89,7 @@ include ("../../../config.php");
                                                 </p>
                                             </td>
                                             <td class="border-bottom-0">
-                                                <a href="delete.php?contact_id=<?php echo $row["contact_id"] ?>"
+                                                 <a onclick="return confirm('Are you sure you want to delete?')"  href="delete.php?contact_id=<?php echo $row["contact_id"] ?>"
                                                     class="btn btn-outline-danger m-1">Delete</a>
                                             </td>
 
@@ -129,7 +133,7 @@ include ("../../../config.php");
                                                 </td>
 
                                                 <td class="border-bottom-0">
-                                                    <a href="delete.php?contact_id=<?php echo $row["contact_id"] ?>"
+                                                    <a onclick="return confirm('Are you sure you want to delete?')" href="delete.php?contact_id=<?php echo $row["contact_id"] ?>"
                                                         class="btn btn-outline-danger m-1">Delete</a>
                                                 </td>
                                             </tr>

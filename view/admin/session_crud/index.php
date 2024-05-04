@@ -2,7 +2,7 @@
 session_start();
 
 if (!isset($_SESSION['admin'])) {
-    header("location:../auth/login.html");
+    header("location:../auth/login.php");
 }
 include ('../layouts/header.php');
 require '../../../config.php';
@@ -134,7 +134,7 @@ require '../../../config.php';
                                                     class="btn btn-outline-warning m-1">Edit</a>
                                             </td>
                                             <td class="border-bottom-0">
-                                                <a href="delete.php?session_id=<?php echo $row["session_id"] ?>"
+                                                <a onclick="return confirm('Are you sure you want to delete?')"  href="delete.php?session_id=<?php echo $row["session_id"] ?>"
                                                     class="btn btn-outline-danger m-1">Delete</a>
                                             </td>
 
@@ -210,7 +210,7 @@ require '../../../config.php';
                                                 class="btn btn-outline-warning m-1">Edit</a>
                                         </td>
                                         <td class="border-bottom-0">
-                                            <a href="delete.php?session_id=<?php echo $row["session_id"] ?>"
+                                            <a onclick="return confirm('Are you sure you want to delete?')"  href="delete.php?session_id=<?php echo $row["session_id"] ?>"
                                                 class="btn btn-outline-danger m-1">Delete</a>
                                         </td>
 
