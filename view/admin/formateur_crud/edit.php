@@ -92,18 +92,19 @@ $row = $req->fetch();
 
                         </div>
                         <div class="mb-3">
-                            <label  class="form-label">Banque</label>
-                            <Select name="banque" class="form-control" value="<?php echo $row['banque'] ?>">
-                                <option value="STB">STB</option>
-                                <option value="ATB">ATB</option>
-                                <option value="BNA">BNA</option>
-                                <option value="Zitouna">Zitouna</option>
-                                <option value="Amen">Amen</option>
-                                <option value="Wifek">Wifek</option>
-                                <option value="BH">BH</option>
-                            </Select>
-                            <div class="form-text">Pick your bank from the list</div>
-                        </div>
+    <label class="form-label">Banque</label>
+    <select name="banque" class="form-control">
+        <option value="STB" <?php if($row['banque'] == "STB") echo "selected"; ?>>STB</option>
+        <option value="ATB" <?php if($row['banque'] == "ATB") echo "selected"; ?>>ATB</option>
+        <option value="BNA" <?php if($row['banque'] == "BNA") echo "selected"; ?>>BNA</option>
+        <option value="Zitouna" <?php if($row['banque'] == "Zitouna") echo "selected"; ?>>Zitouna</option>
+        <option value="Amen" <?php if($row['banque'] == "Amen") echo "selected"; ?>>Amen</option>
+        <option value="Wifek" <?php if($row['banque'] == "Wifek") echo "selected"; ?>>Wifek</option>
+        <option value="BH" <?php if($row['banque'] == "BH") echo "selected"; ?>>BH</option>
+    </select>
+    <div class="form-text">Pick your bank from the list</div>
+</div>
+
                         <button onclick="return confirm('Are you sure you want to update?')" type="submit" class="btn btn-primary">Submit</button>
                     </form>
                 </div>

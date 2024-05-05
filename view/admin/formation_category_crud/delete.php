@@ -8,8 +8,12 @@ include ("../../../config.php");
 
 $req = $conn->prepare('delete from formation_category where formation_category_id=?');
 
-$req->execute([$_GET['formation_category_id']]);
-
+$success=$req->execute([$_GET['formation_category_id']]);
+if ($success) {
+    $_SESSION['successDelete'] = "Record deleted successfully.";
+} else {
+    $_SESSION['errorDelete'] = "Failed to delete record.";
+}
 header('location:index.php');
 
 ?>

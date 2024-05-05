@@ -52,9 +52,7 @@ include ("../../../config.php");
                                     <th class="border-bottom-0">
                                         <h6 class="fw-semibold mb-0">Phone Number</h6>
                                     </th>
-                                    <th class="border-bottom-0">
-                                        <h6 class="fw-semibold mb-0">Id</h6>
-                                    </th>
+                                    
                                     <th class="border-bottom-0">
                                     </th>
                                     <th class="border-bottom-0">
@@ -97,9 +95,7 @@ include ("../../../config.php");
                                                 <td class="border-bottom-0">
                                                     <p class="mb-0 fw-normal"><?= $row["tel"] ?></p>
                                                 </td>
-                                                <td class="border-bottom-0">
-                                                    <h6 class="fw-semibold mb-0"><?= $row["admin_id"] ?></h6>
-                                                </td>
+                                                
                                                 <td class="border-bottom-0">
                                                     <a href="edit.php?admin_id=<?= $row["admin_id"] ?>"
                                                         class="btn btn-outline-warning m-1">Edit</a>
@@ -181,9 +177,7 @@ include ("../../../config.php");
                                                     <td class="border-bottom-0">
                                                         <p class="mb-0 fw-normal"><?= $row["tel"] ?></p>
                                                     </td>
-                                                    <td class="border-bottom-0">
-                                                        <h6 class="fw-semibold mb-0"><?= $row["admin_id"] ?></h6>
-                                                    </td>
+                                                   
                                                     <td class="border-bottom-0">
                                                         <a href="edit.php?admin_id=<?= $row["admin_id"] ?>"
                                                             class="btn btn-outline-warning m-1">Edit</a>
