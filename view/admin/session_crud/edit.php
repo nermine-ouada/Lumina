@@ -20,7 +20,7 @@ $row = $req->fetch();
         <div class="card-body">
             <h5 class="card-title fw-semibold mb-4">update session</h5>
             <div class="card-body">
-                <form action="update.php" method="post">
+                <form action="update.php" onsubmit="return validateDates();" method="post">
                     <div class="row">
                         <input required type="text" class="form-control" name="session_id" style="visibility:hidden"
                             value="<?php echo $row['session_id'] ?>">
@@ -60,6 +60,8 @@ $row = $req->fetch();
                         <div class="mb-3">
                             <label class="form-label">Formation</label>
                             <Select name="formation_id" class="form-control">
+                                 <option value="nopromo">
+                                No discount </option>
                                 <?php
                                 $req = $conn->prepare("select * from formation");
                                 $req->execute();

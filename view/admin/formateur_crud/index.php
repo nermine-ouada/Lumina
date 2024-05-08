@@ -38,7 +38,7 @@ include ("../../../config.php");
                             <thead class="text-dark fs-4">
                                 <tr>
                                     <th class="border-bottom-0">
-                                        <h6 class="fw-semibold mb-0">Name </h6>
+                                        <h6 class="fw-semibold mb-0">Name & Specialty</h6>
                                     </th>
                                     <th class="border-bottom-0">
                                         <h6 class="fw-semibold mb-0">Email</h6>
@@ -49,13 +49,11 @@ include ("../../../config.php");
                                     <th class="border-bottom-0">
                                         <h6 class="fw-semibold mb-0">Phone Number</h6>
                                     </th>
-                                    <th class="border-bottom-0">
-                                        <h6 class="fw-semibold mb-0">Specialite</h6>
-                                    </th>
+
                                     <th class="border-bottom-0">
                                         <h6 class="fw-semibold mb-0">Banque</h6>
                                     </th>
-                                
+
                                     <th class="border-bottom-0">
                                     </th>
                                     <th class="border-bottom-0">
@@ -84,7 +82,9 @@ include ("../../../config.php");
                                                 <h6 class="fw-semibold mb-1">
                                                     <?php echo $row["first_name"] ?>
                                                     <?php echo $row["last_name"] ?>
+
                                                 </h6>
+                                                    <span class="fw-normal"><?= $row["specialite"] ?></span>
 
                                             </td>
                                             <td class="border-bottom-0">
@@ -112,14 +112,14 @@ include ("../../../config.php");
                                                     <?php echo $row["banque"] ?>
                                                 </p>
                                             </td>
-                                           
-                                            
+
                                             <td class="border-bottom-0">
                                                 <a href="edit.php?formateur_id=<?php echo $row["formateur_id"] ?>"
                                                     class="btn btn-outline-warning m-1">Edit</a>
                                             </td>
                                             <td class="border-bottom-0">
-                                                 <a onclick="return confirm('Are you sure you want to delete?')"  href="delete.php?formateur_id=<?php echo $row["formateur_id"] ?>"
+                                                <a onclick="return confirm('Are you sure you want to delete?')"
+                                                    href="delete.php?formateur_id=<?php echo $row["formateur_id"] ?>"
                                                     class="btn btn-outline-danger m-1">Delete</a>
                                             </td>
 
@@ -127,7 +127,7 @@ include ("../../../config.php");
                                     <?php }
                                 } else if (isset($_GET["search"])) {
                                     $search = '%' . $_GET["search"] . '%';
-                                
+
                                     $sql = 'SELECT * FROM formateur 
                                         WHERE first_name LIKE ? 
                                         OR last_name LIKE ? 
@@ -154,6 +154,7 @@ include ("../../../config.php");
                                                     <?php echo $row["first_name"] ?>
                                                     <?php echo $row["last_name"] ?>
                                                     </h6>
+                                                    <span class="fw-normal"><?= $row["specialite"] ?></span>
 
                                                 </td>
                                                 <td class="border-bottom-0">
@@ -171,23 +172,20 @@ include ("../../../config.php");
                                                     <?php echo $row["tel"] ?>
                                                     </p>
                                                 </td>
-                                                <td class="border-bottom-0">
-                                                    <p class="mb-0 fw-normal">
-                                                    <?php echo $row["specialite"] ?>
-                                                    </p>
-                                                </td>
+                                               
                                                 <td class="border-bottom-0">
                                                     <p class="mb-0 fw-normal">
                                                     <?php echo $row["banque"] ?>
                                                     </p>
                                                 </td>
-                                               
+
                                                 <td class="border-bottom-0">
                                                     <a href="edit.php?formateur_id=<?php echo $row["formateur_id"] ?>"
                                                         class="btn btn-outline-warning m-1">Edit</a>
                                                 </td>
                                                 <td class="border-bottom-0">
-                                                     <a onclick="return confirm('Are you sure you want to delete?')"  href="delete.php?formateur_id=<?php echo $row["formateur_id"] ?>"
+                                                    <a onclick="return confirm('Are you sure you want to delete?')"
+                                                        href="delete.php?formateur_id=<?php echo $row["formateur_id"] ?>"
                                                         class="btn btn-outline-danger m-1">Delete</a>
                                                 </td>
 

@@ -40,9 +40,7 @@ include ("../../../config.php");
                                     <th class="border-bottom-0">
                                         <h6 class="fw-semibold mb-0">Category Name</h6>
                                     </th>
-                                    <th class="border-bottom-0">
-                                        <h6 class="fw-semibold mb-0">Category Id</h6>
-                                    </th>
+                                 
                                     <th class="border-bottom-0">
                                     </th>
                                     <th class="border-bottom-0">
@@ -72,11 +70,7 @@ include ("../../../config.php");
                                                     <?php echo $row["category_name"] ?>
                                                 </p>
                                             </td>
-                                          <td class="border-bottom-0">
-                                                <h6 class="fw-semibold mb-0">
-                                                    <?php echo $row["formation_category_id"] ?>
-                                                </h6>
-                                            </td>
+                                     
                                             <td class="border-bottom-0">
                                                 <a href="edit.php?formation_category_id=<?php echo $row["formation_category_id"] ?>"
                                                     class="btn btn-outline-warning m-1">Edit</a>
@@ -114,11 +108,7 @@ include ("../../../config.php");
                                                     </p>
                                                 </td>
                                               
-                                                <td class="border-bottom-0">
-                                                    <h6 class="fw-semibold mb-0">
-                                                    <?php echo $row["formation_category_id"] ?>
-                                                    </h6>
-                                                </td>
+                                            
                                                 <td class="border-bottom-0">
                                                     <a href="edit.php?formation_category_id=<?php echo $row["formation_category_id"] ?>"
                                                         class="btn btn-outline-warning m-1">Edit</a>

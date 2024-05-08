@@ -38,15 +38,12 @@ require '../../../config.php';
                             <thead class="text-dark fs-4">
                                 <tr>
                                     <th class="border-bottom-0">
-                                        <h6 class="fw-semibold mb-0">Title</h6>
+                                        <h6 class="fw-semibold mb-0">Title & category</h6>
                                     </th>
                                     <th class="border-bottom-0">
                                         <h6 class="fw-semibold mb-0">Description</h6>
                                     </th>
-                                    <th class="border-bottom-0">
-                                        <h6 class="fw-semibold mb-0">Category</h6>
-                                    </th>
-                                   
+                                 
                                     <th class="border-bottom-0">
                                     </th>
                                 </tr>
@@ -72,22 +69,19 @@ require '../../../config.php';
                                         <tr>
 
                                             <td class="border-bottom-0">
-                                                <p class="mb-0 fw-normal">
+                                                <h6 class="mb-0 fw-semibold">
                                                     <?php $title = $row['title'];
                                                     echo $row["title"] ?>
-                                                </p>
+                                                </h6> <span class="fw-normal"><?= $row["category_name"] ?></span>
+
                                             </td>
                                             <td class="border-bottom-0">
                                                 <p class="mb-0 fw-normal">
                                                     <?php echo $row["description"] ?>
                                                 </p>
                                             </td>
-                                            <td class="border-bottom-0">
-                                                <p class="mb-0 fw-normal">
-                                                    <?php echo $row["category_name"] ?>
-                                                </p>
-                                            </td>
                                             
+
                                             <td class="border-bottom-0">
                                                 <a onclick="return confirm('Are you sure you want to add a new module to <?php echo $title ?>?')"
                                                     href="../module_crud/create.php?formation_id=<?php echo $row["formation_id"] ?>"
@@ -98,7 +92,7 @@ require '../../../config.php';
                                                     href="../session_crud/create.php?formation_id=<?php echo $row["formation_id"] ?>"
                                                     class="btn btn-outline-primary m-1">Add to a session</a>
                                             </td>
-                                            
+
                                             <td class="border-bottom-0">
                                                 <a href="edit.php?formation_id=<?php echo $row["formation_id"] ?>"
                                                     class="btn btn-outline-warning m-1">Edit</a>
@@ -148,7 +142,7 @@ require '../../../config.php';
                                                     <?php echo $row["category_name"] ?>
                                                     </p>
                                                 </td>
-                                                
+
                                                 <td class="border-bottom-0">
                                                     <a href="edit.php?formation_id=<?php echo $row["formation_id"] ?>"
                                                         class="btn btn-outline-warning m-1">Edit</a>

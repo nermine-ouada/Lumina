@@ -14,7 +14,7 @@ require '../../../config.php';
         <div class="card-body">
             <h5 class="card-title fw-semibold mb-4">Add new session</h5>
             <div class="card-body">
-                <form action="store.php" method="post">
+                <form action="store.php" onsubmit="return validateDates();" method="post">
                     <div class="mb-3">
                         <label class="form-label">Title</label>
                         <input required type="text" class="form-control" name="title">
@@ -23,7 +23,8 @@ require '../../../config.php';
                     <div class="row">
                         <div class="mb-3 w-50">
                             <label class="form-label">Start_Date</label>
-                            <input required type="datetime-local" class="form-control" name="start_date" id="start_date">
+                            <input required type="datetime-local" class="form-control" name="start_date"
+                                id="start_date">
                         </div>
 
                         <div class="mb-3 w-50">
@@ -75,6 +76,8 @@ require '../../../config.php';
                     <div class="mb-3">
                         <label class="form-label">Promotion</label>
                         <Select name="promotion_id" class="form-control">
+                            <option value="nopromo">
+                                No discount </option>
                             <?php
                             $req = $conn->prepare("select * from promotion");
                             $req->execute();
@@ -111,6 +114,7 @@ require '../../../config.php';
 
         if (endDate <= startDate) {
             alert("End date must be after start date.");
+            console.log("hi");
             return false;
         }
         return true;

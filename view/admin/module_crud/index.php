@@ -39,14 +39,10 @@ include ("../../../config.php");
                             <thead class="text-dark fs-4">
                                 <tr>
                                     <th class="border-bottom-0">
-                                        <h6 class="fw-semibold mb-0"> Module title</h6>
+                                        <h6 class="fw-semibold mb-0"> Title & formation</h6>
                                     </th>
                                     <th class="border-bottom-0">
                                         <h6 class="fw-semibold mb-0">description</h6>
-                                    </th>
-
-                                    <th class="border-bottom-0">
-                                        <h6 class="fw-semibold mb-0">formation_id</h6>
                                     </th>
                                     <th class="border-bottom-0">
                                         <h6 class="fw-semibold mb-0"> volume_cours</h6>
@@ -57,7 +53,7 @@ include ("../../../config.php");
                                     <th class="border-bottom-0">
                                         <h6 class="fw-semibold mb-0"> volume_td</h6>
                                     </th>
-                                    
+
                                     <th class="border-bottom-0">
                                     </th>
                                     <th class="border-bottom-0">
@@ -67,7 +63,10 @@ include ("../../../config.php");
                             <tbody>
                                 <?php
                                 if (!isset($_GET['search'])) {
-                                    $sql = 'select * from module ';
+                                    $sql = 'select module_id ,module.title as title,module.description as description ,
+                                    formation.title as formation,volume_cours,volume_tp,volume_td
+
+                                     from module join  formation using(formation_id) ';
 
                                     $req = $conn->prepare($sql);
                                     $req->execute();
@@ -87,6 +86,7 @@ include ("../../../config.php");
                                                     <?php echo $row["title"] ?>
 
                                                 </h6>
+                                                <span class="fw-normal"><?= $row["formation"] ?></span>
 
                                             </td>
 
@@ -97,11 +97,7 @@ include ("../../../config.php");
                                                 </h6>
 
                                             </td>
-                                            <td class="border-bottom-0">
-                                                <p class="mb-0 fw-normal">
-                                                    <?php echo $row["formation_id"] ?>
-                                                </p>
-                                            </td>
+
                                             <td class="border-bottom-0">
                                                 <p class="mb-0 fw-normal">
                                                     <?php echo $row["volume_cours"] ?>
@@ -117,20 +113,24 @@ include ("../../../config.php");
                                                     <?php echo $row["volume_td"] ?>
                                                 </p>
                                             </td>
-                                           
+
                                             <td class="border-bottom-0">
                                                 <a href="edit.php?module_id=<?php echo $row["module_id"] ?>"
                                                     class="btn btn-outline-warning m-1">Edit</a>
                                             </td>
                                             <td class="border-bottom-0">
-                                                 <a onclick="return confirm('Are you sure you want to delete?')"  href="delete.php?module_id=<?php echo $row["module_id"] ?>"
+                                                <a onclick="return confirm('Are you sure you want to delete?')"
+                                                    href="delete.php?module_id=<?php echo $row["module_id"] ?>"
                                                     class="btn btn-outline-danger m-1">Delete</a>
                                             </td>
 
                                         </tr>
                                     <?php }
                                 } else if (isset($_GET["search"])) {
-                                    $sql = 'select * from module where title like ?  or description like ? ';
+                                    $sql = 'select module_id ,module.title as title,module.description as description ,
+                                    formation.title as formation,volume_cours,volume_tp,volume_td
+
+                                     from module join  formation using(formation_id) where module.title=? or formation.title=?';
 
                                     $req = $conn->prepare($sql);
                                     $req->execute([$_GET["search"], $_GET["search"]]);
@@ -144,21 +144,23 @@ include ("../../../config.php");
                                     <?php while ($row = $req->fetch()) { ?>
 
                                             <tr>
-
                                                 <td class="border-bottom-0">
                                                     <h6 class="fw-semibold mb-1">
                                                     <?php echo $row["title"] ?>
 
                                                     </h6>
-                                                    <span class="fw-normal">
-                                                    <?php echo $row["description"] ?>
-                                                    </span>
+                                                    <span class="fw-normal"><?= $row["formation"] ?></span>
+
                                                 </td>
+
                                                 <td class="border-bottom-0">
-                                                    <p class="mb-0 fw-normal">
-                                                    <?php echo $row["formation_id"] ?>
-                                                    </p>
+                                                    <h6 class="fw-semibold mb-1">
+                                                    <?php echo $row["description"] ?>
+
+                                                    </h6>
+
                                                 </td>
+
                                                 <td class="border-bottom-0">
                                                     <p class="mb-0 fw-normal">
                                                     <?php echo $row["volume_cours"] ?>
@@ -174,13 +176,14 @@ include ("../../../config.php");
                                                     <?php echo $row["volume_td"] ?>
                                                     </p>
                                                 </td>
-                                               
+
                                                 <td class="border-bottom-0">
                                                     <a href="edit.php?module_id=<?php echo $row["module_id"] ?>"
                                                         class="btn btn-outline-warning m-1">Edit</a>
                                                 </td>
                                                 <td class="border-bottom-0">
-                                                     <a onclick="return confirm('Are you sure you want to delete?')"  href="delete.php?module_id=<?php echo $row["module_id"] ?>"
+                                                    <a onclick="return confirm('Are you sure you want to delete?')"
+                                                        href="delete.php?module_id=<?php echo $row["module_id"] ?>"
                                                         class="btn btn-outline-danger m-1">Delete</a>
                                                 </td>
 
