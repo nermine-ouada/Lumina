@@ -21,37 +21,43 @@ $row = $req->fetch();
             <h5 class="card-title fw-semibold mb-4">Add new admin</h5>
             <div class="card-body">
                 <form action="update.php" method="post">
-                    <div class="row">
-                        <input required type="text" class="form-control" name="admin_id" style="visibility:hidden"
+                        <input required type="hidden" class="form-control" name="admin_id"
                             value="<?php echo $row['admin_id'] ?>">
+                    <div class="row">
 
                         <div class="mb-3 w-50">
                             <label class="form-label">First name</label>
                             <input required type="text" class="form-control" name="first_name"
                                 value="<?php echo $row['first_name'] ?>">
-                                <div class="form-text">Enter your first name</div>
+                            <div class="form-text">Enter your first name</div>
 
                         </div>
                         <div class="mb-3 w-50">
                             <label class="form-label">Last name</label>
                             <input required type="text" class="form-control" name="last_name"
                                 value="<?php echo $row['last_name'] ?>">
-                                <div class="form-text">Enter your last name</div>
+                            <div class="form-text">Enter your last name</div>
 
                         </div>
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label">Email address</label>
-                        <input required type="email" class="form-control" name="email" value="<?php echo $row['email'] ?>">
-                        <div class="form-text">Enter your email address with the '@' symbol included</div>
+                        <input required type="email" class="form-control" name="email"
+                            value="<?php echo $row['email'] ?>" readonly>
 
                     </div>
-                    <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label">Password</label>
-                        <input required type="password" class="form-control" name="password"
-                            value="<?php echo $row['password'] ?>">
-                            <div class="form-text">Create a password   
+                    <div class="row">
+                        <div class="mb-3 w-50">
+                            <label for="exampleInputPassword1" class="form-label">Password</label>
+                            <input required type="password" class="form-control" name="password"
+                                value="<?php echo $row['password'] ?>">
+                            <div class="form-text">Create a password
                             </div>
+                        </div>
+                        <div class="mb-3 w-50">
+                            <label class="form-label">Confirm assword</label>
+                            <input required type="password" class="form-control" name="password" id="confirmPassword">
+                        </div>
                     </div>
                     <div class="row">
                         <div class="mb-3 w-50">
@@ -72,15 +78,20 @@ $row = $req->fetch();
                     <div class="mb-3">
                         <label class="form-label">Poste</label>
                         <select name="poste" class="form-control">
-        <option value="" <?php if($row['poste'] == "") echo "selected"; ?>></option>
-        <option value="Manager" <?php if($row['poste'] == "Manager") echo "selected"; ?>>Manager</option>
-        <option value="HR" <?php if($row['poste'] == "HR") echo "selected"; ?>>HR</option>
-        <!-- Ajoutez d'autres options au besoin -->
-    </select>
-                        <div  class="form-text">Choose your job title from the list.</div>
+                            <option value="" <?php if ($row['poste'] == "")
+                                echo "selected"; ?>></option>
+                            <option value="Manager" <?php if ($row['poste'] == "Manager")
+                                echo "selected"; ?>>Manager
+                            </option>
+                            <option value="HR" <?php if ($row['poste'] == "HR")
+                                echo "selected"; ?>>HR</option>
+                            <!-- Ajoutez d'autres options au besoin -->
+                        </select>
+                        <div class="form-text">Choose your job title from the list.</div>
 
                     </div>
-                    <button  onclick="return confirm('Are you sure you want to update?')"  type="submit" class="btn btn-primary">Submit</button>
+                    <button onclick="return confirm('Are you sure you want to update?')" type="submit"
+                        class="btn btn-primary">Submit</button>
                 </form>
             </div>
         </div>

@@ -26,36 +26,37 @@ include ('../layouts/header.php');
                     </div>
                     <div class="row">
                         <div class="mb-3 w-50">
-                            <label class="form-label">Password</label>
-                            <input required type="password" class="form-control" name="password">
-                            <div class="form-text">Create a password   
-                            </div>
-                        </div>
-                        <div class="mb-3 w-50">
                             <label class="form-label">Email address</label>
                             <input required type="email" class="form-control" name="email">
                             <div class="form-text">Enter your email address with the '@' symbol included</div>
                         </div>
-                    </div>
-                    <div class="row">
                         <div class="mb-3 w-50">
                             <label class="form-label">Phone number</label>
                             <input required type="tel" class="form-control" name="tel" aria-describedby="emailHelp">
                             <div class="form-text">Enter only your phone number +216 ** *** ***
                             </div>
                         </div>
+                    </div>
+                    <div class="row">
+                        <div class="mb-3 w-50">
+                            <label class="form-label">Password</label>
+                            <input required type="password" class="form-control" name="password">
+                            <div class="form-text">Create a password
+                            </div>
+                        </div>
+                        <div class="mb-3 w-50">
+                            <label class="form-label">Confirm assword</label>
+                            <input required type="password" class="form-control" name="password" id="confirmPassword">
+                        </div>
+
+                    </div>
+
+                    <div class="row">
                         <div class="mb-3 w-50">
                             <label class="form-label">CIN</label>
                             <input required type="text" class="form-control" name="cin" aria-describedby="emailHelp">
                             <div class="form-text">Enter your 8 digit CIN number.
                             </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="mb-3 w-50">
-                            <label class="form-label">Rib</label>
-                            <input required type="text" class="form-control" name="rib">
-                            <div class="form-text">Enter your bank account number (RIB)</div>
                         </div>
                         <div class="mb-3 w-50">
                             <label class="form-label">specialite</label>
@@ -69,19 +70,25 @@ include ('../layouts/header.php');
                             <div class="form-text">Select your speciality</div>
                         </div>
                     </div>
-
-                    <div class="mb-3">
-                        <label class="form-label">Banque</label>
-                        <Select name="banque" class="form-control">
-                            <option value="STB">STB</option>
-                            <option value="ATB">ATB</option>
-                            <option value="BNA">BNA</option>
-                            <option value="Zitouna">Zitouna</option>
-                            <option value="Amen">Amen</option>
-                            <option value="Wifek">Wifek</option>
-                            <option value="BH">BH</option>
-                        </Select>
-                        <div class="form-text">Pick your bank from the list</div>
+                    <div class="row">
+                        <div class="mb-3 w-50">
+                            <label class="form-label">Banque</label>
+                            <Select name="banque" class="form-control">
+                                <option value="STB">STB</option>
+                                <option value="ATB">ATB</option>
+                                <option value="BNA">BNA</option>
+                                <option value="Zitouna">Zitouna</option>
+                                <option value="Amen">Amen</option>
+                                <option value="Wifek">Wifek</option>
+                                <option value="BH">BH</option>
+                            </Select>
+                            <div class="form-text">Pick your bank from the list</div>
+                        </div>
+                        <div class="mb-3 w-50">
+                            <label class="form-label">Rib</label>
+                            <input required type="text" class="form-control" name="rib">
+                            <div class="form-text">Enter your bank account number (RIB)</div>
+                        </div>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>

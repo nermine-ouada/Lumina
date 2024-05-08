@@ -66,7 +66,6 @@ require '../../../config.php';
 
                             </Select>
                             <div class="form-text">Please select the desired formation from the options provided.</div>
-
                         </div>
 
                         <?php
@@ -87,9 +86,6 @@ require '../../../config.php';
                             <option value="nopromo">
                                 No discount </option>
 
-                            <div class="mb-3">
-                                <label class="form-label">Promotion</label>
-                                <Select name="promotion_id" class="form-control">
                                     <?php
                                     $req = $conn->prepare("select * from promotion");
                                     $req->execute();
