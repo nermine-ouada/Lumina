@@ -29,7 +29,7 @@ include ('../../../config.php');
                                 $req->execute();
                                 while ($row = $req->fetch()) {
                                     ?>
-                                    <option value="<?php echo $row['title']; ?>">
+                                    <option value="<?php echo $row['formation_id']; ?>">
                                         <?php echo $row['title']; ?>
                                     </option>
                                     <?php
