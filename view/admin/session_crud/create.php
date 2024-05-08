@@ -24,7 +24,8 @@ require '../../../config.php';
                     <div class="row">
                         <div class="mb-3 w-50">
                             <label class="form-label">Start_Date</label>
-                            <input required type="datetime-local" class="form-control" name="start_date" id="start_date">
+                            <input required type="datetime-local" class="form-control" name="start_date"
+                                id="start_date">
                             <div class="form-text">Please select the start date.</div>
 
                         </div>
@@ -42,7 +43,7 @@ require '../../../config.php';
                             <option value="Intermediate">Intermediate</option>
                             <option value="Advanced">Advanced</option>
                         </select>
-                        <div class="form-text">Please select your  level from the options provided.</div>
+                        <div class="form-text">Please select your level from the options provided.</div>
                     </div>
 
                     <?php if (!isset($_GET["formation_id"])) { ?>
@@ -69,49 +70,49 @@ require '../../../config.php';
                         </div>
 
                         <?php
+                    } else {
+                        $req = $conn->prepare("select * from formation where formation_id=?");
+                        $req->execute([$_GET["formation_id"]]);
+                        $row = $req->fetch(); ?>
+                        <div class="mb-3">
+                            <label class="form-label">Formation</label>
+                            <input required class="form-control" value="<?php echo $row['title']; ?>" readonly>
+                            <input required name="formation_id" value="<?php echo $_GET["formation_id"] ?>" hidden>
+                        </div>
+                        <?php
                     } ?>
                     <div class="mb-3">
                         <label class="form-label">Promotion</label>
                         <Select name="promotion_id" class="form-control">
                             <option value="nopromo">
                                 No discount </option>
-                            <?php
-                                } else {
-                                    $req = $conn->prepare("select * from formation where formation_id=?");
-                                    $req->execute([$_GET["formation_id"]]);
-                                    $row = $req->fetch(); ?>
-                                    <div class="mb-3">
-                                        <label class="form-label">Formation</label>
-                                        <input required class="form-control" value="<?php echo $row['title']; ?>" readonly>
-                                        <input required name="formation_id" value="<?php echo $_GET["formation_id"] ?>" hidden>
-                                    </div>
-                                    <?php
-                                } ?>
-                        <div class="mb-3">
-                            <label class="form-label">Promotion</label>
+
+                            <div class="mb-3">
+                                <label class="form-label">Promotion</label>
                                 <Select name="promotion_id" class="form-control">
-                                        <?php
-                                        $req = $conn->prepare("select * from promotion");
-                                        $req->execute();
-                                        while ($row = $req->fetch()) {
-                                            ?>
-                                            <option value="<?php echo $row['promotion_id']; ?>">
-                                                <?php echo $row['title']; ?>
-                                            </option>
-
-                                            <?php
-                                        }
+                                    <?php
+                                    $req = $conn->prepare("select * from promotion");
+                                    $req->execute();
+                                    while ($row = $req->fetch()) {
                                         ?>
-                                </Select>
-                                <div class="form-text">Please select the desired promotion from the options provided.</div>
+                                        <option value="<?php echo $row['promotion_id']; ?>">
+                                            <?php echo $row['title']; ?>
+                                        </option>
 
-                        </div>
-                        <div class="mb-3">
-                            <label class="form-label">Description</label>
-                            <textarea type="text" class="form-control" name="description"></textarea>
-                            <div class="form-text">Enter your description.</div>
-                        </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                                        <?php
+                                    }
+                                    ?>
+                                </Select>
+                                <div class="form-text">Please select the desired promotion from the options provided.
+                                </div>
+
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Description</label>
+                                <textarea type="text" class="form-control" name="description"></textarea>
+                                <div class="form-text">Enter your description.</div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
             </div>
         </div>
