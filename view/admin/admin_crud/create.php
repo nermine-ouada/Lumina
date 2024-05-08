@@ -18,27 +18,8 @@ include ('../layouts/header.php');
                             <input required  type="text" class="form-control" name="first_name">
                             <div class="form-text">Enter your first name</div>
                         </div>
-                        <div class="mb-3 w-50">
-                            <label class="form-label">Last name</label>
-                            
-                        <input required  type="text" class="form-control" name="last_name">
-                        <div class="form-text">Enter your last name</div>
-
-                    </div>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Email address</label>
-                        <input required  type="email" class="form-control" name="email">
-                        <div class="form-text">Enter your email address with the '@' symbol included</div>
-
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Password</label>
-                        <input required  type="password" class="form-control" name="password">
-                        <div class="form-text">Create a password   
-                            </div>
-                            <input required type="text" class="form-control" name="first_name">
-                        </div>
+                      
+                    
                         <div class="mb-3 w-50">
                             <label class="form-label">Last name</label>
                             <input required type="text" class="form-control" name="last_name">
@@ -46,7 +27,8 @@ include ('../layouts/header.php');
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Email address</label>
-                        <input required type="email" class="form-control" name="email">
+                        <input required type="email" class="form-control" name="email">                        <div class="form-text">Enter your email address with the '@' symbol included</div>
+
                     </div>
                     <div class="row">
 
