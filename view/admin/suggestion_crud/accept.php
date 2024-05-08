@@ -30,6 +30,7 @@ $row = $req->fetch();
                     <div class="mb-3">
                         <label class="form-label">Title</label>
                         <input required type="text" class="form-control" name="title" value="<?php echo $row["title"]; ?>">
+                        <div class="form-text">Enter your formation title.</div>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Category</label>
@@ -51,11 +52,14 @@ $row = $req->fetch();
                             ?>
 
                         </Select>
+                        <div class="form-text">Please select your category from the options provided.</div>
+
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Description</label>
                         <textarea type="text" class="form-control"
                             name="description"><?php echo $row["description"]; ?></textarea>
+                        <div class="form-text">Enter your description.</div>
                     </div>
 
                     <button  onclick="return confirm('Are you sure you want to proceed?')"  type="submit" class="btn btn-primary">Submit</button>

@@ -10,11 +10,13 @@ include ('../../../config.php');
 <div class="container-fluid">
     <div class="card">
         <div class="card-body">
-            <h5 class="card-title fw-semibold mb-4">Add new admin</h5>
+            <h5 class="card-title fw-semibold mb-4">Add new module</h5>
             <form action="store.php" method="post">
                 <div class="mb-3 ">
                     <label class="form-label">Module Title</label>
                     <input type="text" class="form-control" name="title">
+                    <div class="form-text">Enter your module title.</div>
+
                 </div>
                 <div class="row">
                     <?php if (!isset($_GET["formation_id"])) { ?>
@@ -34,6 +36,8 @@ include ('../../../config.php');
                                 }
                                 ?>
                             </select>
+                            <div class="form-text">Please select the desired formation from the options provided.</div>
+
                         </div><?php
                     } else {
                         $req = $conn->prepare("select * from formation where formation_id=?");
@@ -73,6 +77,8 @@ include ('../../../config.php');
                     <div class="mb-3 ">
                         <label class="form-label">Description</label>
                         <textarea required class="form-control" name="description"></textarea>
+                        <div class="form-text"> Enter your description.</div>
+
                     </div>
 
                 </div>

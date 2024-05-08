@@ -16,6 +16,7 @@ include ('../layouts/header.php');
                             <div class="mb-3 w-50">
                                 <label  class="form-label">Category name</label>
                                 <input required type="text" class="form-control" name="category_name">
+                                <div class="form-text">Enter your category name.</div>
                             </div>
                         </div>   
                          <button type="submit" class="btn btn-primary">Submit</button>

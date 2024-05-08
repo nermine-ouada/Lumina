@@ -18,6 +18,8 @@ require '../../../config.php';
                     <div class="mb-3">
                         <label class="form-label">Title</label>
                         <input required type="text" class="form-control" name="title">
+                        <div class="form-text">Enter your formation title.</div>
+
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Category</label>
@@ -36,10 +38,14 @@ require '../../../config.php';
                             ?>
 
                         </Select>
+                        <div class="form-text">Please select your category from the options provided.</div>
+
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Description</label>
                         <textarea type="text" class="form-control" name="description"></textarea>
+                        <div class="form-text">Enter your description. </div>
+
                     </div>
 
                     <button type="submit" class="btn btn-primary">Submit</button>
