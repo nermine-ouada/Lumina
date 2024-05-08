@@ -32,10 +32,16 @@ include ('../layouts/header.php');
                         <input required type="email" class="form-control" name="email">
                         <div class="form-text"> Enter your email adresse with the '@' symbol included.</div>
                     </div>
-                    <div class="mb-3">
-                        <label class="form-label">Password</label>
-                        <input required type="password" class="form-control" name="password">
-                        <div class="form-text"> Create your password.</div>
+                    <div class="row">
+                        <div class="mb-3 w-50">
+                            <label class="form-label">Password</label>
+                            <input required type="password" class="form-control" name="password">
+                            <div class="form-text"> Create your password.</div>
+                        </div>
+                        <div class="mb-3 w-50">
+                            <label class="form-label">Confirm password</label>
+                            <input required type="password" class="form-control" name="password" id="confirmPassword">
+                        </div>
                     </div>
                     <div class="row">
                         <div class="mb-3 w-50">
@@ -45,15 +51,6 @@ include ('../layouts/header.php');
 
                             </div>
                         </div>
-                        <div class="mb-3 w-50">
-                            <label class="form-label">Adresse</label>
-                            <input required type="text" class="form-control" name="address">
-                            <div class="form-text">Enter your adress correctly .</div>
-                        </div>
-
-                    </div>
-                    <div class="row">
-
                         <div class="mb-3  w-50">
                             <label class="form-label">CIN</label>
                             <input required type="text" class="form-control" name="cin" aria-describedby="emailHelp">
@@ -61,6 +58,8 @@ include ('../layouts/header.php');
                             </div>
                         </div>
 
+                    </div>
+                    <div class="row">
                         <div class="mb-3 w-50">
 
                             <label class="form-label">Profession</label>
@@ -75,6 +74,11 @@ include ('../layouts/header.php');
                             </Select>
                             <div class="form-text">Please select your profession from the options provided.</div>
 
+                        </div>
+                        <div class="mb-3 w-50">
+                            <label class="form-label">Adresse</label>
+                            <input required type="text" class="form-control" name="address">
+                            <div class="form-text">Enter your adress correctly .</div>
                         </div>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>

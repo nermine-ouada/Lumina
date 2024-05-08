@@ -1,15 +1,13 @@
-<?php
-session_start();
-
+<?php session_start();
 if (!isset($_SESSION['admin'])) {
     header("location:../auth/login.phpview/admin/layouts/message.php");
 }
 include ('../layouts/header.php');
-include ("../../../config.php");
-?>
+include
+    ("../../../config.php"); ?>
 
 <div class="container-fluid">
-<?php include ('../layouts/message.php'); ?>
+    <?php include ('../layouts/message.php'); ?>
     <div class="row">
 
         <form action="index.php" method="GET">
@@ -89,8 +87,32 @@ include ("../../../config.php");
                                                     <?php echo $row["message"] ?>
                                                 </p>
                                             </td>
+                                            <?php if ($row["home"] == "false") { ?>
+                                                    <form action="update.php" method="post">
+                                                    <td class="border-bottom-0">
+                                                        <input type="hidden" name="contact_id"
+                                                            value="<?php echo $row["contact_id"] ?>">
+                                                        <input type="hidden" name="home" value="<?php echo $row["home"] ?>">
+                                                        <button type="submit"
+                                                            onclick="return confirm('Are you sure you want to show in homepage?')"
+                                                            class="btn btn-outline-success m-1">Show</button>
+                                                    </td>
+                                                </form><?php
+                                            } else if ($row["home"] == "true") { ?>
+                                                    <form action="update.php" method="post">
+                                                    <td class="border-bottom-0">
+                                                        <input type="hidden" name="contact_id"
+                                                            value="<?php echo $row["contact_id"] ?>">
+                                                        <input type="hidden" name="home" value="<?php echo $row["home"] ?>">
+                                                        <button type="submit"
+                                                            onclick="return confirm('Are you sure you want to hide from homepage?')"
+                                                            class="btn btn-outline-warning m-1">Hide</button>
+                                                    </td>
+                                                </form><?php
+                                            } ?>
                                             <td class="border-bottom-0">
-                                                 <a onclick="return confirm('Are you sure you want to delete?')"  href="delete.php?contact_id=<?php echo $row["contact_id"] ?>"
+                                                <a onclick="return confirm('Are you sure you want to delete?')"
+                                                    href="delete.php?contact_id=<?php echo $row["contact_id"] ?>"
                                                     class="btn btn-outline-danger m-1">Delete</a>
                                             </td>
 
@@ -132,9 +154,32 @@ include ("../../../config.php");
                                                     <?php echo $row["message"] ?>
                                                     </p>
                                                 </td>
-
+                                            <?php if ($row["home"] == "false") { ?>
+                                                    <form action="update.php" method="post">
+                                                        <td class="border-bottom-0">
+                                                            <input type="hidden" name="contact_id"
+                                                                value="<?php echo $row["contact_id"] ?>">
+                                                            <input type="hidden" name="home" value="<?php echo $row["home"] ?>">
+                                                            <button type="submit"
+                                                                onclick="return confirm('Are you sure you want to show in homepage?')"
+                                                                class="btn btn-outline-success m-1">Show</button>
+                                                        </td>
+                                                    </form><?php
+                                            } else if ($row["home"] == "true") { ?>
+                                                    <form action="update.php" method="post">
+                                                        <td class="border-bottom-0">
+                                                            <input type="hidden" name="contact_id"
+                                                                value="<?php echo $row["contact_id"] ?>">
+                                                            <input type="hidden" name="home" value="<?php echo $row["home"] ?>">
+                                                            <button type="submit"
+                                                                onclick="return confirm('Are you sure you want to hide from homepage?')"
+                                                                class="btn btn-outline-warning m-1">Hide</button>
+                                                        </td>
+                                                    </form><?php
+                                            } ?>
                                                 <td class="border-bottom-0">
-                                                    <a onclick="return confirm('Are you sure you want to delete?')" href="delete.php?contact_id=<?php echo $row["contact_id"] ?>"
+                                                    <a onclick="return confirm('Are you sure you want to delete?')"
+                                                        href="delete.php?contact_id=<?php echo $row["contact_id"] ?>"
                                                         class="btn btn-outline-danger m-1">Delete</a>
                                                 </td>
                                             </tr>
