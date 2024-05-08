@@ -15,6 +15,28 @@ include ('../layouts/header.php');
                     <div class="row">
                         <div class="mb-3 w-50">
                             <label class="form-label">First name</label>
+                            <input required  type="text" class="form-control" name="first_name">
+                            <div class="form-text">Enter your first name</div>
+                        </div>
+                        <div class="mb-3 w-50">
+                            <label class="form-label">Last name</label>
+                            
+                        <input required  type="text" class="form-control" name="last_name">
+                        <div class="form-text">Enter your last name</div>
+
+                    </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Email address</label>
+                        <input required  type="email" class="form-control" name="email">
+                        <div class="form-text">Enter your email address with the '@' symbol included</div>
+
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Password</label>
+                        <input required  type="password" class="form-control" name="password">
+                        <div class="form-text">Create a password   
+                            </div>
                             <input required type="text" class="form-control" name="first_name">
                         </div>
                         <div class="mb-3 w-50">
@@ -61,6 +83,7 @@ include ('../layouts/header.php');
                             <option value="Manager">Manager</option>
                             <option value="HR">HR</option>
                         </Select>
+                        <div  class="form-text">Choose your job title from the list.</div>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>

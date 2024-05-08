@@ -16,20 +16,24 @@ include ('../layouts/header.php');
                         <div class="mb-3 ">
                             <label class="form-label">Title</label>
                             <input required type="text" class="form-control" name="title">
+                            <div class="form-text">Enter the title</div>
                         </div>
                     </div>
                     
                     <div class="row">
-                        <div class="mb-3 ">
-                            <label class="form-label">Taux Reduction</label>
-                            <input required type="text" class="form-control" name="taux_reduction">
-                        </div>
+                    <div class="mb-3">
+    <label class="form-label">Taux de Réduction</label>
+    <input required type="text" class="form-control" name="taux_reduction" value="(%)">
+    <div class="form-text">Enter the percentage of reduction(%)</div>
+</div>
+
                         
                     </div>
                <div class="row">
                         <div class="mb-3 ">
                             <label class="form-label">Description</label>
                             <textarea required type="text" class="form-control" name="description"></textarea>
+                            <div class="form-text">Enter the description</div>
                         </div>
                         
                     </div>

@@ -2,13 +2,14 @@
 session_start();
 
 if (!isset($_SESSION['admin'])) {
-    header("location:../auth/login.php");
+    header("location:../auth/login.phpview/admin/layouts/message.php");
 }
 include ('../layouts/header.php');
 include ("../../../config.php");
 ?>
 
 <div class="container-fluid">
+<?php include ('../layouts/message.php'); ?>
     <div class="row">
         <form action="index.php" method="GET">
             <div class="d-sm-flex d-block align-items-center justify-content mb-9">
@@ -111,7 +112,6 @@ include ("../../../config.php");
                                                     <?php echo $row["banque"] ?>
                                                 </p>
                                             </td>
-
 
                                             <td class="border-bottom-0">
                                                 <a href="edit.php?formateur_id=<?php echo $row["formateur_id"] ?>"

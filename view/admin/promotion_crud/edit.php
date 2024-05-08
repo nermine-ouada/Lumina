@@ -29,6 +29,8 @@ $row = $req->fetch();
                                 <label  class="form-label">Title</label>
                                 <input required type="text" class="form-control" name="title"
                                     value="<?php echo $row['title'] ?>">
+                                    <div class="form-text">Enter the title</div>
+
                             </div>
                             
                         </div>
@@ -36,7 +38,9 @@ $row = $req->fetch();
                             <div class="mb-3 ">
                             <label   class="form-label">Taux_Reduction</label>
                             <input required type="text" class="form-control" name="taux_reduction"
-                                value="<?php echo $row['taux_reduction'] ?>">
+                                value="<?php echo $row['taux_reduction'] ?>(%)">
+                                <div class="form-text">Enter the percentage of reduction(%)</div>
+
                         </div>
                         
                         
@@ -45,6 +49,8 @@ $row = $req->fetch();
                            <div class="mb-3 ">
                                 <label  class="form-label">Description</label>
                                 <textarea required type="text" class="form-control" name="description"><?php echo $row['description']; ?></textarea>
+                                <div class="form-text">Enter the description</div>
+
                             </div>
                         </div>
                       

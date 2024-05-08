@@ -11,7 +11,7 @@ $req = $conn->prepare(
     'UPDATE session SET title=?, description=?, start_date=?,end_date=?,niveau=?,formation_id=?,promotion_id=?,updated_at=? WHERE session_id=?'
 );
 $currentDateTime = date("Y-m-d H:i:s");
-$req->execute([
+$success=$req->execute([
     $_POST['title'],
     $_POST['description'],
     $_POST['start_date'],
@@ -22,7 +22,11 @@ $req->execute([
     $currentDateTime,
     $_POST['session_id']
 ]);
-
+if ($success) {
+    $_SESSION['successUpdate'] = "Record updated successfully.";
+} else {
+    $_SESSION['errorUpdate'] = "Failed to update record.";
+}
 
 header('location:index.php');
 

@@ -10,7 +10,7 @@ $req = $conn->prepare(
     'update module set title=?,description=?,formation_id=?,volume_cours=?,volume_tp=?,volume_td=?, updated_at=? where module_id=?'
 );
 $currentDateTime = date("Y-m-d H:i:s");
-$req->execute([
+$success=$req->execute([
 
 
 
@@ -24,7 +24,11 @@ $req->execute([
 
 
 ]);
-
+if ($success) {
+    $_SESSION['successUpdate'] = "Record updated successfully.";
+} else {
+    $_SESSION['errorUpdate'] = "Failed to update record.";
+}
 header('location:index.php');
 
 ?>
