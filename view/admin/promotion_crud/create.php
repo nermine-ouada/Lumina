@@ -15,12 +15,13 @@ include ('../layouts/header.php');
                     <div class="row">
                         <div class="mb-3 ">
                             <label class="form-label">Title</label>
-                            <input required type="text" class="form-control" name="title">
-                            <div class="form-text">Enter the title</div>
+                            <input required type="text" class="form-control" name="title" placeholder="Enter the title">
+                           
                         </div>
                     </div>
 
                     <div class="row">
+
                         <div class="mb-3">
                             <label class="form-label">Taux de Réduction</label>
                             <input required type="text" class="form-control" name="taux_reduction" >
@@ -32,8 +33,8 @@ include ('../layouts/header.php');
                     <div class="row">
                         <div class="mb-3 ">
                             <label class="form-label">Description</label>
-                            <textarea required type="text" class="form-control" name="description"></textarea>
-                            <div class="form-text">Enter the description</div>
+                            <textarea required type="text" class="form-control" name="description" placeholder="Enter the description" ></textarea>
+                            
                         </div>
 
                     </div>

@@ -15,13 +15,13 @@ include ('../layouts/header.php');
                     <div class="row">
                         <div class="mb-3 w-50">
                             <label class="form-label">First name</label>
-                            <input required type="text" class="form-control" name="first_name">
-                            <div class="form-text">Enter your first name</div>
+                            <input required type="text" class="form-control" name="first_name" placeholder="Enter your first name">
+                            
                         </div>
                         <div class="mb-3 w-50">
                             <label class="form-label">Last name</label>
-                            <input required type="text" class="form-control" name="last_name">
-                            <div class="form-text">Enter your last name</div>
+                            <input required type="text" class="form-control" name="last_name" placeholder="Enter your last name">
+                           
                         </div>
                     </div>
                     <div class="row">
@@ -40,13 +40,13 @@ include ('../layouts/header.php');
                     <div class="row">
                         <div class="mb-3 w-50">
                             <label class="form-label">Password</label>
-                            <input required type="password" class="form-control" name="password" id="password">
+                            <input required type="password" class="form-control" name="password" id="password" placeholder="Enter your password">
                             <div class="form-text">Create a password
                             </div>
                         </div>
                         <div class="mb-3 w-50">
-                            <label class="form-label">Confirm assword</label>
-                            <input required type="password" class="form-control" name="password" id="confirmPassword">
+                            <label class="form-label">Confirm password</label>
+                            <input required type="password" class="form-control" name="password" id="confirmPassword" placeholder="Confirm Password">
                         </div>
 
                     </div>
@@ -60,8 +60,8 @@ include ('../layouts/header.php');
                         </div>
                         <div class="mb-3 w-50">
                             <label class="form-label">specialite</label>
-                            <Select name="specialite" class="form-control">
-                                <option value=""></option>
+                            <Select name="specialite" class="form-control" >
+                                <option value=" " selected ></option>
                                 <option value="Mathematique">Mathematique</option>
                                 <option value="Digital Marketing">Digital Marketing</option>
                                 <option value="FrontEnd Web Developpement">FrontEnd Web Developpement</option>
@@ -74,7 +74,8 @@ include ('../layouts/header.php');
                         <div class="mb-3 w-50">
                             <label class="form-label">Banque</label>
                             <Select name="banque" class="form-control">
-                                <option value="STB">STB</option>
+                            <option value=" " selected ></option>
+                                <option value="STB"  >STB</option>
                                 <option value="ATB">ATB</option>
                                 <option value="BNA">BNA</option>
                                 <option value="Zitouna">Zitouna</option>
