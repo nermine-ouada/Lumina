@@ -11,7 +11,7 @@ include ('../layouts/header.php');
         <div class="card-body">
             <h5 class="card-title fw-semibold mb-4">Add new admin</h5>
             <div class="card-body">
-                <form action="store.php" onsubmit="return onSubmitForm();" method="post">
+                <form action="store.php" onsubmit="return onSubmitForm()" method="post">
                     <div class="row">
                         <div class="mb-3 w-50">
                             <label class="form-label">First name</label>
