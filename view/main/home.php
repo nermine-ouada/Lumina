@@ -63,26 +63,57 @@ include ("../../config.php"); ?>
         <div class="row g-5">
             <div class="col-sm-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.1s">
                 <i class="fa fa-users fa-3x text-white mb-3"></i>
-                <h1 class="display-4 text-white" data-toggle="counter-up">1234</h1>
-                <span class="fs-5 text-white">Happy Clients</span>
+                <h1 class="display-4 text-white" data-toggle="counter-up">
+                    <?php
+                    $sql = 'select count(*) as nb from formateur ';
+
+                    $req = $conn->prepare($sql);
+                    $req->execute();
+                    $row = $req->fetch();
+                    echo $row["nb"];
+                    ?>
+                </h1> <span class="fs-5 text-white">Trainers</span>
                 <hr class="bg-white w-25 mx-auto mb-0">
             </div>
             <div class="col-sm-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.3s">
                 <i class="fa fa-check fa-3x text-white mb-3"></i>
-                <h1 class="display-4 text-white" data-toggle="counter-up">1234</h1>
-                <span class="fs-5 text-white">Projects Completed</span>
+                <h1 class="display-4 text-white" data-toggle="counter-up"><?php
+                $sql = 'select count(*) as nb from participant ';
+
+                $req = $conn->prepare($sql);
+                $req->execute();
+                $row = $req->fetch();
+                echo $row["nb"];
+                ?></h1>
+                <span class="fs-5 text-white">Participants</span>
                 <hr class="bg-white w-25 mx-auto mb-0">
             </div>
             <div class="col-sm-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.5s">
                 <i class="fa fa-users-cog fa-3x text-white mb-3"></i>
-                <h1 class="display-4 text-white" data-toggle="counter-up">1234</h1>
-                <span class="fs-5 text-white">Dedicated Staff</span>
+                <h1 class="display-4 text-white" data-toggle="counter-up">
+                    <?php
+                    $sql = 'select count(*) as nb from participant ';
+
+                    $req = $conn->prepare($sql);
+                    $req->execute();
+                    $row = $req->fetch();
+                    echo $row["nb"];
+                    ?>
+                </h1> <span class="fs-5 text-white">Sessions</span>
                 <hr class="bg-white w-25 mx-auto mb-0">
             </div>
             <div class="col-sm-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.7s">
                 <i class="fa fa-award fa-3x text-white mb-3"></i>
-                <h1 class="display-4 text-white" data-toggle="counter-up">1234</h1>
-                <span class="fs-5 text-white">Awards Achieved</span>
+                <h1 class="display-4 text-white" data-toggle="counter-up">
+                    <?php
+                    $sql = 'select count(*) as nb from formation ';
+
+                    $req = $conn->prepare($sql);
+                    $req->execute();
+                    $row = $req->fetch();
+                    echo $row["nb"];
+                    ?>
+                </h1> <span class="fs-5 text-white">Trainings</span>
                 <hr class="bg-white w-25 mx-auto mb-0">
             </div>
         </div>
@@ -98,10 +129,10 @@ include ("../../config.php"); ?>
             <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                 <p class="d-inline-block border rounded text-primary fw-semi-bold py-1 px-3">Why Choosing Us!</p>
                 <h1 class="display-5 mb-4">Few Reasons Why People Choosing Us!</h1>
-                <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et
-                    eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet
+                <p class="mb-4">Choose our training school for expert-led programs tailored to your needs. With
+                    experienced instructors, modern facilities, and flexible scheduling, we offer practical skills and
+                    personalized support to help you succeed in your career goals.
                 </p>
-                <a class="btn btn-primary py-3 px-5" href="">Explore More</a>
             </div>
             <div class="col-lg-6">
                 <div class="row g-4 align-items-center">
@@ -379,10 +410,12 @@ include ("../../config.php"); ?>
             $req = $conn->prepare($sql);
             $req->execute();
             if ($req->rowCount() == 0) {
-                ?><div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.3s">
+                ?>
+                <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.3s">
 
-                <p class="d-inline-block border rounded text-primary fw-semi-bold">No testimony</p></div>
-                
+                    <p class="d-inline-block border rounded text-primary fw-semi-bold">No testimony</p>
+                </div>
+
             <?php } else {
                 while ($row = $req->fetch()) { ?>
                     <div class="testimonial-item">
