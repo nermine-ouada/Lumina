@@ -11,7 +11,7 @@ include ('../layouts/header.php');
         <div class="card-body">
             <h5 class="card-title fw-semibold mb-4">Add new Trainer</h5>
             <div class="card-body">
-                <form action="store.php" method="post">
+                <form action="store.php"onsubmit="return onSubmitForm();" method="post">
                     <div class="row">
                         <div class="mb-3 w-50">
                             <label class="form-label">First name</label>
@@ -40,7 +40,7 @@ include ('../layouts/header.php');
                     <div class="row">
                         <div class="mb-3 w-50">
                             <label class="form-label">Password</label>
-                            <input required type="password" class="form-control" name="password">
+                            <input required type="password" class="form-control" name="password" id="password">
                             <div class="form-text">Create a password
                             </div>
                         </div>
@@ -54,7 +54,7 @@ include ('../layouts/header.php');
                     <div class="row">
                         <div class="mb-3 w-50">
                             <label class="form-label">CIN</label>
-                            <input required type="text" class="form-control" name="cin" aria-describedby="emailHelp">
+                            <input required type="text" class="form-control" name="cin" aria-describedby="emailHelp"  id="cin">
                             <div class="form-text">Enter your 8 digit CIN number.
                             </div>
                         </div>
@@ -86,7 +86,7 @@ include ('../layouts/header.php');
                         </div>
                         <div class="mb-3 w-50">
                             <label class="form-label">Rib</label>
-                            <input required type="text" class="form-control" name="rib">
+                            <input required type="text" class="form-control" name="rib"  id="rib">
                             <div class="form-text">Enter your bank account number (RIB)</div>
                         </div>
                     </div>
