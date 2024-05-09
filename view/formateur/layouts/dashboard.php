@@ -10,8 +10,7 @@ include ('../../../config.php');
 ?>
 
 <div class="container-fluid">
-    <!--  Row 1 -->
-
+    <?php include ('message.php'); ?>
     <div class="row">
         <div class=" d-flex align-items-stretch">
             <div class="card w-100">
@@ -27,7 +26,7 @@ include ('../../../config.php');
                                         <h6 class="fw-semibold mb-0">My tables</h6>
                                     </th>
                                     <th class="border-bottom-0">
-                                        <h6 class="fw-semibold mb-0">Admin</h6>
+                                        <h6 class="fw-semibold mb-0">Demandes</h6>
                                     </th>
                                     <th class="border-bottom-0">
                                         <h6 class="fw-semibold mb-0">Trainer</h6>
@@ -36,7 +35,7 @@ include ('../../../config.php');
                                         <h6 class="fw-semibold mb-0">Participant</h6>
                                     </th>
                                     <th class="border-bottom-0">
-                                        <h6 class="fw-semibold mb-0">Formation Category</h6>
+                                        <h6 class="fw-semibold mb-0">Session</h6>
                                     </th>
                                     <th class="border-bottom-0">
                                         <h6 class="fw-semibold mb-0">Formation</h6>
@@ -50,7 +49,7 @@ include ('../../../config.php');
                                     </td>
                                     <td class="border-bottom-0">
                                         <p class="mb-0 fw-normal">
-                                            <?php $sql = "SELECT count(*) as nb from admin";
+                                            <?php $sql = "SELECT count(*) as nb from formation_suggestion";
                                             $req = $conn->prepare($sql);
                                             $req->execute();
                                             $row = $req->fetch();
@@ -77,7 +76,7 @@ include ('../../../config.php');
                                     </td>
                                     <td class="border-bottom-0">
                                         <p class="mb-0 fw-normal">
-                                            <?php $sql = "SELECT count(*) as nb from formation_category";
+                                            <?php $sql = "SELECT count(*) as nb from session";
                                             $req = $conn->prepare($sql);
                                             $req->execute();
                                             $row = $req->fetch();
