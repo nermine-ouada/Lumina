@@ -15,14 +15,14 @@ include ('../layouts/header.php');
                     <div class="row">
                         <div class="mb-3 w-50">
                             <label class="form-label">First name</label>
-                            <input required type="text" class="form-control" name="first_name">
-                            <div class="form-text">Enter your first name</div>
+                            <input required type="text" class="form-control" name="first_name" placeholder="Enter your first name">
+                           
                         </div>
 
 
                         <div class="mb-3 w-50">
                             <label class="form-label">Last name</label>
-                            <input required type="text" class="form-control" name="last_name">
+                            <input required type="text" class="form-control" name="last_name" placeholder="Enter your last name">
                         </div>
                     </div>
                     <div class="mb-3">
@@ -35,11 +35,11 @@ include ('../layouts/header.php');
 
                         <div class="mb-3 w-50">
                             <label class="form-label">Password</label>
-                            <input required type="password" class="form-control" name="password" id="password">
+                            <input required type="password" class="form-control" name="password" id="password" placeholder="Enter your password">
                         </div>
                         <div class="mb-3 w-50">
                             <label class="form-label">Confirm assword</label>
-                            <input required type="password" class="form-control" name="password" id="confirmPassword">
+                            <input required type="password" class="form-control" name="password" id="confirmPassword" placeholder="Confirm password">
                         </div>
                     </div>
 
