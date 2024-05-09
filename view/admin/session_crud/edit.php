@@ -106,5 +106,26 @@ $row = $req->fetch();
     </div>
 </div>
 
+<script>
+ function validateDates() {
+        var startDate = new Date(document.getElementById("start_date").value);
+        var endDate = new Date(document.getElementById("end_date").value);
+        var errorMessage = "";
 
+        if (endDate <= startDate) {
+            errorMessage = "End date must be after start date.";
+        }
+        return errorMessage;
+    }
+    function onSubmitForm() {
+        var errorMessage =validateDates();
+
+        if (errorMessage) {
+            alert(errorMessage);
+            return false;
+        } else {
+            return true;
+        }
+    }
+</script>
 <?php include ('../layouts/footer.php'); ?>

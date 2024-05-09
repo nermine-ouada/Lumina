@@ -75,4 +75,54 @@ include ('../layouts/header.php');
 
     </div>
 </div>
+<script>
+    function validatePassword() {
+        var password = document.getElementById("password").value;
+        var confirmPassword = document.getElementById("confirmPassword").value;
+        var errorMessage = "";
+
+        if (password !== confirmPassword) {
+            errorMessage += "Passwords do not match.\n";
+            confirmPassword.value = "";
+        }
+        if (password.length < 8) {
+            password.value = "";
+            errorMessage += "Password must be 8 characters or less.\n";
+        }
+        return errorMessage;
+    }
+
+    function validatePhoneNumber() {
+        var phoneNumber = document.getElementById("tel").value;
+        var errorMessage = "";
+
+        if (phoneNumber.length !== 8) {
+            phoneNumber.value="";
+            errorMessage += "Please enter a valid phone number.\n";
+        }
+        return errorMessage;
+    }
+
+    function validateCIN() {
+        var cin = document.getElementById("cin").value;
+        var errorMessage = "";
+
+        if (cin.length !== 8) {
+            cin.value="";
+            errorMessage += "Please enter a valid 8-digit CIN number.\n";
+        }
+        return errorMessage;
+    }
+ 
+    function onSubmitForm() {
+        var errorMessage = validatePassword() + validatePhoneNumber() + validateCIN();
+
+        if (errorMessage) {
+            alert(errorMessage);
+            return false;
+        } else {
+            return true;
+        }
+    }
+</script>
 <?php include ('../layouts/footer.php'); ?>
