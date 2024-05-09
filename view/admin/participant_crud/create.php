@@ -12,7 +12,7 @@ include ('../layouts/header.php');
         <div class="card-body">
             <h5 class="card-title fw-semibold mb-4">Add new participant</h5>
             <div class="card-body">
-                <form action="store.php"onsubmit="return onSubmitForm();" method="post">
+                <form action="store.php"onsubmit="return onSubmitForm()" method="post">
 
                     <div class="row">
                         <div class="mb-3 w-50">
@@ -88,5 +88,64 @@ include ('../layouts/header.php');
 
         </div>
     </div>
+<script>
+    function validatePassword() {
+        var password = document.getElementById("password").value;
+        var confirmPassword = document.getElementById("confirmPassword").value;
+        var errorMessage = "";
 
+        if (password !== confirmPassword) {
+            errorMessage += "Passwords do not match.\n";
+            confirmPassword.value = "";
+        }
+        if (password.length < 8) {
+            password.value = "";
+            errorMessage += "Password must be 8 characters or less.\n";
+        }
+        return errorMessage;
+    }
+
+    function validatePhoneNumber() {
+        var phoneNumber = document.getElementById("tel").value;
+        var errorMessage = "";
+
+        if (phoneNumber.length !== 8) {
+            phoneNumber.value="";
+            errorMessage += "Please enter a valid phone number.\n";
+        }
+        return errorMessage;
+    }
+
+    function validateRib() {
+        var rib = document.getElementById("rib").value;
+        var errorMessage = "";
+
+        if (rib.length !== 24) {
+            rib.value="";
+            errorMessage += "Please enter a valid rib.\n";
+        }
+        return errorMessage;
+    }
+    function validateCIN() {
+        var cin = document.getElementById("cin").value;
+        var errorMessage = "";
+
+        if (cin.length !== 8) {
+            cin.value="";
+            errorMessage += "Please enter a valid 8-digit CIN number.\n";
+        }
+        return errorMessage;
+    }
+   
+    function onSubmitForm() {
+        var errorMessage = validatePassword() + validatePhoneNumber() + validateCIN() + validateRib();
+
+        if (errorMessage) {
+            alert(errorMessage);
+            return false;
+        } else {
+            return true;
+        }
+    }
+</script>
     <?php include ('../layouts/footer.php'); ?>

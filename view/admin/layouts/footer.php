@@ -1,6 +1,6 @@
 </div>
 </div>
-<script>
+<!-- <script>
     function validatePassword() {
         var password = document.getElementById("password").value;
         var confirmPassword = document.getElementById("confirmPassword").value;
@@ -68,7 +68,7 @@
             return true;
         }
     }
-</script>
+</script> -->
 
 
 <script src="../../../assets/dashboard/libs/jquery/dist/jquery.min.js"></script>

@@ -14,7 +14,7 @@ require '../../../config.php';
         <div class="card-body">
             <h5 class="card-title fw-semibold mb-4">Add new session</h5>
             <div class="card-body">
-                <form action="store.php" onsubmit="return onSubmitForm();" method="post">
+                <form action="store.php" onsubmit="return onSubmitForm()" method="post">
                     <div class="mb-3">
                         <label class="form-label">Title</label>
                         <input required type="text" class="form-control" name="title">
@@ -83,9 +83,6 @@ require '../../../config.php';
                     <div class="mb-3">
                         <label class="form-label">Promotion</label>
                         <Select name="promotion_id" class="form-control">
-                            <option value="nopromo">
-                                No discount </option>
-
                                     <?php
                                     $req = $conn->prepare("select * from promotion");
                                     $req->execute();
@@ -115,6 +112,27 @@ require '../../../config.php';
 
     </div>
 </div>
+<script>
+ function validateDates() {
+        var startDate = new Date(document.getElementById("start_date").value);
+        var endDate = new Date(document.getElementById("end_date").value);
+        var errorMessage = "";
 
+        if (endDate <= startDate) {
+            errorMessage = "End date must be after start date.";
+        }
+        return errorMessage;
+    }
+    function onSubmitForm() {
+        var errorMessage =validateDates();
+
+        if (errorMessage) {
+            alert(errorMessage);
+            return false;
+        } else {
+            return true;
+        }
+    }
+</script>
 
 <?php include ('../layouts/footer.php'); ?>
