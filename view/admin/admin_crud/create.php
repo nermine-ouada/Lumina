@@ -11,7 +11,7 @@ include ('../layouts/header.php');
         <div class="card-body">
             <h5 class="card-title fw-semibold mb-4">Add new admin</h5>
             <div class="card-body">
-                <form action="store.php" onsubmit="return onSubmitForm()" method="post">
+                <form action="store.php" onsubmit="return onSubmitForm();" method="post">
                     <div class="row">
                         <div class="mb-3 w-50">
                             <label class="form-label">First name</label>
@@ -47,7 +47,7 @@ include ('../layouts/header.php');
                         <div class="mb-3 w-50">
                             <label class="form-label">Phone number</label>
                             <input required type="tel" class="form-control" name="tel" aria-describedby="emailHelp"
-                                id="phone_number">
+                                id="tel">
                             <div class="form-text">Enter only your phone number +216 ** *** ***
                             </div>
 

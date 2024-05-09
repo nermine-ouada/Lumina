@@ -381,7 +381,8 @@ include ("../../config.php"); ?>
             if ($req->rowCount() == 0) {
                 ?><div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.3s">
 
-                <p class="d-inline-block border rounded text-primary fw-semi-bold">No testimony</p>
+                <p class="d-inline-block border rounded text-primary fw-semi-bold">No testimony</p></div>
+                
             <?php } else {
                 while ($row = $req->fetch()) { ?>
                     <div class="testimonial-item">
@@ -391,7 +392,7 @@ include ("../../config.php"); ?>
                             </div>
                             <?php echo $row["message"] ?>
                         </div>
-                        <img class="rounded-circle mb-3" src="../../assets/main/img/user.jpg" alt="">
+                        <img class="rounded-circle mb-3" src="../../assets/dashboard/images/profile/user-1.jpg" alt="">
                         <h4><?php echo $row["name"] ?></h4>
                     </div><?php
                 }

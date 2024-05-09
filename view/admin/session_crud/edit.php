@@ -20,7 +20,7 @@ $row = $req->fetch();
         <div class="card-body">
             <h5 class="card-title fw-semibold mb-4">update session</h5>
             <div class="card-body">
-                <form action="update.php" onsubmit="return validateDates();" method="post">
+                <form action="update.php" onsubmit="return onSubmitForm();" method="post">
                     <div class="row">
                         <input required type="text" class="form-control" name="session_id" style="visibility:hidden"
                             value="<?php echo $row['session_id'] ?>">
@@ -105,18 +105,6 @@ $row = $req->fetch();
         </div>
     </div>
 </div>
-<script>
-    // Function to validate end date after start date
-    function validateDates() {
-        var startDate = new Date(document.getElementById("start_date").value);
-        var endDate = new Date(document.getElementById("end_date").value);
 
-        if (endDate <= startDate) {
-            alert("End date must be after start date.");
-            return false;
-        }
-        return true;
-    }
-</script>
 
 <?php include ('../layouts/footer.php'); ?>

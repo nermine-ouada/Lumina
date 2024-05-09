@@ -4,51 +4,68 @@
     function validatePassword() {
         var password = document.getElementById("password").value;
         var confirmPassword = document.getElementById("confirmPassword").value;
-        var errorMessage = ""; // Initialize an empty string to store error messages
+        var errorMessage = "";
 
-        // Check if the passwords match
         if (password !== confirmPassword) {
             errorMessage += "Passwords do not match.\n";
+            confirmPassword.value = "";
         }
-        // Check if the password is more than 8 characters
         if (password.length > 8) {
+            password.value = "";
             errorMessage += "Password must be 8 characters or less.\n";
         }
-        return errorMessage; // Return the concatenated error message
+        return errorMessage;
     }
 
     function validatePhoneNumber() {
-        var phoneNumber = document.getElementById("phone_number").value;
-        var errorMessage = ""; // Initialize an empty string to store error messages
+        var phoneNumber = document.getElementById("tel").value;
+        var errorMessage = "";
 
-        // Check if the phone number is not empty and not equal to 10 digits
         if (phoneNumber.length !== 8) {
+            phoneNumber.value="";
             errorMessage += "Please enter a valid phone number.\n";
         }
-        return errorMessage; // Return the concatenated error message
+        return errorMessage;
     }
 
+    function validateRib() {
+        var rib = document.getElementById("rib").value;
+        var errorMessage = "";
+
+        if (rib.length !== 24) {
+            rib.value="";
+            errorMessage += "Please enter a valid rib.\n";
+        }
+        return errorMessage;
+    }
     function validateCIN() {
         var cin = document.getElementById("cin").value;
-        var errorMessage = ""; // Initialize an empty string to store error messages
+        var errorMessage = "";
 
-        // Check if the CIN is not empty and not equal to 8 digits
         if (cin.length !== 8) {
+            cin.value="";
             errorMessage += "Please enter a valid 8-digit CIN number.\n";
         }
-        return errorMessage; // Return the concatenated error message
+        return errorMessage;
     }
+    function validateDates() {
+        var startDate = new Date(document.getElementById("start_date").value);
+        var endDate = new Date(document.getElementById("end_date").value);
+        var errorMessage = "";
 
+        if (endDate <= startDate) {
+            errorMessage = "End date must be after start date.";
+        }
+        return errorMessage;
+    }
     function onSubmitForm() {
-        // Call each validation function and concatenate the error messages
-        var errorMessage = validatePassword() + validatePhoneNumber() + validateCIN();
+        var errorMessage = validatePassword() + validatePhoneNumber() + validateCIN() + validateRib() + validateDates();
 
-        // Check if the error message is not empty (indicating validation failure)
         if (errorMessage) {
-            alert(errorMessage); // Display the concatenated error message
-            return false; // Prevent form submission
+            alert(errorMessage);
+            return false;
         } else {
-            return true; // Proceed with form submission
+            return true;
         }
     }
 </script>
