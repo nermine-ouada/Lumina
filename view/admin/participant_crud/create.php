@@ -12,7 +12,7 @@ include ('../layouts/header.php');
         <div class="card-body">
             <h5 class="card-title fw-semibold mb-4">Add new participant</h5>
             <div class="card-body">
-                <form action="store.php" method="post">
+                <form action="store.php"onsubmit="return onSubmitForm();" method="post">
 
                     <div class="row">
                         <div class="mb-3 w-50">
@@ -35,7 +35,7 @@ include ('../layouts/header.php');
                     <div class="row">
                         <div class="mb-3 w-50">
                             <label class="form-label">Password</label>
-                            <input required type="password" class="form-control" name="password">
+                            <input required type="password" class="form-control" name="password"  id="password">
                             <div class="form-text"> Create your password.</div>
                         </div>
                         <div class="mb-3 w-50">
@@ -46,14 +46,14 @@ include ('../layouts/header.php');
                     <div class="row">
                         <div class="mb-3 w-50">
                             <label class="form-label">Phone number</label>
-                            <input required type="tel" class="form-control" name="tel" aria-describedby="emailHelp">
+                            <input required type="tel" class="form-control" name="tel" aria-describedby="emailHelp"  id="tel">
                             <div class="form-text">Enter only your phone number +216 ** *** ***
 
                             </div>
                         </div>
                         <div class="mb-3  w-50">
                             <label class="form-label">CIN</label>
-                            <input required type="text" class="form-control" name="cin" aria-describedby="emailHelp">
+                            <input required type="text" class="form-control" name="cin" aria-describedby="emailHelp"  id="cin">
                             <div class="form-text">Enter your 8 digit CIN number.
                             </div>
                         </div>

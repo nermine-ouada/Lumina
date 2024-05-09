@@ -20,7 +20,7 @@ $row = $req->fetch();
         <div class="card-body">
             <h5 class="card-title fw-semibold mb-4">Add new Formateur</h5>
             <div class="card-body">
-                <form action="update.php" method="post">
+                <form action="update.php"onsubmit="return onSubmitForm();" method="post">
                     <div class="row">
                         <input required type="text" class="form-control" name="formateur_id" style="visibility:hidden"
                             value="<?php echo $row['formateur_id'] ?>">
@@ -47,7 +47,7 @@ $row = $req->fetch();
                         </div>
                         <div class="mb-3 w-50">
                             <label class="form-label">Phone number</label>
-                            <input required type="tel" class="form-control" name="tel" aria-describedby="emailHelp"
+                            <input required type="tel" class="form-control" name="tel" aria-describedby="emailHelp" id="tel"
                                 value="<?php echo $row['tel'] ?>">
                             <div class="form-text">Enter only your phone number +216 ** *** ***
                             </div>
@@ -56,7 +56,7 @@ $row = $req->fetch();
                     <div class="row">
                         <div class="mb-3 w-50">
                             <label class="form-label">Password</label>
-                            <input required type="password" class="form-control" name="password"
+                            <input required type="password" class="form-control" name="password"  id="password"
                                 value="<?php echo $row['password'] ?>">
                             <div class="form-text">Create a password
                             </div>
@@ -74,7 +74,7 @@ $row = $req->fetch();
                         <div class="mb-3 w-50">
                             <label class="form-label">CIN</label>
                             <input required type="text" class="form-control" name="cin" aria-describedby="emailHelp"
-                                value="<?php echo $row['cin'] ?>">
+                                value="<?php echo $row['cin'] ?>"  id="cin">
                             <div class="form-text">Enter your 8 digit CIN number.
                             </div>
                         </div>
@@ -99,7 +99,7 @@ $row = $req->fetch();
                     <div class="row">
                         <div class="mb-3 w-50">
                             <label class="form-label">Rib</label>
-                            <input required type="text" class="form-control" name="rib"
+                            <input required type="text" class="form-control" name="rib"  id="rib"
                                 value="<?php echo $row['rib'] ?>">
                             <div class="form-text">Enter your bank account number (RIB)</div>
 

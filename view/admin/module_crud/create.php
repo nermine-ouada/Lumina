@@ -53,7 +53,7 @@ include ('../../../config.php');
                     } ?>
                     <div class="mb-3 w-50">
                         <label class="form-label">Volume TD</label>
-                        <input required type="number" class="form-control" name="volume_td" aria-describedby="emailHelp">
+                        <input required type="number" class="form-control" name="volume_td" aria-describedby="emailHelp" >
                         <div class="form-text">Enter only number.</div>
                     </div>
                 </div>
