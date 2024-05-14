@@ -23,7 +23,7 @@ session_start();
             <div class="d-flex align-items-center justify-content-center w-100">
                 <div class="row justify-content-center w-100">
                     <div class="col-md-8 col-lg-6 col-xxl-3">
-                        <?php include ('../layouts/message.php'); ?>
+                        <?php include ('message.php'); ?>
 
                         <div class="card mb-0">
                             <div class="card-body">
@@ -32,7 +32,7 @@ session_start();
                                     <img src="../../../assets/dashboard/images/logos/lumina-logo.png" width="180"
                                         alt="">
                                 </a>
-                                <p class="text-center">Log in as Trainer!</p>
+                                <p class="text-center">Log in as participant!</p>
                                 <form action="auth.php" method="post">
                                     <div class="mb-3">
                                         <label for="exampleInputEmail1" class="form-label">Email address</label>
