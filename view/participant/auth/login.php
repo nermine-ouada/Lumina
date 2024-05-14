@@ -14,8 +14,7 @@ session_start();
     <link rel="stylesheet" href="../../../assets/dashboard/css/styles.min.css" />
 </head>
 
-<body>                   
-
+<body>
     <!--  Body Wrapper -->
     <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
         data-sidebar-position="fixed" data-header-position="fixed">
@@ -23,8 +22,8 @@ session_start();
             class="position-relative overflow-hidden radial-gradient min-vh-100 d-flex align-items-center justify-content-center">
             <div class="d-flex align-items-center justify-content-center w-100">
                 <div class="row justify-content-center w-100">
-    
                     <div class="col-md-8 col-lg-6 col-xxl-3">
+                        <?php include ('../layouts/message.php'); ?>
 
                         <div class="card mb-0">
                             <div class="card-body">
@@ -33,7 +32,7 @@ session_start();
                                     <img src="../../../assets/dashboard/images/logos/lumina-logo.png" width="180"
                                         alt="">
                                 </a>
-                                <p class="text-center danger">
+                                <p class="text-center">Log in as Trainer!</p>
                                 <form action="auth.php" method="post">
                                     <div class="mb-3">
                                         <label for="exampleInputEmail1" class="form-label">Email address</label>
