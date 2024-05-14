@@ -87,6 +87,7 @@ require '../../../config.php';
                                                     href="../module_crud/create.php?formation_id=<?php echo $row["formation_id"] ?>"
                                                     class="btn btn-primary m-1">Add module</a>
                                             </td>
+                                            if count(*) from module
                                             <td class="border-bottom-0">
                                                 <a onclick="return confirm('Are you sure you want to add  <?php echo $title ?> to a new session?')"
                                                     href="../session_crud/create.php?formation_id=<?php echo $row["formation_id"] ?>"
