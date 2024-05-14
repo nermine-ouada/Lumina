@@ -52,15 +52,25 @@ require '../../../config.php';
                             <label class="form-label">Formation</label>
                             <Select name="formation_id" class="form-control">
                                 <?php
-                                $req = $conn->prepare("select * from formation");
+                                $sql = 'SELECT  title,formation_id FROM formation ';
+
+
+                                $req = $conn->prepare($sql);
                                 $req->execute();
                                 while ($row = $req->fetch()) {
-                                    ?>
-                                    <option value="<?php echo $row['formation_id']; ?>">
-                                        <?php echo $row['title']; ?>
-                                    </option>
+                                    $sql1 = 'SELECT count(*) as nb FROM module where formation_id=?';
+                                    $req2 = $conn->prepare($sql1);
+                                    $req2->execute([$row["formation_id"]]);
+                                    $nb = $req2->fetch();
+                                    if ($nb["nb"] == 0) {
+                                    } else { ?>
+                                        ?>
+                                        <option value="<?php echo $row['formation_id']; ?>">
+                                            <?php echo $row['title']; ?>
+                                        </option>
 
-                                    <?php
+                                        <?php
+                                    }
                                 }
                                 ?>
 
@@ -83,29 +93,29 @@ require '../../../config.php';
                     <div class="mb-3">
                         <label class="form-label">Promotion</label>
                         <Select name="promotion_id" class="form-control">
-                                    <?php
-                                    $req = $conn->prepare("select * from promotion");
-                                    $req->execute();
-                                    while ($row = $req->fetch()) {
-                                        ?>
-                                        <option value="<?php echo $row['promotion_id']; ?>">
-                                            <?php echo $row['title']; ?>
-                                        </option>
+                            <?php
+                            $req = $conn->prepare("select * from promotion");
+                            $req->execute();
+                            while ($row = $req->fetch()) {
+                                ?>
+                                <option value="<?php echo $row['promotion_id']; ?>">
+                                    <?php echo $row['title']; ?>
+                                </option>
 
-                                        <?php
-                                    }
-                                    ?>
-                                </Select>
-                                <div class="form-text">Please select the desired promotion from the options provided.
-                                </div>
+                                <?php
+                            }
+                            ?>
+                        </Select>
+                        <div class="form-text">Please select the desired promotion from the options provided.
+                        </div>
 
-                            </div>
-                            <div class="mb-3">
-                                <label class="form-label">Description</label>
-                                <textarea type="text" class="form-control" name="description"></textarea>
-                                <div class="form-text">Enter your description.</div>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Description</label>
+                        <textarea type="text" class="form-control" name="description"></textarea>
+                        <div class="form-text">Enter your description.</div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
             </div>
         </div>
@@ -113,7 +123,7 @@ require '../../../config.php';
     </div>
 </div>
 <script>
- function validateDates() {
+    function validateDates() {
         var startDate = new Date(document.getElementById("start_date").value);
         var endDate = new Date(document.getElementById("end_date").value);
         var errorMessage = "";
@@ -124,7 +134,7 @@ require '../../../config.php';
         return errorMessage;
     }
     function onSubmitForm() {
-        var errorMessage =validateDates();
+        var errorMessage = validateDates();
 
         if (errorMessage) {
             alert(errorMessage);

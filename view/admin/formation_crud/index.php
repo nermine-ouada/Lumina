@@ -9,7 +9,7 @@ require '../../../config.php';
 ?>
 
 <div class="container-fluid">
-<?php include ('../layouts/message.php'); ?>
+    <?php include ('../layouts/message.php'); ?>
     <div class="row">
         <form action="index.php" method="GET">
             <div class="d-sm-flex d-block align-items-center justify-content mb-9">
@@ -43,7 +43,7 @@ require '../../../config.php';
                                     <th class="border-bottom-0">
                                         <h6 class="fw-semibold mb-0">Description</h6>
                                     </th>
-                                 
+
                                     <th class="border-bottom-0">
                                     </th>
                                 </tr>
@@ -64,7 +64,12 @@ require '../../../config.php';
                                         </tr>
                                     <?php } ?>
 
-                                    <?php while ($row = $req->fetch()) { ?>
+                                    <?php while ($row = $req->fetch()) {
+                                        $sql1 = 'SELECT count(*) as nb FROM module where formation_id=?';
+                                        $req2 = $conn->prepare($sql1);
+                                        $req2->execute([$row["formation_id"]]);
+                                        $nb = $req2->fetch();
+                                        ?>
 
                                         <tr>
 
@@ -80,25 +85,34 @@ require '../../../config.php';
                                                     <?php echo $row["description"] ?>
                                                 </p>
                                             </td>
-                                            
+
 
                                             <td class="border-bottom-0">
                                                 <a onclick="return confirm('Are you sure you want to add a new module to <?php echo $title ?>?')"
                                                     href="../module_crud/create.php?formation_id=<?php echo $row["formation_id"] ?>"
                                                     class="btn btn-primary m-1">Add module</a>
                                             </td>
-                                            <td class="border-bottom-0">
-                                                <a onclick="return confirm('Are you sure you want to add  <?php echo $title ?> to a new session?')"
-                                                    href="../session_crud/create.php?formation_id=<?php echo $row["formation_id"] ?>"
-                                                    class="btn btn-outline-primary m-1">Add to a session</a>
-                                            </td>
+                                            <?php if ($nb["nb"] != 0) { ?>
 
+                                                <td class="border-bottom-0">
+                                                    <a onclick="return confirm('Are you sure you want to add  <?php echo $title ?> to a new session?')"
+                                                        href="../session_crud/create.php?formation_id=<?php echo $row["formation_id"] ?>"
+                                                        class="btn btn-outline-primary m-1">Add to a session</a>
+                                                </td>
+                                                <?php
+                                            } else { ?>
+                                                <td class="border-bottom-0">
+                                                       <a class="btn btn-outline-danger disabled m-1">Cannot add to session</a>
+                                                </td>
+                                            <?php
+                                            } ?>
                                             <td class="border-bottom-0">
                                                 <a href="edit.php?formation_id=<?php echo $row["formation_id"] ?>"
                                                     class="btn btn-outline-warning m-1">Edit</a>
                                             </td>
                                             <td class="border-bottom-0">
-                                                <a  onclick="return confirm('Are you sure you want to delete?')"  href="delete.php?formation_id=<?php echo $row["formation_id"] ?>"
+                                                <a onclick="return confirm('Are you sure you want to delete?')"
+                                                    href="delete.php?formation_id=<?php echo $row["formation_id"] ?>"
                                                     class="btn btn-outline-danger m-1">Delete</a>
                                             </td>
 

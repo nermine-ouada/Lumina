@@ -36,14 +36,14 @@ include ("../../../config.php");
                         <h6 class="card-subtitle mb-2 text-muted"><?php echo $row["formation_title"] ?></h6>
                         <p class="card-text"><?php echo $row["description"] ?></p>
 
-                        <?php if ($row["start_date"] > $today) { ?>
+                       
                             <a href="demande.php?session=<?php echo $row["session_id"] ?>"
                                 onclick="return confirm('are you sure you wanna teach this session ?')"
                                 class="btn btn-outline-warning">Depot de demande</a>
-                        <?php } else { ?>
+                     <!-- <?php if ($row["start_date"] > $today) { ?> -->    <!-- <?php } else { ?>
                             <a class="btn btn-success disabled">Session started</a>
                             <?php
-                        } ?>
+                        } ?> -->
 
                     </div>
                 </div>

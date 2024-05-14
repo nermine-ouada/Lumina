@@ -87,7 +87,7 @@ require '../../../config.php';
                                         <tr>
 
                                             <td class="border-bottom-0">
-                                                <p class="mb-0 fw-normal">
+                                                <p class="mb-0 fw-semibold">
                                                     <?php echo $row["title"] ?>
                                                 </p>  <span class="fw-normal">
                                                 <?php echo $row["formation_title"] ?>
@@ -157,7 +157,7 @@ require '../../../config.php';
                                         <tr>
 
                                         <td class="border-bottom-0">
-                                            <h6 class="mb-0 fw-normal">
+                                            <h6 class="mb-0 fw-semibold">
                                                 <?php echo $row["title"] ?>
                                     </h6>
                                             <span class="fw-normal">
