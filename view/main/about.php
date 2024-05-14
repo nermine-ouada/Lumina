@@ -116,7 +116,7 @@ include ("../../config.php"); ?>
             <div class="right-content1">
                 <!-- img -->
                 <div class="right-img">
-                    <img src="../../assets/main/img/about.jpg" alt="">
+                    <img src="../../assets/home/img/about.jpg" alt="">
                 </div>
             </div>
         </div>
