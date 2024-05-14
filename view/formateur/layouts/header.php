@@ -52,43 +52,16 @@
                                 <span class="hide-menu">Suggestion formation</span>
                             </a>
                         </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link" href="../suggestion_crud/encours.php" aria-expanded="false">
-                                <span>
-                                    <i class="ti ti-alert-circle"></i>
-                                </span>
-                                <span class="hide-menu">Depot session</span>
-                            </a>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link" href="../suggestion_crud/accept.php" aria-expanded="false">
-                                <span>
-                                    <i class="ti ti-cards"></i>
-                                </span>
-                                <span class="hide-menu">depot resultat</span>
-                            </a>
-                        </li>
-                       
-                        <li class="nav-small-cap">
-                            <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-                            <span class="hide-menu">INFO</span>
-                        </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link" href="../formation_category_crud/index.php" aria-expanded="false">
+                          <li class="sidebar-item">
+                            <a class="sidebar-link" href="../session/index.php" aria-expanded="false">
                                 <span>
                                     <i class="ti ti-login"></i>
                                 </span>
-                                <span class="hide-menu">Formations</span>
+                                <span class="hide-menu">Sessions</span>
                             </a>
                         </li>
-                        <li class="sidebar-item">
-                            <a class="sidebar-link" href="../suivi/index.php" aria-expanded="false">
-                                <span>
-                                    <i class="ti ti-aperture"></i>
-                                </span>
-                                <span class="hide-menu">Fiche Suivi</span>
-                            </a>
-                        </li>
+                       
+                    
                     </ul>
                     <div class="unlimited-access hide-menu bg-light-primary position-relative mb-7 mt-5 rounded">
                         <div class="d-flex">
