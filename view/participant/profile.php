@@ -3,8 +3,9 @@ session_start();
 
 if (!isset($_SESSION['participant'])) {
     header("location:auth/login.php");
-}include('layouts/header.php');
+}include('header.php');
 ?>
 
 
-<?php include ('layouts/footer.php');?>
+
+<?php include ('footer.php');?>

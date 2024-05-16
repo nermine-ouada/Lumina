@@ -14,7 +14,7 @@ if ($req->rowCount() > 0) {
     $_SESSION['participant'] = $result["email"];
     $_SESSION['username'] = $result["first_name"] . " " . $result["last_name"];
     $_SESSION['participant_id'] = $result["participant_id"];
-    header("Location: ../layouts/dashboard.php");
+    header("Location: ../../main/home.php");
     exit(); // Terminate script execution after redirection
 } else {
     $_SESSION['errorLogin'] = "Login failed.";
