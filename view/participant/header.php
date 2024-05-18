@@ -74,7 +74,7 @@
                                                 <!-- Button -->
                                                 <?php if (!isset($_SESSION['participant'])) { ?>
                                                     <li class="button-header margin-left "><a href="auth/register.php"
-                                                            class="btn">Join</a>
+                                                            class="btn">Register</a>
                                                     </li>
                                                     <li class="button-header"><a href="auth/login.php" class="btn btn3">Log
                                                             in</a></li>
@@ -82,10 +82,10 @@
                                                 } else { ?>
 
                                                     <li class="button-header margin-left "><a href="profile.php"
-                                                            class="btn">Join</a>
+                                                            class="btn">My Profile</a>
                                                     </li>
                                                     <li class="button-header"><a href="auth/login.php" class="btn btn3">Log
-                                                            in</a></li>
+                                                            out</a></li>
                                                     <?php
                                                 } ?>
                                             </ul>
