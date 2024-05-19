@@ -136,49 +136,41 @@ include ("../../config.php"); ?>
             <div class="team-active">
                 <div class="single-cat text-center">
                     <div class="cat-icon">
-                        <img src="../../assets/home/img/gallery/team1.png" alt="">
+                        <img src="../../assets/dashboard/images/profile/nermine.jpg" alt="">
                     </div>
                     <div class="cat-cap">
-                        <h5><a href="services.html">Mr. Urela</a></h5>
+                        <h5><a href="services.html">Miss. Nermine Ouada</a></h5>
                         <p>The automated process all your website tasks.</p>
                     </div>
                 </div>
                 <div class="single-cat text-center">
                     <div class="cat-icon">
-                        <img src="../../assets/home/img/gallery/team2.png" alt="">
+                        <img src="../../assets/dashboard/images/profile/ons.jpg" alt="">
                     </div>
                     <div class="cat-cap">
-                        <h5><a href="services.html">Mr. Uttom</a></h5>
+                        <h5><a href="services.html">Miss. Ons ben Amara</a></h5>
                         <p>The automated process all your website tasks.</p>
                     </div>
                 </div>
                 <div class="single-cat text-center">
                     <div class="cat-icon">
-                        <img src="../../assets/home/img/gallery/team3.png" alt="">
+                        <img src="../../assets/dashboard/images/profile/tesnim.jpg" alt="">
                     </div>
                     <div class="cat-cap">
-                        <h5><a href="services.html">Mr. Shakil</a></h5>
+                        <h5><a href="services.html">Miss. Tesnim Rhaiem</a></h5>
                         <p>The automated process all your website tasks.</p>
                     </div>
                 </div>
                 <div class="single-cat text-center">
                     <div class="cat-icon">
-                        <img src="../../assets/home/img/gallery/team4.png" alt="">
+                        <img src="../../assets/dashboard/images/profile/wiem1.jpg" alt="">
                     </div>
                     <div class="cat-cap">
-                        <h5><a href="services.html">Mr. Arafat</a></h5>
+                        <h5><a href="services.html">Miss. Wiem Hichri</a></h5>
                         <p>The automated process all your website tasks.</p>
                     </div>
                 </div>
-                <div class="single-cat text-center">
-                    <div class="cat-icon">
-                        <img src="../../assets/home/img/gallery/team3.png" alt="">
-                    </div>
-                    <div class="cat-cap">
-                        <h5><a href="services.html">Mr. saiful</a></h5>
-                        <p>The automated process all your website tasks.</p>
-                    </div>
-                </div>
+                
             </div>
         </div>
     </section>
