@@ -18,7 +18,7 @@ $row = $req->fetch();
 <div class="container-fluid">
     <div class="card">
         <div class="card-body">
-            <h5 class="card-title fw-semibold mb-4">Add new Formateur</h5>
+            <h5 class="card-title fw-semibold mb-4">Update Formateur</h5>
             <div class="card-body">
                 <form action="update.php"onsubmit="return onSubmitForm()" method="post">
                     <div class="row">
@@ -58,12 +58,11 @@ $row = $req->fetch();
                             <label class="form-label">Password</label>
                             <input required type="password" class="form-control" name="password"  id="password"
                                 value="<?php echo $row['password'] ?>">
-                            <div class="form-text">Create a password
-                            </div>
+                            
                         </div>
 
                         <div class="mb-3 w-50">
-                            <label class="form-label">Confirm assword</label>
+                            <label class="form-label">Confirm password</label>
                             <input required type="password" class="form-control" name="password" id="confirmPassword">
                         </div>
 
@@ -127,7 +126,7 @@ $row = $req->fetch();
                         </div>
                     </div>
                     <button onclick="return confirm('Are you sure you want to update?')" type="submit"
-                        class="btn btn-primary">Submit</button>
+                        class="btn btn-primary">Update</button>
                 </form>
             </div>
         </div>

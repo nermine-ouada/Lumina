@@ -20,27 +20,18 @@ $row = $req->fetch();
 <div class="container-fluid">
     <div class="card">
         <div class="card-body">
-            <h5 class="card-title fw-semibold mb-4">Add new Module</h5>
+            <h5 class="card-title fw-semibold mb-4">Update Module</h5>
             <div class="card-body">
                 <form action="update.php" method="post">
                     <div class="row">
                         <input required type="text" class="form-control" name="module_id" style="visibility:hidden"
                             value="<?php echo $row['module_id'] ?>">
-
+                        <div class="row">
                         <div class="mb-3 w-50">
                             <label class="form-label">Title </label>
                             <input required type="text" class="form-control" name="title" value="<?php echo $row['title'] ?>">
                         </div>
-                        <div class="mb-3 w-50">
-
-                            <label class="form-label">Description </label>
-                            <input required type="text" class="form-control" name="description"
-                                value="<?php echo $row['description'] ?>">
-                        </div>
-
-                    </div>
-                    <div class="row">
-                        <div class="mb-3 w-50">
+                       <div class="mb-3 w-50">
                             <label class="form-label">Formation</label>
                             <select name="formation_id" class="form-control">
                                 <?php
@@ -53,9 +44,8 @@ $row = $req->fetch();
                                 ?>
                             </select>
                         </div>
-
-                    </div>
-
+                     </div>
+                     </div>
                     <div class="row">
                         <div class="mb-3 w-50">
                             <label class="form-label">Volume Cours</label>
@@ -78,12 +68,12 @@ $row = $req->fetch();
                             <div class="form-text">Enter only number.</div>
                         </div>
                         <div class="mb-3 w-50">
-                            <label class="form-label">Description </label>
-                            <textarea required class="form-control" name="description"
-                                value="<?php echo $row['description'] ?>"></textarea>
-                        </div>
+                                <label  class="form-label">Description</label>
+                                <textarea required type="text" class="form-control" name="description">
+                                    <?php echo $row['description'] ?></textarea>
+                            </div>
                     </div>
-                    <button  onclick="return confirm('Are you sure you want to update?')"  type="submit" class="btn btn-primary">Submit</button>
+                    <button  onclick="return confirm('Are you sure you want to update?')"  type="submit" class="btn btn-primary">Update</button>
                 </form>
             </div>
         </div>

@@ -120,7 +120,7 @@ include
                                         </tr>
                                     <?php }
                                 } else if (isset($_GET["search"])) {
-                                    $sql = 'select * from contact where title subject ?  or message like ? ';
+                                    $sql = 'select * from contact where name like ?  or message like ? ';
 
                                     $req = $conn->prepare($sql);
                                     $req->execute([$_GET["search"], $_GET["search"]]);

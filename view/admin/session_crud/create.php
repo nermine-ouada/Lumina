@@ -26,14 +26,11 @@ require '../../../config.php';
                             <label class="form-label">Start_Date</label>
                             <input required type="datetime-local" class="form-control" name="start_date"
                                 id="start_date">
-                            <div class="form-text">Please select the start date.</div>
-
                         </div>
 
                         <div class="mb-3 w-50">
                             <label class="form-label">End_Date</label>
                             <input required type="datetime-local" class="form-control" name="end_date" id="end_date">
-                            <div class="form-text">Please select the end date.</div>
                         </div>
                     </div>
                     <div class="mb-3">
@@ -90,7 +87,13 @@ require '../../../config.php';
                         </div>
                         <?php
                     } ?>
-                    <div class="mb-3">
+                    <div class="row">
+                    <div class="mb-3 w-50">
+                        <label class="form-label">Price</label>
+                        <input required type="text" class="form-control" name="price">
+                        <div class="form-text">Enter your price.</div>
+                    </div>
+                    <div class="mb-3 w-50">
                         <label class="form-label">Promotion</label>
                         <Select name="promotion_id" class="form-control">
                             <?php
@@ -108,9 +111,9 @@ require '../../../config.php';
                         </Select>
                         <div class="form-text">Please select the desired promotion from the options provided.
                         </div>
-
+                        </div>
                     </div>
-                    <div class="mb-3">
+                    <div class="mb-3 ">
                         <label class="form-label">Description</label>
                         <textarea type="text" class="form-control" name="description"></textarea>
                         <div class="form-text">Enter your description.</div>

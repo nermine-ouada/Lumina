@@ -35,6 +35,7 @@ $row = $req->fetch();
                                 <textarea required type="text" class="form-control" name="description">
                                     <?php echo $row['description'] ?></textarea>
                             </div>
+                            </div>
                             <div class="mb-3">
                                 <label class="form-label">Category</label>
                                 <Select name="formation_category_id" class="form-control">
