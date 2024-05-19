@@ -19,7 +19,7 @@ $row = $req->fetch();
     <div class="card">
 
         <div class="card-body">
-            <h5 class="card-title fw-semibold mb-4">Add new participant</h5>
+            <h5 class="card-title fw-semibold mb-4">Update participant</h5>
             <div class="card-body">
                 <form action="update.php" onsubmit="return onSubmitForm()" method="post">
                     <div class="row">
@@ -95,7 +95,7 @@ $row = $req->fetch();
                     </div>
 
                     <button onclick="return confirm('Are you sure you want to update?')" type="submit"
-                        class="btn btn-primary">Submit</button>
+                        class="btn btn-primary">Update</button>
                 </form>
             </div>
         </div>

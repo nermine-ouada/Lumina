@@ -8,7 +8,7 @@ if (!isset($_SESSION['admin'])) {
 require '../../../config.php';
 
 $req = $conn->prepare(
-    'UPDATE session SET title=?, description=?, start_date=?,end_date=?,niveau=?,formation_id=?,promotion_id=?,updated_at=? WHERE session_id=?'
+    'UPDATE session SET title=?, description=?, start_date=?,end_date=?,niveau=?,price=?,formation_id=?,promotion_id=?,updated_at=? WHERE session_id=?'
 );
 $currentDateTime = date("Y-m-d H:i:s");
 $success=$req->execute([
@@ -17,6 +17,7 @@ $success=$req->execute([
     $_POST['start_date'],
     $_POST['end_date'],
     $_POST['niveau'],
+    $_POST['price'],
     $_POST['formation_id'],
     $_POST['promotion_id'],
     $currentDateTime,

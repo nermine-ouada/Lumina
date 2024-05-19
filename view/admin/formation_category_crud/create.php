@@ -13,15 +13,16 @@ include ('../layouts/header.php');
             <h5 class="card-title fw-semibold mb-4">Add new Category</h5>
                 <div class="card-body">
                     <form action="store.php" method="post">
-                        <div class="row">
+                       
                             <div class="mb-3 w-50">
                                 <label  class="form-label">Category name</label>
                                 <input required type="text" class="form-control" name="category_name">
                                 <div class="form-text">Enter your category name
                                 </div>
                             </div>
-                        </div>   
+                         
                          <button type="submit" class="btn btn-primary">Submit</button>
+                         
                     </form>
                 </div>
             </div>

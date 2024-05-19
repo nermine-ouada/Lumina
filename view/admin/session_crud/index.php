@@ -52,7 +52,9 @@ require '../../../config.php';
                                     <th class="border-bottom-0">
                                         <h6 class="fw-semibold mb-0">Niveau</h6>
                                     </th>
-
+                                    <th class="border-bottom-0">
+                                        <h6 class="fw-semibold mb-0">Price</h6>
+                                    </th>
                                  
                                     <th class="border-bottom-0">
                                         <h6 class="fw-semibold mb-0">Promotion</h6>
@@ -65,7 +67,7 @@ require '../../../config.php';
                             <tbody>
                                 <?php
                                 if (!isset($_GET['search'])) {
-                                    $sql = 'SELECT session.title, session.description, session.start_date, session.end_date, session.niveau, 
+                                    $sql = 'SELECT session.title, session.description, session.start_date, session.end_date, session.niveau,session.price, 
                                     formation.title AS formation_title, promotion.title AS promotion_title, session.session_id 
                                     FROM session 
                                     JOIN formation ON session.formation_id = formation.formation_id 
@@ -113,7 +115,11 @@ require '../../../config.php';
                                                     <?php echo $row["niveau"] ?>
                                                 </h6>
                                             </td>
-                                         
+                                            <td class="border-bottom-0">
+                                                <h6 class="fw-semibold mb-0">
+                                                    <?php echo $row["price"] ?>
+                                                </h6>
+                                            </td>
                                             <td class="border-bottom-0">
                                                 <h6 class="fw-semibold mb-0">
                                                     <?php echo $row["promotion_title"] ?>
@@ -133,7 +139,7 @@ require '../../../config.php';
                                     <?php }
                                 } else if (isset($_GET["search"])) {
                                     $search = '%' . $_GET["search"] . '%';
-                                    $sql = 'SELECT session.title, session.description, session.start_date, session.end_date, session.niveau, 
+                                    $sql = 'SELECT session.title, session.description, session.start_date, session.end_date, session.niveau,session.price, 
                                     formation.title AS formation_title, promotion.title AS promotion_title, session.session_id 
                             FROM session 
                             JOIN formation ON session.formation_id = formation.formation_id 
@@ -184,7 +190,11 @@ require '../../../config.php';
                                                 <?php echo $row["niveau"] ?>
                                             </h6>
                                         </td>
-                                      
+                                        <td class="border-bottom-0">
+                                            <h6 class="fw-semibold mb-0">
+                                                <?php echo $row["price"] ?>
+                                            </h6>
+                                        </td>
                                         <td class="border-bottom-0">
                                             <h6 class="fw-semibold mb-0">
                                                 <?php echo $row["promotion_title"] ?>

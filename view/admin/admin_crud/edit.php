@@ -51,8 +51,7 @@ $row = $req->fetch();
                             <label for="exampleInputPassword1" class="form-label">Password</label>
                             <input required type="password" class="form-control" name="password"id="password"
                                 value="<?php echo $row['password'] ?>">
-                            <div class="form-text">Create a password
-                            </div>
+                            
                         </div>
                         <div class="mb-3 w-50">
                             <label class="form-label">Confirm assword</label>

@@ -18,7 +18,7 @@ $row = $req->fetch();
 <div class="container-fluid">
     <div class="card">
         <div class="card-body">
-            <h5 class="card-title fw-semibold mb-4">Add new Promotion</h5>
+            <h5 class="card-title fw-semibold mb-4">Update Promotion</h5>
                 <div class="card-body">
                     <form action="update.php" method="post">
                         <div class="row">
@@ -42,9 +42,7 @@ $row = $req->fetch();
                                 <div class="form-text">Enter the percentage of reduction(%)</div>
 
                         </div>
-                        
-                        
-</div>
+                        </div>
                         <div class="row">
                            <div class="mb-3 ">
                                 <label  class="form-label">Description</label>
@@ -53,9 +51,7 @@ $row = $req->fetch();
 
                             </div>
                         </div>
-                      
-                      
-                        <button onclick="return confirm('Are you sure you want to update?')" type="submit" class="btn btn-primary">Submit</button>
+                      <button onclick="return confirm('Are you sure you want to update?')" type="submit" class="btn btn-primary">Update</button>
                     </form>
                 </div>
             </div>

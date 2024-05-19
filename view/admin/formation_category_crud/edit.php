@@ -21,7 +21,7 @@ $row = $req->fetch();
             <h5 class="card-title fw-semibold mb-4">update category</h5>
                 <div class="card-body">
                     <form action="update.php" method="post">
-                        <div class="row">
+                        
                             <input required type="text" class="form-control" name="formation_category_id" style="visibility:hidden"
                                 value="<?php echo $row['formation_category_id'] ?>">
 
