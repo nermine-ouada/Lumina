@@ -7,8 +7,14 @@ if (!isset($_SESSION['formateur'])) {
 include ('../layouts/header.php');
 include ("../../../config.php");
 
-$sql = 'select * from session where session_id=?';
-
+$sql = "SELECT session.title, session.description, session.start_date, session.end_date, session.niveau, 
+            formation.title AS formation_title, promotion.title AS promotion_title, session.session_id as session_id
+            FROM session 
+            JOIN formation ON session.formation_id = formation.formation_id 
+            JOIN promotion ON session.promotion_id = promotion.promotion_id
+            WHERE session.session_id NOT IN (
+                SELECT DISTINCT session_id FROM fiche_demande WHERE status = 'accepted'
+            )";
 $req = $conn->prepare($sql);
 $req->execute([$_GET["session"]]);
 $row = $req->fetch();
@@ -23,8 +29,7 @@ $row = $req->fetch();
                 <form action="submit.php" onsubmit="return validateForm();" method="post">
                     <input required type="hidden" class="form-control" name="session_id"
                         value="<?php echo $row['session_id'] ?>">
-                    <input required type="hidden" class="form-control" name="formation_id"
-                        value="<?php echo $row['formation_id'] ?>">
+
                     <div class="mb-3">
                         <label class="form-label">Session</label>
                         <input required class="form-control" value="<?php echo $row['title']; ?>" readonly>
