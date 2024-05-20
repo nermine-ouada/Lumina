@@ -8,7 +8,6 @@ include ('../layouts/header.php');
 include ("../../../config.php");
 
 $sql = 'select * from session where session_id=?';
-
 $req = $conn->prepare($sql);
 $req->execute([$_GET["session"]]);
 $row = $req->fetch();
@@ -20,7 +19,7 @@ $row = $req->fetch();
         <div class="card-body">
             <h5 class="card-title fw-semibold mb-4">Demande session (<?php echo $row['title'] ?>)</h5>
             <div class="card-body">
-                <form action="submit.php" onsubmit="return validateForm();" method="post">
+                <form action="store.php" onsubmit="return validateForm();" method="post">
                     <input required type="hidden" class="form-control" name="session_id"
                         value="<?php echo $row['session_id'] ?>">
                     <input required type="hidden" class="form-control" name="formation_id"
@@ -41,11 +40,10 @@ $row = $req->fetch();
                             ?>
                             <div class="mb-3 form-check">
 
-                                <input type="checkbox" class="form-check-input" name="module_id"
-                                    id="<?php echo $row['title'] ?>">
-                                <label class="form-check-label"
-                                    for="<?php echo $row['title'] ?>"><?php echo $row['title'] ?>
-                                </label>
+                               <input type="checkbox" class="form-check-input" name="module_ids[]" value="<?php echo $row['module_id']; ?>"
+                                id="<?php echo $row['title'] ?>">
+                            <label class="form-check-label" for="<?php echo $row['title'] ?>"><?php echo $row['title'] ?></label>
+
                             </div>
                             <?php
                         }
@@ -62,9 +60,8 @@ $row = $req->fetch();
     </div>
 </div>
 <script>
-function validateForm() {
-    const form = document.querySelector('form');
-    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+ function validateForm() {
+    const checkboxes = document.querySelectorAll('input[name="module_ids[]"]');
     
     let checkedCount = 0;
     checkboxes.forEach(function (checkbox) {
@@ -73,12 +70,13 @@ function validateForm() {
         }
     });
     
-    if (checkedCount < 3 || checkedCount > 5) {
-        alert('Please select between 3 and 5 checkboxes.');
+    if (checkedCount < 1 || checkedCount > 5) {
+        alert('Please select between 1 and 5 checkboxes.');
         return false; // Prevent form submission
     } else {
         return true; // Allow form submission
     }
 }
+
 </script>
 <?php include ('../layouts/footer.php'); ?>
