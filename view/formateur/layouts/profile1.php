@@ -1,23 +1,23 @@
 <?php 
-include('../../config.php');
+include('../../../config.php');
 session_start();
 
-if (!isset($_SESSION['participant'])) {
+if (!isset($_SESSION['formateur'])) {
     header("Location: auth/login.php");
     exit();
 }
-$participant_id = $_SESSION['participant_id'];
+$formateur_id = $_SESSION['formateur_id'];
 
-// Récupérer les données du participant à partir de la base de données
-$sql = 'SELECT * FROM participant WHERE participant_id = ?';
+// Récupérer les données du formateur à partir de la base de données
+$sql = 'SELECT * FROM formateur WHERE formateur_id = ?';
 $stmt = $conn->prepare($sql);
-$stmt->execute([$participant_id]);
-$participant = $stmt->fetch(PDO::FETCH_ASSOC);
+$stmt->execute([$formateur_id]);
+$formateur = $stmt->fetch(PDO::FETCH_ASSOC);
 
-// Vérifier si les données du participant ont été récupérées avec succès
-if (!$participant) {
+// Vérifier si les données du formateur ont été récupérées avec succès
+if (!$formateur) {
     // Rediriger l'utilisateur vers une page d'erreur ou afficher un message d'erreur
-    echo "Erreur: Participant introuvable.";
+    echo "Erreur: formateur introuvable.";
     exit();
 }
  include('header.php');
@@ -32,13 +32,13 @@ if (!$participant) {
       <div class="col-lg-4">
         <div class="card mb-4">
           <div class="card-body text-center">
-            <img src="../../assets/home/img/user.jpg"
+            <img src="../../../assets/home/img/user.jpg"
               class="rounded-circle img-fluid" style="width: 150px;">
             <h1 class="my-3">
-            <?php if (isset($participant['last_name'])) 
-    echo $participant['last_name'];?>
-     <?php if (isset($participant['first_name'])) 
-    echo $participant['first_name'];?>
+            <?php if (isset($formateur['last_name'])) 
+    echo $formateur['last_name'];?>
+     <?php if (isset($formateur['first_name'])) 
+    echo $formateur['first_name'];?>
             </h1>
            
           </div>
@@ -53,8 +53,8 @@ if (!$participant) {
                 <p class="mb-0">Email</p>
               </div>
               <div class="col-sm-9">
-                <p class="text-muted mb-0"><?php if (isset($participant['email'])) 
-    echo $participant['email'];?></p>
+                <p class="text-muted mb-0"><?php if (isset($formateur['email'])) 
+    echo $formateur['email'];?></p>
               </div>
             </div>
             <hr>
@@ -63,8 +63,8 @@ if (!$participant) {
                 <p class="mb-0">Cin</p>
               </div>
               <div class="col-sm-9">
-                <p class="text-muted mb-0"><?php if (isset($participant['cin'])) 
-    echo $participant['cin'];?></p>
+                <p class="text-muted mb-0"><?php if (isset($formateur['cin'])) 
+    echo $formateur['cin'];?></p>
               </div>
             </div>
             <hr>
@@ -73,20 +73,22 @@ if (!$participant) {
                 <p class="mb-0">Phone</p>
               </div>
               <div class="col-sm-9">
-                <p class="text-muted mb-0"><?php if (isset($participant['tel'])) 
-    echo $participant['tel'];?></p>
+                <p class="text-muted mb-0"><?php if (isset($formateur['tel'])) 
+    echo $formateur['tel'];?></p>
               </div>
             </div>
             <hr>
          
             <div class="row">
               <div class="col-sm-3">
-                <p class="mb-0">Address</p>
+                <p class="mb-0">Spécialité</p>
               </div>
               <div class="col-sm-9">
-                <p class="text-muted mb-0"><?php if (isset($participant['address'])) 
-    echo $participant['address'];?></p>
+                <p class="text-muted mb-0"><?php if (isset($formateur['specialite'])) 
+    echo $formateur['specialite'];?></p>
               </div>
+              <hr>
+              
             </div>
           </div>
         </div>
