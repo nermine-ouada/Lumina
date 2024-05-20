@@ -41,7 +41,6 @@ $row = $req->fetch();
                         <label class="form-label">Trainer</label>
                         <input required class="form-control"
                             value="<?php echo $row['first_name'] . " " . $row['last_name']; ?>" readonly>
-                        <div class="form-text">This is the session selected.</div>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Modules</label>
