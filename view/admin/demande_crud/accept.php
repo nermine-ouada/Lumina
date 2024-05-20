@@ -57,7 +57,7 @@ $row = $req->fetch();
                             <div class="mb-3 form-check">
 
                                 <input type="checkbox" class="form-check-input" name="module_ids[]"
-                                    value="<?php echo $row['module_id']; ?>" id="<?php echo $row['title'] ?>">
+                                    value="<?php echo $row['module_id']; ?>" id="<?php echo $row['module_id'] ?>">
                                 <label class="form-check-label"
                                     for="<?php echo $row['title'] ?>"><?php echo $row['title'] ?></label>
                             </div>

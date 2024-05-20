@@ -24,28 +24,42 @@ include ("../../../config.php");
                             <thead class="text-dark fs-4">
                                 <tr>
                                     <th class="border-bottom-0">
-                                        <h6 class="fw-semibold mb-0">Frormateur</h6>
+                                        <h6 class="fw-semibold mb-0">Frormateur & specialite</h6>
                                     </th>
                                     <th class="border-bottom-0">
-                                        <h6 class="fw-semibold mb-0">Title</h6>
+                                        <h6 class="fw-semibold mb-0">Session</h6>
                                     </th>
                                     <th class="border-bottom-0">
-                                        <h6 class="fw-semibold mb-0">Description</h6>
+                                        <h6 class="fw-semibold mb-0">Start date</h6>
                                     </th>
                                     <th class="border-bottom-0">
-                                        <h6 class="fw-semibold mb-0">Category</h6>
+                                        <h6 class="fw-semibold mb-0">End date</h6>
                                     </th>
-
+<th class="border-bottom-0">
+                                        <h6 class="fw-semibold mb-0">status</h6>
+                                    </th>
                                     <th class="border-bottom-0">
                                     </th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php
-                                    $sql = 'SELECT title, description, category_name, first_name ,etat,formation_suggestion_id FROM formation_suggestion 
-                                    JOIN formation_category ON formation_suggestion.formation_category_id = formation_category.formation_category_id
-                                    join formateur on  formation_suggestion.formateur_id=formateur.formateur_id 
-                                    where formation_suggestion.etat="encours"';
+                                $sql = "SELECT formateur.first_name AS first_name, 
+                                        formation.formation_id AS formation_id, 
+                                        formateur.last_name AS last_name,
+                                        session.title AS session, 
+                                        fiche_demande.status AS status,
+                                        fiche_demande.fiche_demande_id AS demande_id,
+                                        formateur.specialite as specialite,
+                                        session.start_date as start_date ,
+                                        session.end_date as end_date
+
+                                    FROM fiche_demande 
+                                    JOIN session ON session.session_id = fiche_demande.session_id
+                                    JOIN formation ON formation.formation_id = session.formation_id
+                                    JOIN formateur ON formateur.formateur_id = fiche_demande.formateur_id
+                                  "
+                                   ;
 
                                     // Prepare and execute the statement
                                     $req = $conn->prepare($sql);
@@ -59,64 +73,71 @@ include ("../../../config.php");
 
                                     <?php while ($row = $req->fetch()) { ?>
 
-                                        <tr>
-                                            <td class="border-bottom-0">
-                                                <h6 class="fw-semibold mb-0">
-                                                    <?php echo $row["first_name"] ?>
-                                                </h6>
-                                            </td>
-                                            <td class="border-bottom-0">
-                                                <p class="mb-0 fw-normal">
-                                                    <?php echo $row["title"] ?>
-                                                </p>
-                                            </td>
-                                            <td class="border-bottom-0">
-                                                <p class="mb-0 fw-normal">
-                                                    <?php echo $row["description"] ?>
-                                                </p>
-                                            </td>
-                                            <td class="border-bottom-0">
-                                                <p class="mb-0 fw-normal">
-                                                    <?php echo $row["category_name"] ?>
-                                                </p>
-                                            </td>
+                                          <tr>
 
-                                              <?php if ($row["etat"] == "encours") { ?>
-                                                        <td class="border-bottom-0">
-                                                            <div class="d-flex align-items-center gap-2">
-                                                                <span class="badge bg-warning rounded-3 fw-semibold">Pending</span>
-                                                            </div>
-                                                        </td>
+                                            <td class="border-bottom-0">
+                                                <h6 class="fw-semibold mb-1">
+                                                    <?php echo $row["first_name"] ?>
+                                                            <?php echo $row["last_name"] ?>
+                                                
+                                                        </h6>
+                                                        <span class="fw-normal"><?= $row["specialite"] ?></span>
+                                                
+                                                    </td>
+                                                    <td class="border-bottom-0">
+                                                        <p class="mb-0 fw-normal">
+                                                            <?php echo $row["session"] ?>
+                                                        </p>
+                                                    </td>
+                                                    <td class="border-bottom-0">
+                                                        <p class="mb-0 fw-normal">
+                                                            <?php echo $row["start_date"] ?>
+                                                        </p>
+                                                    </td>
+                                                    <td class="border-bottom-0">
+                                                        <p class="mb-0 fw-normal">
+                                                            <?php echo $row["end_date"] ?>
+                                                        </p>
+                                                    </td>
+                                                    
+                                                <?php if ($row["status"] == "encours") { ?>
+                                                    <td class="border-bottom-0">
+                                                        <div class="d-flex align-items-center gap-2">
+                                                            <span class="badge bg-warning rounded-3 fw-semibold">Pending</span>
+                                                        </div>
+                                                    </td>
                                                     <?php
                                                 } ?>
-                                                <?php if ($row["etat"] == "refuse") { ?>
-                                                        <td class="border-bottom-0">
-                                                            <div class="d-flex align-items-center gap-2">
-                                                                <span class="badge bg-danger rounded-3 fw-semibold">Denied</span>
-                                                            </div>
-                                                        </td>
+                                                <?php if ($row["status"] == "refuse") { ?>
+                                                    <td class="border-bottom-0">
+                                                        <div class="d-flex align-items-center gap-2">
+                                                            <span class="badge bg-danger rounded-3 fw-semibold">Denied</span>
+                                                        </div>
+                                                    </td>
                                                     <?php
                                                 } ?>
-                                                <?php if ($row["etat"] == "accepte") { ?>
-                                                        <td class="border-bottom-0">
-                                                            <div class="d-flex align-items-center gap-2">
-                                                                <span class="badge bg-success rounded-3 fw-semibold">Accepted</span>
-                                                            </div>
-                                                        </td>
+                                                <?php if ($row["status"] == "accepte") { ?>
+                                                    <td class="border-bottom-0">
+                                                        <div class="d-flex align-items-center gap-2">
+                                                            <span class="badge bg-success rounded-3 fw-semibold">Accepted</span>
+                                                        </div>
+                                                    </td>
                                                     <?php
                                                 } ?>
-                                                <?php if ($row["etat"] == "encours") { ?>
-                                                        <td class="border-bottom-0">
-                                                            <a href="accept.php?suggestion=<?php echo $row["formation_suggestion_id"] ?>"
-                                                                class="btn btn-outline-warning m-1">Accept</a>
-                                                        </td>
-                                                        <td class="border-bottom-0">
-                                                             <a onclick="return confirm('Are you sure you want to deny?')"  href="refus.php?suggestion=<?php echo $row["formation_suggestion_id"] ?>"
-                                                                class="btn btn-outline-danger m-1">Deny</a>
-                                                        </td>
+                                                <?php if ($row["status"] == "encours") { ?>
+                                                    <td class="border-bottom-0">
+                                                        <a href="accept.php?demande=<?php echo $row["demande_id"] ?>"
+                                                            class="btn btn-outline-warning m-1">Accept</a>
+                                                    </td>
+                                                    <td class="border-bottom-0">
+                                                        <a onclick="return confirm('Are you sure you want to deny?')"
+                                                            href="refus.php?demande=<?php echo $row["demande_id"] ?>"
+                                                            class="btn btn-outline-danger m-1">Deny</a>
+                                                    </td>
                                                     <?php
                                                 } ?>
-                                                </tr>
+                                                
+                                                </tr>  
                                     <?php }
                                  
                                 ?>

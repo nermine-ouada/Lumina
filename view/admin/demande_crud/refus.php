@@ -8,34 +8,36 @@ if (!isset($_SESSION['admin'])) {
 
 include ("../../../config.php");
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $fiche_demande_id = $_POST['fiche_demande_id'];
+$fiche_demande_id = $_GET['demande'];
 
-    // Begin transaction
-    $conn->beginTransaction();
+// Begin transaction
+$conn->beginTransaction();
 
-    try {
-        // Update the selected fiche_demande to "refused"
-        $sql = 'UPDATE fiche_demande SET status = "refused" WHERE fiche_demande_id = ?';
-        $stmt = $conn->prepare($sql);
-        $stmt->execute([$fiche_demande_id]);
+try {
+    // Update the selected fiche_demande to "refused"
+    $sql = 'UPDATE fiche_demande SET status = "refuse" WHERE fiche_demande_id = ?';
+    $stmt = $conn->prepare($sql);
+    $stmt->execute([$fiche_demande_id]);
 
-        // Update all related rows in ligne_fiche to "refused"
-        $sql = 'UPDATE ligne_fiche SET status = "refused" WHERE fiche_demande_id = ?';
-        $stmt = $conn->prepare($sql);
-        $stmt->execute([$fiche_demande_id]);
+    // Update all related rows in ligne_fiche to "refused"
+    $sql = 'UPDATE ligne_fiche SET status = "refuse" WHERE fiche_demande_id = ?';
+    $stmt = $conn->prepare($sql);
+    $stmt->execute([$fiche_demande_id]);
 
-        // Commit transaction
-        $conn->commit();
+    // Commit transaction
+    $conn->commit();
 
-        // Redirect or display success message
-        header("location:success_page.php"); // Redirect to a success page
-        exit;
+    // Redirect or display success message
+    $_SESSION["successAdd"] = "Record updated  successfully";
+    header("location:index.php");
 
-    } catch (Exception $e) {
-        // Rollback transaction if an error occurs
-        $conn->rollBack();
-        echo "Failed: " . $e->getMessage();
-    }
+    // Redirect to a success page
+    exit;
+
+} catch (Exception $e) {
+    // Rollback transaction if an error occurs
+    $conn->rollBack();
+    $_SESSION["errorAdd"] = $e->getMessage();
+
 }
 ?>
