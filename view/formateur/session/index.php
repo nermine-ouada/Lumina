@@ -21,11 +21,22 @@ include ("../../../config.php");
             FROM session 
             JOIN formation ON session.formation_id = formation.formation_id 
             JOIN promotion ON session.promotion_id = promotion.promotion_id
-            ";
+            WHERE session.session_id NOT IN (
+                SELECT DISTINCT session_id FROM fiche_demande WHERE status = 'accepte' or formateur_id= ?
+            )";
 
     $req = $conn->prepare($sql);
-    $req->execute();
+    $req->execute([$_SESSION["formateur_id"]]);
+    if ($req->rowCount() == 0) { ?>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">No sessions found</h5>
+                    </div>
+                </div>
+            </div>
 
+        <?php }
     while ($row = $req->fetch()) {
 
         ?>
@@ -36,11 +47,11 @@ include ("../../../config.php");
                         <h6 class="card-subtitle mb-2 text-muted"><?php echo $row["formation_title"] ?></h6>
                         <p class="card-text"><?php echo $row["description"] ?></p>
 
-                       
-                            <a href="demande.php?session=<?php echo $row["session_id"] ?>"
-                                onclick="return confirm('are you sure you wanna teach this session ?')"
-                                class="btn btn-outline-warning">Depot de demande</a>
-                     <!-- <?php if ($row["start_date"] > $today) { ?> -->    <!-- <?php } else { ?>
+
+                        <a href="demande.php?session=<?php echo $row["session_id"] ?>"
+                            onclick="return confirm('are you sure you wanna teach this session ?')"
+                            class="btn btn-outline-warning">Depot de demande</a>
+                        <!-- <?php if ($row["start_date"] > $today) { ?> --> <!-- <?php } else { ?>
                             <a class="btn btn-success disabled">Session started</a>
                             <?php
                         } ?> -->
