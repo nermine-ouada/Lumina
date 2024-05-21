@@ -32,7 +32,7 @@ include ('../layouts/header.php');
                         </div>
                         <div class="mb-3 w-50">
                             <label class="form-label">Phone number</label>
-                            <input required type="tel" class="form-control" name="tel" aria-describedby="emailHelp">
+                            <input required type="tel" class="form-control" name="tel" id="tel" aria-describedby="emailHelp">
                             <div class="form-text">Enter only your phone number +216 ** *** ***
                             </div>
                         </div>
@@ -146,9 +146,9 @@ include ('../layouts/header.php');
         }
         return errorMessage;
     }
-
+   
     function onSubmitForm() {
-        var errorMessage = validatePassword() + validatePhoneNumber() + validateCIN() + validateRib() ;
+        var errorMessage = validatePassword() + validatePhoneNumber() + validateCIN() + validateRib();
 
         if (errorMessage) {
             alert(errorMessage);

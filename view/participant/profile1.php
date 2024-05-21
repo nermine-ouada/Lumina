@@ -24,7 +24,7 @@ if (!$participant) {
 ?>
 <br><br><br>
 
-<section class="d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+<section class="d-flex justify-content-center align-items-center" style="min-height: 80vh; ">
   <div class="container ">
 
 
@@ -57,7 +57,7 @@ if (!$participant) {
     echo $participant['email'];?></p>
               </div>
             </div>
-            <hr>
+            <hr style="border-top: 1px solid rgba(128, 128, 128, 0.5);" class="col-sm-6">
             <div class="row">
               <div class="col-sm-3">
                 <p class="mb-0">Cin</p>
@@ -67,7 +67,7 @@ if (!$participant) {
     echo $participant['cin'];?></p>
               </div>
             </div>
-            <hr>
+            <hr style="border-top: 1px solid rgba(128, 128, 128, 0.5);" class="col-sm-6">
             <div class="row">
               <div class="col-sm-3">
                 <p class="mb-0">Phone</p>
@@ -77,13 +77,13 @@ if (!$participant) {
     echo $participant['tel'];?></p>
               </div>
             </div>
-            <hr>
+            <hr style="border-top: 1px solid rgba(128, 128, 128, 0.5);" class="col-sm-6">
          
             <div class="row">
               <div class="col-sm-3">
                 <p class="mb-0">Address</p>
               </div>
-              <div class="col-sm-9">
+              <div class="col-sm-4">
                 <p class="text-muted mb-0"><?php if (isset($participant['address'])) 
     echo $participant['address'];?></p>
               </div>

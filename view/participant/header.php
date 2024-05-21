@@ -26,10 +26,11 @@
     <link rel="stylesheet" href="../../assets/home/css/nice-select.css">
     <link rel="stylesheet" href="../../assets/home/css/style.css">
 
+
 </head>
 
-<body>
-    <!-- ? Preloader Start -->
+<body >
+  <!--  ? Preloader Start -->
     <!-- <div id="preloader-active">
         <div class="preloader d-flex align-items-center justify-content-center">
             <div class="preloader-inner position-relative">
@@ -43,7 +44,7 @@
     <!-- Preloader Start -->
     <header>
         <!-- Header Start -->
-        <div class="header-area header-transparent">
+        <div class="header-area header-transparent" style="background: linear-gradient(90deg, rgba(226,126,236,1) 0%, rgba(222,110,223,1) 35%, rgba(74,143,221,1) 100%);">
             <div class="main-header ">
                 <div class="header-bottom  header-sticky">
                     <div class="container-fluid">
@@ -51,7 +52,7 @@
                             <!-- Logo -->
                             <div class="col-xl-2 col-lg-2">
                                 <div class="logo">
-                                    <a href="home.php"><img src="../../assets/home/Lumina__2_-removebg-preview.png"
+                                    <a href="../main/home.php"><img src="../../assets/home/Lumina__2_-removebg-preview.png"
                                             width="200px"></a>
                                 </div>
                             </div>
@@ -61,10 +62,10 @@
                                     <div class="main-menu d-none d-lg-block">
                                         <nav>
                                             <ul id="navigation">
-                                                <li class="active"><a href="home.php">Home</a></li>
-                                                <li><a href="sessions.php">Sessions</a></li>
-                                                <li><a href="about.php">About</a></li>
-                                                <li><a href="contact.html">Contact</a></li>
+                                                <li class="active"><a href="../main/home.php">Home</a></li>
+                                                <li><a href="../main/sessions.php">Sessions</a></li>
+                                                <li><a href="../main/about.php">About</a></li>
+                                                <li><a href="../main/contact.html">Contact</a></li>
                                                 <li>Other
                                                     <ul class="submenu">
                                                         <li><a href="blog.html">Categories</a></li>
@@ -104,3 +105,4 @@
         </div>
         <!-- Header End -->
     </header>
+                                            
