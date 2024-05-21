@@ -20,7 +20,7 @@ try {
     $stmt->execute([$fiche_demande_id]);
 
     // Update all related rows in ligne_fiche to "refused"
-    $sql = 'UPDATE ligne_fiche SET status = "refuse" WHERE fiche_demande_id = ?';
+    $sql = 'UPDATE ligne_fiche SET etat = "refuse" WHERE fiche_demande_id = ?';
     $stmt = $conn->prepare($sql);
     $stmt->execute([$fiche_demande_id]);
 
