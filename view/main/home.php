@@ -1,5 +1,5 @@
-<?php include ('header.php') ;
-include("../../config.php");?>
+<?php include ('header.php');
+include ("../../config.php"); ?>
 <main>
     <!--? slider Area Start-->
     <section class="slider-area ">
@@ -13,7 +13,12 @@ include("../../config.php");?>
                                 <h1 data-animation="fadeInLeft" data-delay="0.2s">Online learning<br> platform</h1>
                                 <p data-animation="fadeInLeft" data-delay="0.4s">Build skills with courses,
                                     certificates, and degrees online from world-class universities and companies</p>
+<<<<<<< HEAD
                                 <a href="../participant/auth/register1.php" class="btn hero-btn" data-animation="fadeInLeft" data-delay="0.7s">Join for
+=======
+                                <a href="../participant/auth/register.php" class="btn hero-btn"
+                                    data-animation="fadeInLeft" data-delay="0.7s">Join for
+>>>>>>> 55d4e2d5b9376cdfc68251525a79d70eb75202af
                                     Free</a>
                             </div>
                         </div>
@@ -72,10 +77,10 @@ include("../../config.php");?>
                     </div>
                 </div>
             </div>
-              
+
             <div class="courses-actives">
                 <!-- Single -->
-                    <?php
+                <?php
                 // Get today's date
                 $today = date("Y-m-d");
 
@@ -85,7 +90,9 @@ include("../../config.php");?>
             FROM session 
             JOIN formation ON session.formation_id = formation.formation_id 
             JOIN promotion ON session.promotion_id = promotion.promotion_id
-            where session.end_date>=:today limit 5";
+            JOIN fiche_demande ON fiche_demande.session_id = session.session_id
+            WHERE session.end_date >= :today AND status='' ";
+
 
                 $req = $conn->prepare($sql);
                 $req->bindParam(':today', $today);
@@ -93,36 +100,35 @@ include("../../config.php");?>
 
                 while ($row = $req->fetch()) {
 
-                    ?>                <div class="properties pb-20">
+                    ?>
+                    <div class="properties pb-20">
 
-                 
-                            <div class="properties__card">
-                                <div class="properties__img overlay1">
-                                    <a href="#"><img src="../../assets/home/img/gallery/featured5.png" alt=""></a>
-                                </div>
-                                <div class="properties__caption">
-                                    <p><?php echo $row["formation_title"] ?></p>
-                                    <h3><a href="#"><?php echo $row["title"] ?></a></h3>
-                                    <p><?php echo $row["description"] ?></p>
-                                    <div class="properties__footer d-flex justify-content-between align-items-center">
-                                        <div class="price">
-                                            <span>$135</span>
-                                        </div>
-                                    </div>
-                                    <?php if ($row["start_date"] > $today) { ?>
 
-                                        <a href="../participant/participate.php"
-                                            class="border-btn border-btn border-btn2 ">Enroll now</a>
-                                    <?php } else { ?>
-
-                                        <a class="border-btn border-btn border-btn2 disabled">Session started</a>
-                                        <?php
-                                    } ?>
-                                    </div>
+                        <div class="properties__card">
+                            <div class="properties__img overlay1">
+                                <a href="#"><img src="../../assets/home/img/gallery/featured5.png" alt=""></a>
                             </div>
+                            <div class="properties__caption">
+                                <p><?php echo $row["formation_title"] ?></p>
+                                <h3><a href="#"><?php echo $row["title"] ?></a></h3>
+                                <p><?php echo $row["description"] ?></p>
+                                <div class="properties__footer d-flex justify-content-between align-items-center">
+                                    <div class="price">
+                                        <span>$135</span>
+                                    </div>
                                 </div>
-             
-   
+                                <?php if ($row["start_date"] > $today) { ?>
+
+                                    <a href="../participant/participate.php" class="border-btn border-btn border-btn2 ">Enroll
+                                        now</a>
+                                <?php } else { ?>
+
+                                    <a class="border-btn border-btn border-btn2 disabled">Session started</a>
+                                    <?php
+                                } ?>
+                            </div>
+                        </div>
+                    </div>
                 <?php } ?>
             </div>
         </div>
@@ -215,7 +221,7 @@ include("../../config.php");?>
                             </div>
                         </div>
                     </div>
-                <?php
+                    <?php
                 } ?>
             </div>
             <div class="row justify-content-center">
@@ -321,7 +327,7 @@ include("../../config.php");?>
                         <p>The automated process all your website tasks.</p>
                     </div>
                 </div>
-                
+
             </div>
         </div>
     </section>
@@ -354,4 +360,4 @@ include("../../config.php");?>
     <!-- About Area End -->
 </main>
 
-        <?php include ('footer.php') ?>
+<?php include ('footer.php') ?>

@@ -21,6 +21,7 @@ include ("../../../config.php");
             FROM session 
             JOIN formation ON session.formation_id = formation.formation_id 
             JOIN promotion ON session.promotion_id = promotion.promotion_id
+            
             WHERE session.session_id NOT IN (
                 SELECT DISTINCT session_id FROM fiche_demande WHERE status = 'accepte' or formateur_id= ?
             )";
@@ -48,10 +49,20 @@ include ("../../../config.php");
                         <p class="card-text"><?php echo $row["description"] ?></p>
 
 
+
+                        <p class="card-text">
+                            <strong>Start Date:</strong> <?php echo ($row["start_date"]); ?><br>
+                            <strong>End Date:</strong> <?php echo ($row["end_date"]); ?>
+                        </p>
+                        <p class="card-text">
+                            <strong>Niveau:</strong> <?php echo ($row["niveau"]); ?><br>
+                        </p>
+
                         <a href="demande.php?session=<?php echo $row["session_id"] ?>"
                             onclick="return confirm('are you sure you wanna teach this session ?')"
                             class="btn btn-outline-warning">Depot de demande</a>
-                        <!-- <?php if ($row["start_date"] > $today) { ?> --> <!-- <?php } else { ?>
+                        <!-- <?php if ($row["start_date"] > $today) { ?> -->
+                            <!-- <?php } else { ?>
                             <a class="btn btn-success disabled">Session started</a>
                             <?php
                         } ?> -->
