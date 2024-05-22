@@ -10,7 +10,7 @@
                     <div class="row">
                         <div class="col-xl-8 col-lg-11 col-md-12">
                             <div class="hero__caption hero__caption2">
-                                <h1 data-animation="bounceIn" data-delay="0.2s">Contact Successfull</h1>
+                                <h1 data-animation="bounceIn" data-delay="0.2s">Request Successfull</h1>
                                 <!-- breadcrumb Start-->
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
@@ -25,7 +25,7 @@
             </div>
         </div>
     </section>
-<!-- Page Header End -->
+    <!-- Page Header End -->
 </main>
 <!-- Contact Start -->
 
