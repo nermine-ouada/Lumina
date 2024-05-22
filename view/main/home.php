@@ -81,13 +81,13 @@ include ("../../config.php"); ?>
                 $today = date("Y-m-d");
 
                 // SQL query to select sessions
-                $sql = "SELECT session.title, session.description, session.start_date, session.end_date, session.niveau, 
+                $sql = "SELECT session.title, session.description, session.start_date, session.end_date, session.niveau,session.price, 
             formation.title AS formation_title, promotion.title AS promotion_title, session.session_id 
             FROM session 
             JOIN formation ON session.formation_id = formation.formation_id 
             JOIN promotion ON session.promotion_id = promotion.promotion_id
             JOIN fiche_demande ON fiche_demande.session_id = session.session_id
-            WHERE session.end_date >= :today AND status='' ";
+            WHERE session.end_date >= :today AND status='accepte' ";
 
 
                 $req = $conn->prepare($sql);
@@ -107,10 +107,11 @@ include ("../../config.php"); ?>
                             <div class="properties__caption">
                                 <p><?php echo $row["formation_title"] ?></p>
                                 <h3><a href="#"><?php echo $row["title"] ?></a></h3>
-                                <p><?php echo $row["description"] ?></p>
+                                <p><?php echo $row["niveau"] ?></p>
                                 <div class="properties__footer d-flex justify-content-between align-items-center">
                                     <div class="price">
-                                        <span>$135</span>
+                                        <p>price:</p>
+                                        $<?php echo $row["price"] ?>
                                     </div>
                                 </div>
                                 <?php if ($row["start_date"] > $today) { ?>
