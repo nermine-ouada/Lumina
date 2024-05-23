@@ -96,7 +96,7 @@ include ('header.php');
                                 </div>
                                 <?php if ($row["start_date"] > $today) { ?>
             
-                                    <a href="details.php?session=<?php echo $row['session_id'] ?>"
+                                    <a href="../main/details.php?session=<?php echo $row['session_id'] ?>"
                                         class="border-btn border-btn border-btn2 ">Enroll now</a>
                                 <?php } else { ?>
             
