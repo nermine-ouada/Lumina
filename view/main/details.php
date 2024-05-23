@@ -175,7 +175,7 @@ body {
                             <?php echo ($row['start_date']); ?></p>
                         <p class="card-text" style="font-size: 1.5rem;">End Date: <?php echo ($row['end_date']); ?>
                         </p>
-                        <a href="#" onclick="confirmParticipate();" class="participate-button">Participate</a>
+                        <a href="../participant/participate.php?session=<?php echo ($row['session_id']); ?>" onclick="confirmParticipate();" class="participate-button">Participate</a>
 
 
                     </div>

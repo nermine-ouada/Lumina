@@ -22,5 +22,5 @@ $req->execute([
 
 ]);
 
-header('location:../../main/success.php')
+header('location:../main/success.php')
     ?>
