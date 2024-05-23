@@ -11,17 +11,14 @@ $req = $conn->prepare(
 );
 $currentDateTime = date("Y-m-d H:i:s");
 $success=$req->execute([
-
-
-
     $_POST['title'],
     $_POST['description'],
     $_POST['formation_id'],
     $_POST['volume_cours'],
     $_POST['volume_tp'],
     $_POST['volume_td'],
-
-
+    $currentDateTime, 
+    $_POST['module_id'],
 
 ]);
 if ($success) {
