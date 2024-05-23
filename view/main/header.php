@@ -67,12 +67,8 @@
                                                 <li><a href="session.php">Sessions</a></li>
                                                 <li><a href="about.php">About</a></li>
                                                 <li><a href="contact.php">Contact</a></li>
-                                                <li>Other
-                                                    <ul class="submenu">
-                                                        <li><a href="blog.html">Categories</a></li>
-                                                        <li><a href="blog_details.html">Trainings</a></li>
-                                                    </ul>
-                                                </li>
+                                                                                               <li><a href="participations.php">My sessions</a></li>
+
                                                 <!-- Button -->
                                                 <?php if (!isset($_SESSION['participant'])) { ?>
                                                     <li class="button-header margin-left "><a href="../participant/auth/register1.php"

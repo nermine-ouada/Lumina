@@ -29,8 +29,8 @@
 
 </head>
 
-<body >
-  <!--  ? Preloader Start -->
+<body>
+    <!--  ? Preloader Start -->
     <!-- <div id="preloader-active">
         <div class="preloader d-flex align-items-center justify-content-center">
             <div class="preloader-inner position-relative">
@@ -44,7 +44,8 @@
     <!-- Preloader Start -->
     <header>
         <!-- Header Start -->
-        <div class="header-area header-transparent" style="background: linear-gradient(90deg, rgba(226,126,236,1) 0%, rgba(222,110,223,1) 35%, rgba(74,143,221,1) 100%);">
+        <div class="header-area header-transparent"
+            style="background: linear-gradient(90deg, rgba(226,126,236,1) 0%, rgba(222,110,223,1) 35%, rgba(74,143,221,1) 100%);">
             <div class="main-header ">
                 <div class="header-bottom  header-sticky">
                     <div class="container-fluid">
@@ -52,8 +53,8 @@
                             <!-- Logo -->
                             <div class="col-xl-2 col-lg-2">
                                 <div class="logo">
-                                    <a href="../main/home.php"><img src="../../assets/home/Lumina__2_-removebg-preview.png"
-                                            width="200px"></a>
+                                    <a href="../main/home.php"><img
+                                            src="../../assets/home/Lumina__2_-removebg-preview.png" width="200px"></a>
                                 </div>
                             </div>
                             <div class="col-xl-10 col-lg-10">
@@ -66,12 +67,8 @@
                                                 <li><a href="../main/sessions.php">Sessions</a></li>
                                                 <li><a href="../main/about.php">About</a></li>
                                                 <li><a href="../main/contact.html">Contact</a></li>
-                                                <li>Other
-                                                    <ul class="submenu">
-                                                        <li><a href="blog.html">Categories</a></li>
-                                                        <li><a href="blog_details.html">Trainings</a></li>
-                                                    </ul>
-                                                </li>
+                                                <li><a href="../main/participations.php">My sessions</a></li>
+
                                                 <!-- Button -->
                                                 <?php if (!isset($_SESSION['participant'])) { ?>
                                                     <li class="button-header margin-left "><a href="auth/register1.php"
@@ -105,4 +102,3 @@
         </div>
         <!-- Header End -->
     </header>
-                                            
