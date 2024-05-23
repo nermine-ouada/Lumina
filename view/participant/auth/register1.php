@@ -1,17 +1,27 @@
-<?php
-session_start();
-if (!isset($_SESSION['admin'])) {
-    header("location:../auth/login.php");
-}
-include ('../layouts/header.php');
-?>
+<!Doctype html>
+<html lang="en">
 
-<div class="container-fluid">
-    <div class="card">
-        <div class="card-body">
-            <h5 class="card-title fw-semibold mb-4">Add new Trainer</h5>
-            <div class="card-body">
-                <form action="store.php"onsubmit="return onSubmitForm()" method="post">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lumina</title>
+    <link rel="shortcut icon" type="image/png" href="../../../assets/dashboard/images/logos/light-bulb.png" />
+    <link rel="stylesheet" href="../../../assets/dashboard/css/styles.min.css" />
+</head>
+<body> 
+
+     <a href="../../main/home.php"
+                                    class="text-nowrap logo-img  d-block py-3 w-100">
+                                    <img src="../../../assets/dashboard/images/logos/lumina-logo.png" width="180"
+                                        alt="">
+                                </a>
+                                <h3 style="text-align:center ">Contact Us Form</h3>
+<div class="container-fluid  ">
+    <div class="card "> 
+        <div class="card-body ">
+        
+            <div class="card-body ">
+                <form action="participantStore.php" onsubmit="return onSubmitForm()" method="post" style="padding: 0 0 0 250px">
                     <div class="row">
                         <div class="mb-3 w-50">
                             <label class="form-label">First name</label>
@@ -27,12 +37,12 @@ include ('../layouts/header.php');
                     <div class="row">
                         <div class="mb-3 w-50">
                             <label class="form-label">Email address</label>
-                            <input required type="email" class="form-control" name="email">
+                            <input required type="email" class="form-control" id="email" name="email">
                             <div class="form-text">Enter your email address with the '@' symbol included</div>
                         </div>
                         <div class="mb-3 w-50">
                             <label class="form-label">Phone number</label>
-                            <input required type="tel" class="form-control" name="tel" id="tel" aria-describedby="emailHelp">
+                            <input required type="tel" class="form-control" name="tel" id="tel" >
                             <div class="form-text">Enter only your phone number +216 ** *** ***
                             </div>
                         </div>
@@ -53,42 +63,21 @@ include ('../layouts/header.php');
                     <div class="row">
                         <div class="mb-3 w-50">
                             <label class="form-label">CIN</label>
-                            <input required type="text" class="form-control" name="cin" aria-describedby="emailHelp"  id="cin">
+                            <input required type="text" class="form-control" name="cin"   id="cin">
                             <div class="form-text">Enter your 8 digit CIN number.
                             </div>
                         </div>
                         <div class="mb-3 w-50">
-                            <label class="form-label">specialite</label>
-                            <Select name="specialite" class="form-control" >
-                                <option value=" " selected ></option>
-                                <option value="Mathematique">Mathematique</option>
-                                <option value="Digital Marketing">Digital Marketing</option>
-                                <option value="FrontEnd Web Developpement">FrontEnd Web Developpement</option>
-                                <option value="BackEnd Web Developpement">BackEnd Web Developpement</option>
-                            </Select>
-                            <div class="form-text">Select your speciality</div>
+                        <label class="form-label">Address</label>
+                            <input required type="text" class="form-control" name="address" placeholder="Enter your Address" id="adress">
                         </div>
                     </div>
                     <div class="row">
-                        <div class="mb-3 w-50">
-                            <label class="form-label">Banque</label>
-                            <Select name="banque" class="form-control">
-                            <option value=" " selected ></option>
-                                <option value="STB"  >STB</option>
-                                <option value="ATB">ATB</option>
-                                <option value="BNA">BNA</option>
-                                <option value="Zitouna">Zitouna</option>
-                                <option value="Amen">Amen</option>
-                                <option value="Wifek">Wifek</option>
-                                <option value="BH">BH</option>
-                            </Select>
-                            <div class="form-text">Pick your bank from the list</div>
+                        <div class="mb-3 ">
+                        <label class="form-label">Profession</label>
+                            <input required type="text" class="form-control" name="profession"   id="profession">
                         </div>
-                        <div class="mb-3 w-50">
-                            <label class="form-label">Rib</label>
-                            <input required type="text" class="form-control" name="rib"  id="rib">
-                            <div class="form-text">Enter your bank account number (RIB)</div>
-                        </div>
+                        
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
@@ -97,7 +86,7 @@ include ('../layouts/header.php');
 
     </div>
 </div>
-
+</body>
 <script>
     function validatePassword() {
         var password = document.getElementById("password").value;
@@ -126,16 +115,6 @@ include ('../layouts/header.php');
         return errorMessage;
     }
 
-    function validateRib() {
-        var rib = document.getElementById("rib").value;
-        var errorMessage = "";
-
-        if (rib.length !== 24) {
-            rib.value="";
-            errorMessage += "Please enter a valid rib.\n";
-        }
-        return errorMessage;
-    }
     function validateCIN() {
         var cin = document.getElementById("cin").value;
         var errorMessage = "";
@@ -146,9 +125,9 @@ include ('../layouts/header.php');
         }
         return errorMessage;
     }
-   
+ 
     function onSubmitForm() {
-        var errorMessage = validatePassword() + validatePhoneNumber() + validateCIN() + validateRib();
+        var errorMessage = validatePassword() + validatePhoneNumber() + validateCIN();
 
         if (errorMessage) {
             alert(errorMessage);
@@ -158,6 +137,5 @@ include ('../layouts/header.php');
         }
     }
 </script>
+</html>
 
-
-<?php include ('../layouts/footer.php'); ?>
