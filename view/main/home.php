@@ -97,35 +97,35 @@ include ("../../config.php"); ?>
                 while ($row = $req->fetch()) {
 
                     ?>
-                <div class="properties pb-20">
+                    <div class="properties pb-20">
 
 
-                    <div class="properties__card">
-                        <div class="properties__img overlay1">
-                            <a href="#"><img src="../../assets/home/img/gallery/featured5.png" alt=""></a>
-                        </div>
-                        <div class="properties__caption">
-                            <p><?php echo $row["formation_title"] ?></p>
-                            <h3><a href="#"><?php echo $row["title"] ?></a></h3>
-                            <p><?php echo $row["niveau"] ?></p>
-                            <div class="properties__footer d-flex justify-content-between align-items-center">
-                                <div class="price">
-                                    <p>price:</p>
-                                    $<?php echo $row["price"] ?>
-                                </div>
+                        <div class="properties__card">
+                            <div class="properties__img overlay1">
+                                <a href="#"><img src="../../assets/home/img/gallery/featured5.png" alt=""></a>
                             </div>
-                            <?php if ($row["start_date"] > $today) { ?>
+                            <div class="properties__caption">
+                                <p><?php echo $row["formation_title"] ?></p>
+                                <h3><a href="#"><?php echo $row["title"] ?></a></h3>
+                                <p><?php echo $row["niveau"] ?></p>
+                                <div class="properties__footer d-flex justify-content-between align-items-center">
+                                    <div class="price">
+                                        <p>price:</p>
+                                        $<?php echo $row["price"] ?>
+                                    </div>
+                                </div>
+                                <?php if ($row["start_date"] > $today) { ?>
 
-                            <a href="details.php?session=<?php echo $row['session_id'] ?>"
-                                class="border-btn border-btn border-btn2 ">Enroll now</a>
-                            <?php } else { ?>
+                                    <a href="details.php?session=<?php echo $row['session_id'] ?>"
+                                        class="border-btn border-btn border-btn2 ">Enroll now</a>
+                                <?php } else { ?>
 
-                            <a class="border-btn border-btn border-btn2 disabled">Session started</a>
-                            <?php
+                                    <a class="border-btn border-btn border-btn2 disabled">Session started</a>
+                                    <?php
                                 } ?>
+                            </div>
                         </div>
                     </div>
-                </div>
                 <?php } ?>
             </div>
         </div>
@@ -206,19 +206,19 @@ include ("../../config.php"); ?>
             <div class="row">
                 <?php while ($row = $req->fetch()) { ?>
 
-                <div class="col-lg-3 col-md-4 col-sm-6">
-                    <div class="single-topic text-center mb-30">
-                        <div class="topic-img">
-                            <img src="../../assets/home/img/gallery/topic5.png" alt="">
-                            <div class="topic-content-box">
-                                <div class="topic-content">
-                                    <h3><a href="#"><?php echo $row["category_name"]; ?></a></h3>
+                    <div class="col-lg-3 col-md-4 col-sm-6">
+                        <div class="single-topic text-center mb-30">
+                            <div class="topic-img">
+                                <img src="../../assets/home/img/gallery/topic5.png" alt="">
+                                <div class="topic-content-box">
+                                    <div class="topic-content">
+                                        <h3><a href="#"><?php echo $row["category_name"]; ?></a></h3>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <?php
+                    <?php
                 } ?>
             </div>
             <div class="row justify-content-center">
