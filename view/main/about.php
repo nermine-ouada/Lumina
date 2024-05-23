@@ -140,7 +140,7 @@ include ("../../config.php"); ?>
                     </div>
                     <div class="cat-cap">
                         <h5><a href="services.html">Miss. Nermine Ouada</a></h5>
-                        <p>The automated process all your website tasks.</p>
+                        <p>IT Student and CO founder of Lumina</p>
                     </div>
                 </div>
                 <div class="single-cat text-center">
@@ -149,7 +149,7 @@ include ("../../config.php"); ?>
                     </div>
                     <div class="cat-cap">
                         <h5><a href="services.html">Miss. Ons ben Amara</a></h5>
-                        <p>The automated process all your website tasks.</p>
+                        <p>IT Student and CO founder of Lumina</p>
                     </div>
                 </div>
                 <div class="single-cat text-center">
@@ -158,7 +158,7 @@ include ("../../config.php"); ?>
                     </div>
                     <div class="cat-cap">
                         <h5><a href="services.html">Miss. Tesnim Rhaiem</a></h5>
-                        <p>The automated process all your website tasks.</p>
+                        <p>IT Student and CO founder of Lumina</p>
                     </div>
                 </div>
                 <div class="single-cat text-center">
@@ -167,7 +167,7 @@ include ("../../config.php"); ?>
                     </div>
                     <div class="cat-cap">
                         <h5><a href="services.html">Miss. Wiem Hichri</a></h5>
-                        <p>The automated process all your website tasks.</p>
+                        <p>IT Student and CO founder of Lumina</p>
                     </div>
                 </div>
                 
