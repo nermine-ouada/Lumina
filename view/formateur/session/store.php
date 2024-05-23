@@ -1,6 +1,9 @@
 <?php
 session_start();
-include ("../../../config.php");
+
+if (!isset($_SESSION['formateur'])) {
+    header("location:../auth/login.php");
+}include ("../../../config.php");
 require '../../../model/uuid.php';
 
 $fiche_demande_id = Uuid::generate();
