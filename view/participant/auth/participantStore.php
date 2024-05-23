@@ -8,7 +8,7 @@ $req = $conn->prepare($sql);
 
 $participant_id = Uuid::generate(); // Générer un ID participant
 
-$req->execute([
+$success=$req->execute([
     $participant_id,
     $_POST['cin'],
     $_POST['first_name'],
@@ -20,7 +20,17 @@ $req->execute([
     $_POST['profession']
 ]);
 
-
-    header('Location: ../../main/home.php');
+if ($success) {
+    $_SESSION['successLogin'] = "Login successful.";
+    $_SESSION['participant'] = $_POST["email"];
+    $_SESSION['username'] = $_POST["first_name"] . " " . $_POST["last_name"];
+    $_SESSION['participant_id'] = $participant_id;
+    header("Location: ../../main/home.php");
+    exit(); // Terminate script execution after redirection
+} else {
+    $_SESSION['errorLogin'] = "Login failed.";
+    header("Location: ../../main/home.php");
+    exit(); // Terminate script execution after redirection
+}
    
 ?>

@@ -6,6 +6,6 @@ session_start();
 
 $_SESSION['successLogout'] = "Logout successful.";
 
-header("Location: login.php");
+header("Location: ../../main/home.php");
 exit(); // Ensure that no other code is executed after the redirection
 ?>
