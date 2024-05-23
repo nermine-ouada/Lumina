@@ -67,7 +67,7 @@
                                                 <li><a href="session.php">Sessions</a></li>
                                                 <li><a href="about.php">About</a></li>
                                                 <li><a href="contact.php">Contact</a></li>
-                                                                                               <li><a href="participations.php">My sessions</a></li>
+                                                                                               <li><a href="../participant/participations.php">My sessions</a></li>
 
                                                 <!-- Button -->
                                                 <?php if (!isset($_SESSION['participant'])) { ?>

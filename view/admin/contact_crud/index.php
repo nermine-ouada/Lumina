@@ -1,6 +1,6 @@
 <?php session_start();
 if (!isset($_SESSION['admin'])) {
-    header("location:../auth/login.phpview/admin/layouts/message.php");
+    header("location:../auth/login.php");
 }
 include ('../layouts/header.php');
 include
